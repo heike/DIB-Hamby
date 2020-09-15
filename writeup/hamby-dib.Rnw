@@ -56,6 +56,7 @@
 \usepackage{xcolor}
 \definecolor{newcolor}{rgb}{.8,.349,.1}
 
+\newcommand{\hh}[1]{{\color{orange}{#1}}}
 %%
 \usepackage{longtable}
 \usepackage[colorlinks]{hyperref}
@@ -94,8 +95,8 @@
 \author[1,2]{Alicia \snm{Carriquiry}}
 
 %%Affiliations
-\address[1]{Department of Statistics, Iowa State University, Ames, IA}
-\address[2]{Center of Statistics and Applications in Forensic Evidence (CSAFE)}
+\address[1]{Department of Statistics, Iowa State University, Ames, Iowa 50011, United States}
+\address[2]{Center of Statistics and Applications in Forensic Evidence (CSAFE), Iowa State University, Ames, Iowa 50011, United States}
 \address[3]{OmniAnalytics, Address, City and Postal Code, Country}
 
 %\received{1 May 2013}
@@ -321,21 +322,12 @@ Please enter information in the right-hand column and remove all the instruction
 \endhead
 \hline
 \endfoot
-Subject                & [Please select one CATEGORY for your manuscript from the list
-					               available at:\break
-                         \href{https://www.elsevier.com/__data/assets/excel_doc/0012/736977/%
-                               DIB-categories.xlsx}{DIB categories}.]\\
+Subject                & Data Science / Applied Machine Learning\\
 \hline
 Specific subject area  & [Briefly describe the narrower subject area. Max 150 characters]\\
 \hline
-Type of data           & [List the type(s) of data this article describes.
-                         Simply delete from this list as appropriate:]
-                         Table\newline
-                         Image\newline
-                         Chart\newline
-                         Graph\newline
-                         Figure\newline
-                         [Any other type not listed- please specify]\\
+Type of data           & Table\newline
+                         Model\\
 %\clearpage
 How data were acquired & [State how the data were acquired: E.g. Microscope,
                          SEM, NMR, mass spectrometry, survey* etc.\newline
@@ -350,13 +342,7 @@ How data were acquired & [State how the data were acquired: E.g. Microscope,
                          If the survey is not written in English,
                          please provide an English-language translation.}]\\
 \hline
-Data format            & [List your data format(s). Note, unless you are describing secondary data,
-                         all raw data must be provided (either with this data article or linked to a repository).
-                         Simply delete from this list as appropriate:]\newline
-                         Raw\newline
-                         Analyzed\newline
-                         Filtered\newline
-                         [Any other format not listed- please specify]\\
+Data format            & Analyzed\\
 \hline
 Parameters for
 data\newline
@@ -369,31 +355,16 @@ data\newline
 collection             & [Provide a brief description of how these data were collected.
                          Max 600 characters]\\
 \hline
-Data source location   & [Fill in the information available, and delete from this list as appropriate:\newline
+Data source location   &  Institution: Iowa State University\newline
+                         City/Town/Region: Ames, Iowa\newline
+                         Country: United States\newline\newline
 
-                         Institution:\newline
-                         City/Town/Region:\newline
-                         Country:\newline
-                         Latitude and longitude (and GPS coordinates, if possible) for collected samples/data:\newline
-
-
-                         If you are describing secondary data, you are required to provide a list of
-                         the primary data sources used in the section.\newline
-
-                         Primary data sources:  ]\\
+                         Primary data sources: \newline
+                         Hamby Set 173 and Hamby Set 252 from the
+                         National Ballistic and Toolmark Reseach Database at https://tsapps.nist.gov/NRBTD/, in particular \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/b5fbda3e-d889-4211-be7e-654e19b7cd40?nm=True&mt=1&m=3&sp=1} for Hamby173 and \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/c09aaa86-5d60-4acb-9031-46dad2c0ad32?nm=True&mt=1&m=3&sp=1} for Hamby 252\\
 \hline
 \hypertarget{target1}
-{Data accessibility}   & [State here if the data are either hosted `With the article' or on a public repository.
-                         In the interests of openly sharing data we recommend hosting your data in a
-                         trusted repository ($>$70\% of Data in Brief authors now use a data repository).
-                         See our \href{https://www.elsevier.com/authors/author-resources/research-data/data-base-linking#repositories}{list of supported data repositories}.
-                         We suggest \href{https://data.mendeley.com/}{Mendeley Data} if you do not have a trusted repository.\newline
-
-                         Please delete or complete as appropriate, either:]\newline
-
-                         With the article\newline
-
-                         [Or, if in a public repository:]\newline
+{Data accessibility}   & Primary sources are hosted on a database established by NIST (National Institute of Standards and Technology); data described here, are hosted by the data share service provided by Iowa State, handled through figshare. \newline
 
                          Repository name: [Name repository]\newline
                          Data identification number: [provide number]\newline
@@ -570,99 +541,14 @@ here as well. See the online instruction available on:
 \noindent [References are limited (approx. 15) and excessive self-citation is not
 allowed. \textbf{If your data article is co-submitted via another Elsevier
 journal, please cite your associated research article here.}
+\hh{Associated research article is \cite{aoas}.}
 
-\noindent\textbf{Reference style:}
-Text:?Indicate references by number(s) in square brackets in line with
-the text. The actual authors can be referred to, but the reference
-number(s) must always be given.?
 
-\noindent Example: '..... as demonstrated [3,6]. Barnaby and Jones [8] obtained a different result ....'?
-
-\noindent [Use \verb+\cite+ command to cite a reference list item in text.
-
-\noindent These are examples for reference citations \cite{1}.
-\cite{2}.
-\cite{4}.]
-
-\subsection*{Reference list using Bib\TeX database file}
-\noindent [If Bib\TeX database file is used for reference data please use
-\begin{verbatim}
-\bibliographystyle{model1-num-names}
-\bibliography{<BibTeX file name>}
-\end{verbatim}
-and use bibtex command to generate list of references.]
 
 %% Numbered
 %%If
 \bibliographystyle{model1-num-names}
-\bibliography{refs}
-
-\subsection*{Reference list using bibliography envrironment}
-
-\noindent [List:?Number the references (numbers in square brackets) in
-the list in the order in which they appear in the text.?
-
-\noindent Examples:?
-
-{\small
-\begin{verbatim}
-\begin{thebibliography}{0}
-\bibitem{1} J. van der Geer, J.A.J. Hanraads, R.A. Lupton, The art of
-writing a scientific article, J. Sci. Commun. 163 (2010) 51-59.
-https://doi.org/10.1016/j.Sc.2010.00372.
-\bibitem{2} Van der Geer, J., Hanraads, J.A.J., Lupton, R.A., 2018. The
-art of writing a scientific article. Heliyon. 19, e00205.
-https://doi.org/10.1016/j.heliyon.2018.e00205.
-\bibitem{3} W. Strunk Jr., E.B. White, The Elements of Style, fourth ed.,
-Longman, New York, 2000.?
-\bibitem{4} G.R. Mettam, L.B. Adams, How to prepare an electronic
-version of your article, in: B.S. Jones, R.Z. Smith (Eds.),
-Introduction to the Electronic Age, E-Publishing Inc., New York, 2009,
-pp. 281-304.
-\bibitem{5} Cancer Research UK, Cancer statistics reports for the UK.
-http://www.cancerresearchuk.org/aboutcancer/statistics/cancerstatsreport/,
-2003 (accessed 13 March 2003).
-\bibitem{6} [dataset] M. Oguro, S. Imahiro, S. Saito, T. Nakashizuka,
-Mortality data for Japanese oak wilt disease and surrounding forest
-compositions, Mendeley Data, v1, 2015.
-https://doi.org/10.17632/xwj98nb39r.1.
-\end{thebibliography}
-\end{verbatim}
-}
-
-\noindent Example:]
-\vspace*{-12pt}
-
-\begin{thebibliography}{0}
-\item[] \textbf{Reference to a journal publication:}
-\bibitem{1} J. van der Geer, J.A.J. Hanraads, R.A. Lupton, The art of
-writing a scientific article, J. Sci. Commun. 163 (2010) 51-59.
-https://doi.org/10.1016/j.Sc.2010.00372.
-
-\textbf{Reference to a journal publication with an article number:}
-\bibitem{2} Van der Geer, J., Hanraads, J.A.J., Lupton, R.A., 2018. The
-art of writing a scientific article. Heliyon. 19, e00205.
-https://doi.org/10.1016/j.heliyon.2018.e00205.
-
-\textbf{Reference to a book:}
-\bibitem{3} W. Strunk Jr., E.B. White, The Elements of Style, fourth ed., Longman, New York, 2000.?
-
-\textbf{Reference to a chapter in an edited book:}
-\bibitem{4} G.R. Mettam, L.B. Adams, How to prepare an electronic
-version of your article, in: B.S. Jones, R.Z. Smith (Eds.),
-Introduction to the Electronic Age, E-Publishing Inc., New York, 2009,
-pp. 281-304.
-
-\textbf{Reference to a website:}
-\bibitem{5} Cancer Research UK, Cancer statistics reports for the UK.\newline
-http://www.cancerresearchuk.org/aboutcancer/statistics/cancerstatsreport/, 2003 (accessed 13 March 2003).
-
-\textbf{Reference to a dataset:}
-\bibitem{6} [dataset] M. Oguro, S. Imahiro, S. Saito, T. Nakashizuka,
-Mortality data for Japanese oak wilt disease and surrounding forest
-compositions, Mendeley Data, v1, 2015.
-https://doi.org/10.17632/xwj98nb39r.1.]
-\end{thebibliography}
+\bibliography{references}
 
 \end{document}
 
