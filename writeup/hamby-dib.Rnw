@@ -90,14 +90,16 @@
 \cortext[cor1]{Corresponding author:
   Tel.: +1-515-294-8948;
   fax: +1-515-294-4040;}
-\author[3]{Eric \snm{Hare}}
+\author[3]{Susan \snm{VanderPlas}}
+\author[4]{Eric \snm{Hare}}
 %\fntext[fn1]{This is author footnote for second author.}
 \author[1,2]{Alicia \snm{Carriquiry}}
 
 %%Affiliations
 \address[1]{Department of Statistics, Iowa State University, Ames, Iowa 50011, United States}
 \address[2]{Center of Statistics and Applications in Forensic Evidence (CSAFE), Iowa State University, Ames, Iowa 50011, United States}
-\address[3]{OmniAnalytics, Address, City and Postal Code, Country}
+\address[3]{Department of Statistics, University of Nebraska Lincoln, Lincoln, Nebraska zip, United States}
+\address[4]{OmniAnalytics, Address, City and Postal Code, Country}
 
 %\received{1 May 2013}
 %\finalform{10 May 2013}
