@@ -56,16 +56,20 @@
 \usepackage{xcolor}
 \definecolor{newcolor}{rgb}{.8,.349,.1}
 
+\definecolor{lightgray}{gray}{0.9}
+
 \newcommand{\hh}[1]{{\color{orange}{#1}}}
 %%
 \usepackage{longtable}
 \usepackage[colorlinks]{hyperref}
 
+\usepackage{colortbl}
+
 \journal{Data in Brief}
 
 \begin{document}
 
-\verso{Given-name Surname \textit{etal}}
+\verso{Heike Hofmann \textit{et al.}}
 
 \begin{frontmatter}
 
@@ -326,44 +330,33 @@ Please enter information in the right-hand column and remove all the instruction
 \endfoot
 Subject                & Data Science / Applied Machine Learning\\
 \hline
-Specific subject area  & [Briefly describe the narrower subject area. Max 150 characters]\\
+Specific subject area  & Statistical methods in firearms and toolmark evaluation\\
 \hline
 Type of data           & Table\newline
                          Model\\
 %\clearpage
-How data were acquired & [State how the data were acquired: E.g. Microscope,
-                         SEM, NMR, mass spectrometry, survey* etc.\newline
-                         Instruments: E.g. hardware, software, program\newline
-                         Make and model and of the instruments used:\newline
-
-                         {\fontsize{7pt}{8pt}\selectfont
-                         *\,if you conducted a survey you must submit a copy of the
-                         survey(s) used (either provide these as supplementary material
-                         file or provide a URL link to the survey
-                         in this section of the table).
-                         If the survey is not written in English,
-                         please provide an English-language translation.}]\\
+How data were acquired & Table: features quantifying the similarity between pairs of 3d topographic surface scans detailing striation marks on land engraved areas (LEAs) of fired bullets. Features were extracted using the R software packages x3ptools (heike/x3ptools@164e631) and bulletxtrctr (heike/bulletxtrctr@dfa140a) as outlined in the pipeline by \citet{aoas} and detailed in the accompanying R script. From available meta information ground truth regarding source is added for each comparison. Values are stored in form of a comma separated value file.\newline
+                         Model: using the features as training data a random forest is fit to predict same source pairs and different source pairs (R package randomForest 4.6-14).\\
 \hline
 Data format            & Analyzed\\
 \hline
 Parameters for
 data\newline
-collection             & [Provide a brief description of which conditions were considered
-                         for data collection. Max 400 characters]\\
-
+collection             & Hamby sets \citep{hamby} consist of 35 bullets fired from ten consecutively manufactured P85 Ruger barrels. During the firing process micro-imperfections in form of striations are engraved on parts (LEAs) of each bullet. Striation marks are considered to be unique to a barrel. Marks were scanned under 20x magnification by a NanoFocus confocal microscope. Striae from scans of a total of 420 LEAs ($35 \times 2 \times 6$) from two Hamby sets (sets 173 and 252) were considered.
+  \\
 \hline
 Description of
 data\newline
-collection             & [Provide a brief description of how these data were collected.
-                         Max 600 characters]\\
+collection             & 2d images were rendered from topographic scans. Visual inspection revealed damage on 18 of the 420 LEAs (such as `tank rash`, large amount of pitting, cracks). For the remaining scans, areas of good striations were identified, bullet curvature was removed, and signatures extracted. Pairwise signatures were aligned and features describing similarity of striae extracted. Extracted features include cross-correlation, number and location of coinciding peaks and valleys, height of peaks and valleys,  and consecutively matching striae among others.
+                         \\
 \hline
 Data source location   &  Institution: Iowa State University\newline
                          City/Town/Region: Ames, Iowa\newline
                          Country: United States\newline\newline
 
                          Primary data sources: \newline
-                         Hamby Set 173 and Hamby Set 252 from the
-                         National Ballistic and Toolmark Reseach Database at https://tsapps.nist.gov/NRBTD/, in particular \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/b5fbda3e-d889-4211-be7e-654e19b7cd40?nm=True&mt=1&m=3&sp=1} for Hamby173 and \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/c09aaa86-5d60-4acb-9031-46dad2c0ad32?nm=True&mt=1&m=3&sp=1} for Hamby 252\\
+                         x3p files containing topographic surface data from microscopic scans of 35 bullets each from Hamby Set 173 and Hamby Set 252. These scans are available from the
+                         National Ballistic and Toolmark Reseach Database at https://tsapps.nist.gov/NRBTD/. In particular, scans for Hamby Set 173 is available from \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/b5fbda3e-d889-4211-be7e-654e19b7cd40?nm=True&mt=1&m=3&sp=1};  and scans for Hamby Set 252 are available from \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/c09aaa86-5d60-4acb-9031-46dad2c0ad32?nm=True&mt=1&m=3&sp=1}. \\
 \hline
 \hypertarget{target1}
 {Data accessibility}   & Primary sources are hosted on a database established by NIST (National Institute of Standards and Technology); data described here, are hosted by the data share service provided by Iowa State, handled through figshare. \newline
@@ -373,13 +366,10 @@ Data source location   &  Institution: Iowa State University\newline
                          Direct URL to data: [e.g. https://www.data.edu.com - please note,\newline
                          this URL should be working at the time of submission]\newline
 
-                         [\textbf{In addition, for data with access controls only:} For data that,
-                         for ethical reasons (i.e. human patient data),
-                         require access controls please describe
-                         how readers can request access these data and provide a link to any
-                         Data Use Agreement (DUA) or upload a copy as a supplementary file.]\newline
+                         \newline
 
                          Instructions for accessing these data:\newline
+
 
                          [\textit{Important: if your data have access controls a mechanism must also be
                          provided so that our Editors and reviewers may access these data
@@ -389,46 +379,31 @@ Data source location   &  Institution: Iowa State University\newline
 \hline
 Related
 research\newline
-article                & [If your data article is related to a research article - \textbf{especially
-                         if it is a co-submission} - please cite your associated research
-                         article here. Authors should only list \textbf{one article}.\newline
-
-                         Authors' names\newline
-                         Title\newline
-                         Journal\newline
-                         DOI: \textbf{OR} for co-submission manuscripts `In Press'\newline
-
-                         \textbf{For example, for a direct submission:}\newline
-
-                         J. van der Geer, J.A.J. Hanraads, R.A. Lupton, The art of writing a scientific article,
-                         J. Sci. Commun. 163 (2010) 51-59. https://doi.org/10.1016/j.Sc.2010.00372\newline
-
-                         \textbf{Or, for a co-submission (when your related research article has not yet published):}\newline
-
-                         J. van der Geer, J.A.J. Hanraads, R.A. Lupton, The art of writing a
-                         scientific article, J. Sci. Commun. In Press.\newline
-
-                         \textbf{Or, if your data article is not directly related to a research article,
-                         please delete this last row of the table.}]
+article                & E. Hare, H. Hofmann, A. Carriquiry,
+                         Automatic matching of bullet land impressions,
+                         Annals of Applied Statistics, 11(4), 2017, 2332--2356.
+                         DOI: \url{10.1214/17-aoas1080}\newline
 \end{longtable}
 }
 %%%
 
 \section*{Value of the Data}
 
-[Provide 3-6 bullet points explaining why these data are of value to the scientific community.
-Bullet points 1-3 must specifically answer the questions next to the bullet point,
-but do not include the question itself in your answer. You may
-provide up to three additional bullet points to outline the value of these data.
-Please keep points brief, with ideally no more than 400 characters for each point.]
+
+
 
 \begin{itemize}
 \itemsep=0pt
 \parsep=0pt
-\item Your first bullet point must explain why these data are useful or important?
+\item
+These data facilitate the development of probabilistic methods for evaluating and quantifying similarity between pairs of striation mark evidence on fired bullets.
+
 \item Your second bullet point must explain who can benefit from these data?
+This repository may benefit researchers doing similar forensic statistics focused work, or forensic document examiners, interested in examining repeated writing over time or investigating the relation between demographic or situational information and the writing. Outside of forensic evaluation, there may be benefit for researchers developing or testing optical character recognition methods, or for anyone looking to use images of this nature for broader image analysis techniques.
 \item Your third point bullet must explain how these data might be used/reused for
 further insights and/or development of experiments.
+Forensic handwriting analysis is used to evaluate the source of ransom notes, forgeries, and other such pieces of handwritten evidence. The dataset serves as a sample to build statistical approaches to handwriting analysis. These data, and the methods based upon them, have potential implications in the judicial process, to ensure a transparent, accessible, repeatable, and more objective consideration of handwritten evidence.
+
 \item In the next three points you may like to explain how these data could
 potentially make an impact on society and highlight any other additional value of these data.
 \item ....
@@ -436,14 +411,134 @@ potentially make an impact on society and highlight any other additional value o
 
 \section*{Data Description}
 
-\noindent [Individually describe each data file (i.e. figure 1, figure 2, table
-1, dataset, raw data, supplementary data, etc.) that are included in
-this article. Please make sure you refer to every data file and provide
-a clear description for each - do not simply list them. No insight,
-interpretation, background or conclusions should be included in this
-section. Please include legends with any tables, figures or graphs.
+%  [Individually describe each data file (i.e. figure 1, figure 2, table
+% 1, dataset, raw data, supplementary data, etc.) that are included in
+% this article. Please make sure you refer to every data file and provide
+% a clear description for each - do not simply list them. No insight,
+% interpretation, background or conclusions should be included in this
+% section. Please include legends with any tables, figures or graphs.
+%
+% \noindent\textbf{Tip:} do not forget to describe any supplementary data files.]
 
-\noindent\textbf{Tip:} do not forget to describe any supplementary data files.]
+\noindent
+A large part of a forensic examiner's job consists of evaluating whether two pieces of evidence come from the same source or from different sources.
+For casework, same source can never be established with 100\% certainty -- therefore controlled studies are done for performance and proficiency tests to establish the error rates the reports by the \citet{nrc} and the \citet{pcast} called for.
+
+One of the early studies in the field of firearm examination was executed by \citet{hamby} and consists of over 300 sets of bullets sent out to firearm examiners worldwide for an evaluation of same source.
+Each of these sets consists of 20 bullets with known provenance and 15 questioned bullets: two bullets each were fired from ten consecutively manufactured barrels of P-85 Ruger firearms. These two bullets were labelled as bullets 1 and 2 from barrels 1 through 10. The remaining fifteen bullets were each fired from one of the ten barrels (such that at at least one and at most 4 bullets came from the same barrel) and labelled with uppercase letters. Firearms examiners are then asked to match the questioned bullets to the corresponding barrels.
+
+
+What is a Hamby set? confocal light microscopy and x3p format. That is the raw data, downloadable from the NIST database.
+
+
+
+\begin{longtable}{p{33mm}p{94mm}}
+\hline
+\bf Table   (hamby-comparisons.csv)              \\
+\bf Variable name & \bf Description\\ \hline
+\endhead
+\hline
+\endfoot
+\hline
+\bf Land identifiers\\
+\hline\rowcolor{lightgray}
+\bf land1, land2          & identifiers of the land engraved areas of the form {\tt study\_barrel\_bullet\_land} where {\tt study} corresponds to either Hamby173 or Hamby252. A Hamby set consists of twenty bullets of known origin fired from barrels 1 through 10, and 15 questioned bullets. Questioned bullets are named by an uppercase latin letter. They have by definition no known barrel, i.e.\  land 3 from questioned bullet A from set 252 would be denoted as {\tt Hamby252-BrUkn-BA-L3}. Two bullets are fired from each of the ten barrels. Land 2 from the first bullet of barrel 4 in Set 173 is denoted as {\tt Hamby252-Br4-B1-L2}.
+{\bf land1} and {\bf land2} uniquely describe one row in the hamby-comparisons.csv data set.
+\\
+\bf study1, study2, barrel1, barrel2, bullet1, bullet2, l1, l2 & elements describing the provenance of the two LEAs in a comparison. All of these elements can be directly derived from {\bf land1} and {\bf land2} and are added for convenience  only.\\ \hline
+\multicolumn{2}{l}{\bf Measures based on comparisons of two aligned signatures} \\ \hline
+\bf ccf & maximized cross-correlation between two LEA signatures, \\\rowcolor{lightgray}
+\bf rough\_cor & correlation after detrending aligned signatures.\\
+\bf length, length\_mm & length of the shorter of two signatures -- as vector length, or converted to millimeter taking resolution into account.\\\rowcolor{lightgray}
+\bf lag, lag\_mm, abs\_lag, abs\_lag\_mm & (absolute) lag (in millimeter) between signatures to achieve alignment. \\
+\bf overlap & ratio of overlap between the signatures after alignment. The length of the shorter of the two signatures is used as denominator in the ratio. \\\rowcolor{lightgray}
+\bf matches, matches\_per\_mm & number of matching peaks (per millimeter) between aligned signatures. Matching in this context is defined as the same (or similar) location along the $x$ axis. \\
+\bf mismatches, mismatches\_per\_mm & number of peaks on a signature that does not have a counterpart peak in close proximaity along the $x$ axis on the aligned signature. \\\rowcolor{lightgray}
+\bf cms, cms\_per\_mm, cms2, cms\_per\_mm, & CMS are \underline{c}onsecutively \underline{m}atching \underline{s}triae \citep{biasotti} between two aligned land engraved areas (LEAs). Striations, as defined by firearms and toolmarks examiners, exhibit as peaks in the  corresponding signature. Because confocal light microscopy also captures depths, we can expand the notion of striations to peaks and valleys. Correspondingly, {\bf cms} is defined as the number of consecutively matching peaks and valleys of two aligned signatures, while {\bf cms2} is the number of just the peaks. \\
+\bf non\_cms, non\_cms\_per\_mm & longest sequence of non-matching peaks (per millimeter) between two aligned signatures\\\rowcolor{lightgray}
+\bf left\_cms, right\_cms & longest sequence of matching striae from the left/right of two aligned signatures. \\
+\bf D, sd\_D & Euclidean distance (in millimeters) between two aligned signatures and its standard deviation. \\\rowcolor{lightgray}
+\bf sum\_peaks & the depth of peaks measured as the sum of matching peaks between two aligned signatures (in microns).\\
+\bf samesource &  ground truth whether a pair is from the same source (TRUE) or from different sources (FALSE). \\\rowcolor{lightgray}
+\bf damaged & logical variable indicating whether one of the land engraved areas shows visible damage such as pitting (holes in the bullet surface from gun powder exploding in the barrel next to it) or "tank rash" (damage to the bullet after it exited the barrel after the firing). \\
+\hline
+\end{longtable}
+
+\autoref{fig:densities} gives an overview of the feature densities by the source of the comparisons.
+
+<<data-import, echo=FALSE, message=FALSE, warning=FALSE>>=
+library(tidyverse)
+library(randomForest)
+library(here)
+features <- read.csv(here("data/training-features.csv"))
+rf2 <- readRDS(here("data/csafe_rf2.rds"))
+important <- data.frame(importance = rf2$importance) %>% arrange(desc(MeanDecreaseGini))
+important$name <- row.names(important)
+doubles <- duplicated(features$id)
+features <- features %>% filter(!doubles, !damaged)
+
+library(pROC)
+important$auc <- NA
+for (i in 1:nrow(important)) {
+  important$auc[i] <- auc(features$samesource, features[,important$name[i]])
+}
+detach(package:pROC)
+@
+
+<<densities, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 10, fig.height=8, out.width='\\textwidth', fig.cap="Densities of same-source and different source comparisons of each  feature used in fitting the random forest model. Features are sorted according to importance (most important features first). AUC (area under the curve) describes each features univariate strength to distinguish between same source and different source.">>=
+
+long_rf <- features %>%
+  filter(!doubles, land1 != land2) %>%
+  select(important$name, samesource) %>%
+  pivot_longer(cols = -samesource) %>%
+  mutate(
+    name = factor(name, levels=important$name),
+    `Ground truth` = c("Different source", "Same source")[as.numeric(samesource)+1]
+  )
+
+
+long_rf %>%
+  ggplot(aes(x = value)) +
+  geom_density(aes(fill=`Ground truth`), alpha = 0.7, size = 0.2) +
+  facet_wrap(~factor(name, levels=important$name), scales = "free") +
+  scale_fill_manual(values=c("darkgrey", "darkorange")) +
+  theme_bw() +
+  theme(legend.position = c(.8,0.1)) +
+  geom_label(aes(x = Inf, y = Inf, label=sprintf("AUC: %.3f", round(auc,3))), data = important,
+            color = "grey50", size = 8, vjust=1, hjust=1,label.size = 0)
+@
+
+\begin{longtable}{p{33mm}p{94mm}}
+\hline
+\bf Table   (meta-info.csv)              \\
+\bf Variable name & \bf Description\\ \hline
+\endhead
+\hline
+\endfoot
+\hline
+\bf Land identifiers\\
+\hline\rowcolor{lightgray}
+\bf land\_id          & identifier of a land engraved area of the form {\tt study\_barrel\_bullet\_land}. \\
+\bf study, barrel, bullet, land & elements describing the provenance of a LEA. \\\rowcolor{lightgray}
+\bf source & path to the x3p file corresponding to the LEA. \\
+\bf damaged & logical variable indicating whether the land engraved area is exhibiting damage not associated with the barrel and the firing process. \\\rowcolor{lightgray}
+\bf H173\_B1\_index & matching land id to bullet 1 of the Hamby 173 set of the barrel the bullet was fired from.  This index enables to determine ground truth in any comparison: two land engraved areas come from the same source if their corresponding {\bf H173\_B1\_index} matches.
+\hline
+\end{longtable}
+
+
+\begin{longtable}{p{127mm}}
+\hline
+\bf Model   (csafe-rf2.rds)              \\ \hline
+\endhead
+\hline
+\endfoot
+\hline
+Random forest object for assessing similarity of two land engraved areas based on features extracted from aligned signatures. In particular, ccf, rough\_cor,
+    matches\_per\_mm, D, sd\_D, cms\_per\_mm, mismatches\_per\_mm,
+    overlap, abs\_lag\_mm, sum\_peaks were used to fit the random forest.
+\hline
+\end{longtable}
 
 \section*{Experimental Design, Materials and Methods}
 
