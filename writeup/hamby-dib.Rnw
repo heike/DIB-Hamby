@@ -470,7 +470,7 @@ What is a Hamby set? confocal light microscopy and x3p format. That is the raw d
 library(tidyverse)
 library(randomForest)
 library(here)
-features <- read.csv(here("data/training-features.csv"))
+features <- read.csv(here("data/Hamby173-252-features.csv"))
 rf2 <- readRDS(here("data/csafe_rf2.rds"))
 important <- data.frame(importance = rf2$importance) %>% arrange(desc(MeanDecreaseGini))
 important$name <- row.names(important)
