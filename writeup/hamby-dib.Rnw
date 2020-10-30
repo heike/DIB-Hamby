@@ -372,8 +372,6 @@ Data source location   &  Institution: Iowa State University\newline
                          Direct URL to data: [e.g. https://www.data.edu.com - please note,\newline
                          this URL should be working at the time of submission]\newline
 
-                         \newline
-
                          Instructions for accessing these data:\newline
 
 
@@ -450,7 +448,7 @@ What is a Hamby set? confocal light microscopy and x3p format. That is the raw d
 \bf study, barrel, bullet, land & elements describing the provenance of a LEA. \\\rowcolor{lightgray}
 \bf source & path to the x3p file corresponding to the LEA. \\
 \bf damaged & logical variable indicating whether the land engraved area is exhibiting damage not associated with the barrel and the firing process. \\\rowcolor{lightgray}
-\bf H173\_B1\_index & matching land id to bullet 1 of the Hamby 173 set of the barrel the bullet was fired from.  This index enables to determine ground truth in any comparison: two land engraved areas come from the same source if their corresponding {\bf H173\_B1\_index} matches.
+\bf H173\_B1\_index & matching land id to bullet 1 of the Hamby 173 set of the barrel the bullet was fired from.  This index enables to determine ground truth in any comparison: two land engraved areas come from the same source if their corresponding {\bf H173\_B1\_index} matches.\\
 \hline
 \end{longtable}
 
@@ -542,7 +540,7 @@ long_rf %>%
 \hline
 Random forest object for assessing similarity of two land engraved areas based on features extracted from aligned signatures. In particular, ccf, rough\_cor,
     matches\_per\_mm, D, sd\_D, cms\_per\_mm, mismatches\_per\_mm,
-    overlap, abs\_lag\_mm, sum\_peaks were used to fit the random forest.
+    overlap, abs\_lag\_mm, sum\_peaks were used to fit the random forest.\\
 \hline
 \end{longtable}
 
