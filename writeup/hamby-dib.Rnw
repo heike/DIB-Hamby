@@ -53,7 +53,7 @@
 % If you are not loading colors or url, then these are
 % not required.
 \usepackage{url}
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \definecolor{newcolor}{rgb}{.8,.349,.1}
 
 
@@ -418,7 +418,6 @@ potentially make an impact on society and highlight any other additional value o
 \end{itemize}
 
 \section*{Data Description}
-
 %  [Individually describe each data file (i.e. figure 1, figure 2, table
 % 1, dataset, raw data, supplementary data, etc.) that are included in
 % this article. Please make sure you refer to every data file and provide
@@ -427,7 +426,6 @@ potentially make an impact on society and highlight any other additional value o
 % section. Please include legends with any tables, figures or graphs.
 %
 % \noindent\textbf{Tip:} do not forget to describe any supplementary data files.]
-
 \noindent
 A large part of a forensic examiner's job consists of evaluating whether two pieces of evidence come from the same source or from different sources.
 For casework, same source can never be established with 100\% certainty -- therefore controlled studies are done for performance and proficiency tests to establish the error rates the reports by the \citet{nrc} and the \citet{pcast} called for.
