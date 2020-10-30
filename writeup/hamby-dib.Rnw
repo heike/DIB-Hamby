@@ -63,8 +63,6 @@
 \newcommand{\new}[1]{{\textcolor{JungleGreen}{#1}}}
 
 \definecolor{lightgray}{gray}{0.9}
-
-\newcommand{\hh}[1]{{\color{orange}{#1}}}
 %%
 \usepackage{longtable}
 \usepackage[colorlinks]{hyperref}
