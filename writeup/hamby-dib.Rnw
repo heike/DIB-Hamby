@@ -56,6 +56,12 @@
 \usepackage{xcolor}
 \definecolor{newcolor}{rgb}{.8,.349,.1}
 
+
+\newcommand{\hh}[1]{{\textcolor{orange}{#1}}}
+\newcommand{\svp}[1]{{\textcolor{Fuchsia}{#1}}}
+\newcommand{\ac}[1]{{\textcolor{WildStrawberry}{#1}}}
+\newcommand{\new}[1]{{\textcolor{JungleGreen}{#1}}}
+
 \definecolor{lightgray}{gray}{0.9}
 
 \newcommand{\hh}[1]{{\color{orange}{#1}}}
@@ -401,10 +407,12 @@ article                & E. Hare, H. Hofmann, A. Carriquiry,
 These data facilitate the development of probabilistic methods for evaluating and quantifying similarity between pairs of striation mark evidence on fired bullets.
 
 \item Your second bullet point must explain who can benefit from these data?
-This repository may benefit researchers doing similar forensic statistics focused work, or forensic document examiners, interested in examining repeated writing over time or investigating the relation between demographic or situational information and the writing. Outside of forensic evaluation, there may be benefit for researchers developing or testing optical character recognition methods, or for anyone looking to use images of this nature for broader image analysis techniques.
+\svp{Reproducibility is a critical component of work in forensic statistics, because it enables comparison between newly developed algorithms and established methods. Thus, other researchers in forensic statistics, and possibly forensic examiners who are interested in validating new methods, will benefit from these data being publicly available. Outside of forensic applications, researchers in statistics with violations of independence or researchers in machine learning may find this dataset useful because of its real-world relevance.}
+% This repository may benefit researchers doing similar forensic statistics focused work, or forensic document examiners, interested in examining repeated writing over time or investigating the relation between demographic or situational information and the writing. Outside of forensic evaluation, there may be benefit for researchers developing or testing optical character recognition methods, or for anyone looking to use images of this nature for broader image analysis techniques.
 \item Your third point bullet must explain how these data might be used/reused for
 further insights and/or development of experiments.
-Forensic handwriting analysis is used to evaluate the source of ransom notes, forgeries, and other such pieces of handwritten evidence. The dataset serves as a sample to build statistical approaches to handwriting analysis. These data, and the methods based upon them, have potential implications in the judicial process, to ensure a transparent, accessible, repeatable, and more objective consideration of handwritten evidence.
+\svp{This data enables researchers to compare the method described in \citep{aoas} to other methods for analysis of bullet land scans, including those previously published (XXX cite NIST XXX) and methods developed in the future. In addition, this data has been used internally for validation of the method for use across other types of ammunition and other models of handgun; thus, experiments which examine the robustness of the model's application on external test sets may produce new insights by leveraging this data. XXX It would also be possible to e.g. predict the change in the model's predictions based on updates to include new data sources, but I don't know whether we want to mention that...XXX}
+% Forensic handwriting analysis is used to evaluate the source of ransom notes, forgeries, and other such pieces of handwritten evidence. The dataset serves as a sample to build statistical approaches to handwriting analysis. These data, and the methods based upon them, have potential implications in the judicial process, to ensure a transparent, accessible, repeatable, and more objective consideration of handwritten evidence.
 
 \item In the next three points you may like to explain how these data could
 potentially make an impact on society and highlight any other additional value of these data.
