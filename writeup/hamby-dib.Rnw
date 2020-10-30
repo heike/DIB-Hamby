@@ -102,7 +102,7 @@
 %%Affiliations
 \address[1]{Department of Statistics, Iowa State University, Ames, Iowa 50011, United States}
 \address[2]{Center of Statistics and Applications in Forensic Evidence (CSAFE), Iowa State University, Ames, Iowa 50011, United States}
-\address[3]{Department of Statistics, University of Nebraska Lincoln, Lincoln, Nebraska zip, United States}
+\address[3]{Department of Statistics, University of Nebraska Lincoln, Lincoln, Nebraska 68503, United States}
 \address[4]{OmniAnalytics, Address, City and Postal Code, Country}
 
 %\received{1 May 2013}
