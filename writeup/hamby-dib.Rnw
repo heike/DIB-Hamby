@@ -416,7 +416,7 @@ further insights and/or development of experiments.
 
 \item In the next three points you may like to explain how these data could
 potentially make an impact on society and highlight any other additional value of these data.
-\item ....
+\item \svp{Open source algorithms supplemented by open data are a critical component of a fairer justice system which is equally accessible to both prosecution and defense. Currently, many closed-source or closed-data algorithms are used to supplement the discretion of law enforcment agents and prosecutors, and these algorithms cannot be easily audited by affected parties. By making the source and intermediate data relating to this algorithm available, we are ensuring that the algorithm's details are fully transparent to all parties who may be affected by its use in forensic casework.}
 \end{itemize}
 
 \section*{Data Description}
