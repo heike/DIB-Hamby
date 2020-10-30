@@ -332,13 +332,15 @@ Subject                & Data Science / Applied Machine Learning\\
 \hline
 Specific subject area  & Statistical methods in firearms and toolmark evaluation\\
 \hline
-Type of data           & Table\newline
-                         Model\\
+Type of data           & Table: meta-info.csv\newline
+                         Table: hamby-comparisons.csv\newline
+                         Model: csafe-rf2.rds\\
 %\clearpage
-How data were acquired & Table: features quantifying the similarity between pairs of 3d topographic surface scans detailing striation marks on land engraved areas (LEAs) of fired bullets. Features were extracted using the R software packages x3ptools (heike/x3ptools@164e631) and bulletxtrctr (heike/bulletxtrctr@dfa140a) as outlined in the pipeline by \citet{aoas} and detailed in the accompanying R script. From available meta information ground truth regarding source is added for each comparison. Values are stored in form of a comma separated value file.\newline
-                         Model: using the features as training data a random forest is fit to predict same source pairs and different source pairs (R package randomForest 4.6-14).\\
+How data were acquired & Table (meta-info.csv): \newline
+Table (hamby-comparisons.csv): features quantifying the similarity between pairs of 3d topographic surface scans detailing striation marks on land engraved areas (LEAs) of fired bullets. Features were extracted using the R software packages x3ptools (heike/x3ptools@164e631) and bulletxtrctr (heike/bulletxtrctr@dfa140a) as outlined in the pipeline by \citet{aoas} and detailed in the accompanying R script. From available meta information ground truth regarding source is added for each comparison. Values are stored in form of a comma separated value file.\newline
+                         Model (csafe-rf2.rds): using the features as training data a random forest is fit to predict same source pairs and different source pairs (R package randomForest 4.6-14).\\
 \hline
-Data format            & Analyzed\\
+Data format            & Raw \& Analyzed\\
 \hline
 Parameters for
 data\newline
@@ -430,6 +432,23 @@ Each of these sets consists of 20 bullets with known provenance and 15 questione
 
 What is a Hamby set? confocal light microscopy and x3p format. That is the raw data, downloadable from the NIST database.
 
+\begin{longtable}{p{33mm}p{94mm}}
+\hline
+\bf Table   (meta-info.csv)              \\
+\bf Variable name & \bf Description\\ \hline
+\endhead
+\hline
+\endfoot
+\hline
+\bf Land identifiers\\
+\hline\rowcolor{lightgray}
+\bf land\_id          & identifier of a land engraved area of the form {\tt study\_barrel\_bullet\_land}. \\
+\bf study, barrel, bullet, land & elements describing the provenance of a LEA. \\\rowcolor{lightgray}
+\bf source & path to the x3p file corresponding to the LEA. \\
+\bf damaged & logical variable indicating whether the land engraved area is exhibiting damage not associated with the barrel and the firing process. \\\rowcolor{lightgray}
+\bf H173\_B1\_index & matching land id to bullet 1 of the Hamby 173 set of the barrel the bullet was fired from.  This index enables to determine ground truth in any comparison: two land engraved areas come from the same source if their corresponding {\bf H173\_B1\_index} matches.
+\hline
+\end{longtable}
 
 
 \begin{longtable}{p{33mm}p{94mm}}
@@ -508,23 +527,6 @@ long_rf %>%
             color = "grey50", size = 8, vjust=1, hjust=1,label.size = 0)
 @
 
-\begin{longtable}{p{33mm}p{94mm}}
-\hline
-\bf Table   (meta-info.csv)              \\
-\bf Variable name & \bf Description\\ \hline
-\endhead
-\hline
-\endfoot
-\hline
-\bf Land identifiers\\
-\hline\rowcolor{lightgray}
-\bf land\_id          & identifier of a land engraved area of the form {\tt study\_barrel\_bullet\_land}. \\
-\bf study, barrel, bullet, land & elements describing the provenance of a LEA. \\\rowcolor{lightgray}
-\bf source & path to the x3p file corresponding to the LEA. \\
-\bf damaged & logical variable indicating whether the land engraved area is exhibiting damage not associated with the barrel and the firing process. \\\rowcolor{lightgray}
-\bf H173\_B1\_index & matching land id to bullet 1 of the Hamby 173 set of the barrel the bullet was fired from.  This index enables to determine ground truth in any comparison: two land engraved areas come from the same source if their corresponding {\bf H173\_B1\_index} matches.
-\hline
-\end{longtable}
 
 
 \begin{longtable}{p{127mm}}
