@@ -1,5 +1,4 @@
-library(tidyverse)
-
+# read the features
 features <- read.csv("data/hamby-comparisons.csv")
 
 ##########
