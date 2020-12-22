@@ -433,6 +433,10 @@ In current practice a firearms and toolmark examiner will make use of a comparis
 Confocal microscopes can be used to produce a digitized assessment of the surface topology; from these scans, automatic algorithms such as \citet{aoas} and \citet{cmps} can be compared and evaluated objectively.
 These scans, which are by convention saved in x3p format\citep{x3p}, have an additional advantage: it is much easier to share the digital data than the physical bullets; the NIST database \citep{nist} contains the raw data for this study as well as many others.}
 
+\svp{From these scans, we derive statistical features used as input to the classification algorithm; these features are described in more detail in \citet{aoas}.
+Information about each raw x3p data file is provided in \texttt{meta-info.csv}; here, each row describes a scan of a single bullet land.
+When features are computed, however, we work with two bullet lands: the features, which are stored in \texttt{hamby-comparisons.csv}, are the product of a pairwise comparison between two different scans.
+Finally, csafe-rf2.rds contains the binary files XXX}
 % \hh{Modern 3d scanning technology is suggested by }
 
 
