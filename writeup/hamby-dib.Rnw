@@ -405,14 +405,10 @@ These data facilitate the development of probabilistic methods for evaluating an
 \item
 Reproducibility is a critical component of work in forensic statistics, because it enables comparison between newly developed algorithms and established methods. Thus, other researchers in forensic statistics, and possibly forensic examiners who are interested in validating new methods, will benefit from these data being publicly available. Outside of forensic applications, researchers in statistics with violations of independence or researchers in machine learning may find this dataset useful because of its real-world relevance.
 
-\item Your third point bullet must explain how these data might be used/reused for
-further insights and/or development of experiments.
-\svp{This data enables researchers to compare the method described in \citep{aoas} to other methods for analysis of bullet land scans, including those previously published (XXX cite NIST XXX) and methods developed in the future. In addition, this data has been used internally for validation of the method for use across other types of ammunition and other models of handgun; thus, experiments which examine the robustness of the model's application on external test sets may produce new insights by leveraging this data. XXX It would also be possible to e.g. predict the change in the model's predictions based on updates to include new data sources, but I don't know whether we want to mention that...XXX}
+\item This data enables researchers to compare the method described in \citep{aoas} to other methods for analysis of bullet land scans, including those previously published, such as in \citet{cmps}, and methods developed in the future. In addition, this data has been used internally for validation of the method for use across other types of ammunition and other models of handguns; thus, experiments which examine the robustness of the model's application on external test sets may produce new insights by leveraging this data. %\svp{XXX It would also be possible to e.g. predict the change in the model's predictions based on updates to include new data sources, but I don't know whether we want to mention that...XXX}
 % Forensic handwriting analysis is used to evaluate the source of ransom notes, forgeries, and other such pieces of handwritten evidence. The dataset serves as a sample to build statistical approaches to handwriting analysis. These data, and the methods based upon them, have potential implications in the judicial process, to ensure a transparent, accessible, repeatable, and more objective consideration of handwritten evidence.
 
-\item In the next three points you may like to explain how these data could
-potentially make an impact on society and highlight any other additional value of these data.
-\item \svp{Open source algorithms supplemented by open data are a critical component of a fairer justice system which is equally accessible to both prosecution and defense. Currently, many closed-source or closed-data algorithms are used to supplement the discretion of law enforcment agents and prosecutors, and these algorithms cannot be easily audited by affected parties. By making the source and intermediate data relating to this algorithm available, we are ensuring that the algorithm's details are fully transparent to all parties who may be affected by its use in forensic casework.}
+\item Open source algorithms supplemented by open data are a critical component of a fairer justice system, equally accessible to both prosecution and defense. Currently, many closed-source or closed-data algorithms are used to supplement the discretion of law enforcment agents and prosecutors, and these algorithms cannot be easily audited by affected parties. By making the source and intermediate data relating to this algorithm available, we are ensuring that the algorithm's details are fully transparent to all parties who may be affected by its use in forensic casework.
 \end{itemize}
 
 \section*{Data Description}
@@ -431,8 +427,11 @@ For casework, same source can never be established with 100\% certainty -- there
 One of the early studies in the field of firearm examination was executed by \citet{hamby} and consists of over 300 sets of bullets sent out to firearm examiners worldwide for an evaluation of same source.
 Each of these sets consists of 20 bullets with known provenance and 15 questioned bullets: two bullets each were fired from ten consecutively manufactured barrels of P-85 Ruger firearms. These two bullets were labelled as bullets 1 and 2 from barrels 1 through 10. The remaining fifteen bullets were each fired from one of the ten barrels (such that at at least one and at most 4 bullets came from the same barrel) and labelled with uppercase letters. Firearms examiners are then asked to match the questioned bullets to the corresponding barrels.
 
+In current practice a firearms and toolmark examiner will make use of a comparison microscope to determine whether two pieces of evidence were made by the same source by visual inspection. This evaluation is in its nature, subjective, and was critized for a lack of established error rates by  the \citet{nrc} and the \citet{pcast}.
+
 \hh{Modern 3d scanning technology is suggested by }
-\hh{In current practice a firearms and toolmark examiner will make use of a comparison microscope to determine whether two pieces of evidence were made by the same source. This evaluation is in its nature, subjective, and was critized for a lack of established error rates by  the \citet{nrc} and the \citet{pcast}. }
+
+
 confocal light microscopy and x3p format. That is the raw data, downloadable from the NIST database.
 
 \begin{longtable}{p{33mm}p{94mm}}
