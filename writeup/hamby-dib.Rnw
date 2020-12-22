@@ -431,7 +431,7 @@ The remaining fifteen bullets were each fired from one of the ten barrels (such 
 In current practice a firearms and toolmark examiner will make use of a comparison microscope to determine whether two pieces of evidence were made by the same source by \svp{subjective} visual inspection. %This evaluation is in its nature, subjective, and was criticized for a lack of established error rates by  the \citet{nrc} and the \citet{pcast}.
 \svp{One alternative to subjective visual assessment is to use algorithms which automatically assess digital scans of the bullets and determine the degree of similarity between two items.
 Confocal microscopes can be used to produce a digitized assessment of the surface topology; from these scans, automatic algorithms such as \citet{aoas} and \citet{cmps} can be compared and evaluated objectively.
-These scans, which are by convention saved in x3p format, have an additional advantage: it is much easier to share the digital data than the physical bullets; the NIST database \citep{nist} contains the raw data for this study as well as many others.}
+These scans, which are by convention saved in x3p format\citep{x3p}, have an additional advantage: it is much easier to share the digital data than the physical bullets; the NIST database \citep{nist} contains the raw data for this study as well as many others.}
 
 % \hh{Modern 3d scanning technology is suggested by }
 
