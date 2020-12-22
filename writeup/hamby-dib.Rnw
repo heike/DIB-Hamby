@@ -426,9 +426,9 @@ potentially make an impact on society and highlight any other additional value o
 % \noindent\textbf{Tip:} do not forget to describe any supplementary data files.]
 \noindent
 A large part of a forensic examiner's job consists of evaluating whether two pieces of evidence come from the same source or from different sources.
-For casework, same source can never be established with 100\% certainty -- therefore controlled studies are done for performance and proficiency tests to establish the error rates the reports by the \citet{nrc} and the \citet{pcast} called for.
+\svp{In casework}, same source can never be established with 100\% certainty\svp{; as a result, error rate and proficiency studies are used to establish the validity of forensic evaluation \citep[as recommended in]{nrc,pcast}}.
 
-One of the early studies in the field of firearm examination was executed by \citet{hamby} and consists of over 300 sets of bullets sent out to firearm examiners worldwide for an evaluation of same source.
+One early study in the field of firearm examination was executed by \citet{hamby} and consists of over 300 sets of bullets sent out to firearm examiners worldwide.
 Each of these sets consists of 20 bullets with known provenance and 15 questioned bullets: two bullets each were fired from ten consecutively manufactured barrels of P-85 Ruger firearms. These two bullets were labelled as bullets 1 and 2 from barrels 1 through 10. The remaining fifteen bullets were each fired from one of the ten barrels (such that at at least one and at most 4 bullets came from the same barrel) and labelled with uppercase letters. Firearms examiners are then asked to match the questioned bullets to the corresponding barrels.
 
 
