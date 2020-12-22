@@ -428,12 +428,15 @@ One early study in the field of firearm examination was executed by \citet{hamby
 Each of these sets consists of 20 bullets with known provenance and 15 questioned bullets: two bullets each were fired from ten consecutively manufactured barrels of P-85 Ruger firearms. \svp{Barrels are labeled 1 - 10, and the bullets are labelled as bullet 1 and bullet 2 from a particular barrel.} %These two bullets were labeled as bullets 1 and 2 from barrels 1 through 10.
 The remaining fifteen bullets were each fired from one of the ten barrels (such that at at least one and at most 4 bullets came from the same barrel) and labeled with uppercase letters. Firearms examiners are then asked to match the questioned bullets to the corresponding barrels.
 
-In current practice a firearms and toolmark examiner will make use of a comparison microscope to determine whether two pieces of evidence were made by the same source by visual inspection. This evaluation is in its nature, subjective, and was criticized for a lack of established error rates by  the \citet{nrc} and the \citet{pcast}.
+In current practice a firearms and toolmark examiner will make use of a comparison microscope to determine whether two pieces of evidence were made by the same source by \svp{subjective} visual inspection. %This evaluation is in its nature, subjective, and was criticized for a lack of established error rates by  the \citet{nrc} and the \citet{pcast}.
+\svp{One alternative to subjective visual assessment is to use algorithms which automatically assess digital scans of the bullets and determine the degree of similarity between two items.
+Confocal microscopes can be used to produce a digitized assessment of the surface topology; from these scans, automatic algorithms such as \citet{aoas} and \citet{cmps} can be compared and evaluated objectively.
+These scans, which are by convention saved in x3p format, have an additional advantage: it is much easier to share the digital data than the physical bullets; the NIST database \citep{nist} contains the raw data for this study as well as many others.}
 
-\hh{Modern 3d scanning technology is suggested by }
+% \hh{Modern 3d scanning technology is suggested by }
 
 
-confocal light microscopy and x3p format. That is the raw data, downloadable from the NIST database.
+% confocal light microscopy and x3p format. That is the raw data, downloadable from the NIST database.
 
 \begin{longtable}{p{33mm}p{94mm}}
 \hline
