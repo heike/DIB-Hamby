@@ -1,3 +1,11 @@
+# Go to https://tsapps.nist.gov/NRBTD/Studies/Search and select the studies
+# matching Hamby (2009) Barrel Set X (but download each set on its own;
+# they are structured differently!)
+# Click Download for each set.
+# Unzip downloaded file into NBTRD folder for each study
+# The studies are formatted and scanned slightly differently; it is best to
+# process them separately.
+
 library(tidyverse)
 library(x3ptools)
 library(bulletxtrctr) # remotes::install_github("heike/bulletxtrctr")
