@@ -435,9 +435,30 @@ These scans, which are by convention saved in x3p format\citep{x3p}, have an add
 
 \svp{From these scans, we derive statistical features used as input to the classification algorithm; these features are described in more detail in \citet{aoas}.
 Information about each raw x3p data file is provided in \texttt{meta-info.csv}; here, each row describes a scan of a single bullet land.
-When features are computed, however, we work with two bullet lands: the features, which are stored in \texttt{hamby-comparisons.csv}, are the product of a pairwise comparison between two different scans.
-Finally, csafe-rf2.rds contains the binary files XXX}
-% \hh{Modern 3d scanning technology is suggested by }
+When features are computed, however, we work with two bullet lands: the features, which are stored in \texttt{hamby-comparisons.csv}, are the product of a pairwise comparison between two different scans.}
+\hh{Finally, csafe-rf2.rds is the binary file containing the random forest object fitted on the features in \texttt{hamby-comparisons.csv}. Random forests \citep{breiman} are a machine-learning method using an ensemble of decision trees. Here, the fit is done within the statistical computing software R 4.0.1 \citep{R} using the package {\tt randomForest} 4.6-14 \citep{randomforest}. The following lines of code fit the forest object `csafe\_rf2`:}
+
+<<fit-forest, echo=TRUE, eval=FALSE, tidy=FALSE>>=
+# read the features
+features <- read.csv("data/hamby-comparisons.csv")
+
+##########
+# fit the random forest
+library(randomForest)
+features <- read.csv("data/hamby-comparisons.csv")
+
+set.seed(20140105)
+csafe_rf2 <- randomForest(
+  factor(samesource) ~ ccf + rough_cor + matches_per_mm + D + sd_D +
+    cms_per_mm + mismatches_per_mm + overlap + abs_lag_mm + sum_peaks,
+  data = features)
+
+saveRDS(csafe_rf2, "data/csafe_rf2.rds")
+@
+
+\hh{
+The random forest object `csafe\_rf2` has an overall out-of-bag error rate estimated as 0.32\%. Out of the total 81,003 pairwise comparisons of the `hamby-comparisons.csv` data 80,743 comparisons or 99.68\% are correctly classified as same-source or different-source pairs.}
+
 
 
 % confocal light microscopy and x3p format. That is the raw data, downloadable from the NIST database.
@@ -499,7 +520,7 @@ Finally, csafe-rf2.rds contains the binary files XXX}
 library(tidyverse)
 library(randomForest)
 library(here)
-features <- read.csv(here("data/Hamby173-252-features.csv"))
+features <- read.csv(here("data/hamby-comparisons.csv"))
 rf2 <- readRDS(here("data/csafe_rf2.rds"))
 important <- data.frame(importance = rf2$importance) %>% arrange(desc(MeanDecreaseGini))
 important$name <- row.names(important)
