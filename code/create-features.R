@@ -9,6 +9,11 @@
 library(tidyverse)
 library(x3ptools)
 library(bulletxtrctr) # remotes::install_github("heike/bulletxtrctr")
+
+
+# ------------------------------------------------------------------------------
+# *** Step 1: Read in data and orient scans, convert to microns ****************
+# ------------------------------------------------------------------------------
 b252 <- read_bullet("NBTRD/Hamby 252 (2009) Barrel/bullets/")
 b252 <- b252 %>%
   mutate(
@@ -51,12 +56,16 @@ b173 <- b173 %>% mutate(
 bullets <- rbind(b173, b252)
 #write.csv(bullets %>% select(-x3p), "meta-info.csv", row.names = FALSE)
 
+
+# ------------------------------------------------------------------------------
+# *** Step 2: Identify a stable crosscut ***************************************
+# ------------------------------------------------------------------------------
+
 bullets <- bullets %>% mutate(
   cc = x3p %>% purrr::map_dbl(.f = function(x) x3p_crosscut_optimize(x))
 )
 
-##########
-# check crosscuts
+# check crosscuts manually
 for (i in 1:nrow(bullets)) {
   x3p <- bullets$x3p[[i]]
   x3p <- x3p %>% x3p_add_hline(yintercept = bullets$cc[[i]], size = 10, color = "white")
@@ -74,16 +83,21 @@ for (i in which(bullets$land_id %in% cc_manual)) {
 }
 
 
-##########
+# ------------------------------------------------------------------------------
+# *** Step 3: Get measurements at the identified crosscut **********************
+# ------------------------------------------------------------------------------
 bullets <- bullets %>% mutate(
   ccdata = purrr::map2(.x = x3p, .y = cc, .f = function(x, y) x3p_crosscut(x3p=x, y = y))
 )
 
+# ------------------------------------------------------------------------------
+# *** Step 4: Identify the grooves between GEA and LEAs on the scans ***********
+# ------------------------------------------------------------------------------
 bullets <- bullets %>% mutate(
   grooves = ccdata %>% purrr::map(.f = function(x) cc_locate_grooves(x, return_plot = TRUE))
 )
 
-###########
+# Manually assess the grooves
 library(shiny)
 grooves <- bullets$grooves
 
@@ -152,76 +166,19 @@ shinyApp(
 bullets$grooves_pred <- bullets$grooves
 bullets$grooves <- grooves
 
-###########
 
+# ------------------------------------------------------------------------------
+# *** Step 5: Remove bullet curvature and groove areas, get signature **********
+# ------------------------------------------------------------------------------
 
 bullets <- bullets %>% mutate(
   sigs = purrr::map2(.x = ccdata, .y = grooves, .f = function(x, y) cc_get_signature(ccdata=x, grooves = y))
 )
 
-signatures <- bullets %>% unnest(sigs)
-signatures %>%
-  filter(study=="Hamby252", barrel %in% c(1:5)) %>%
-  ggplot(aes( x= x, y = sig)) +
-  geom_line(aes(colour = damaged)) +
-  facet_grid(barrel+bullet~study+land, labeller="label_both") +
-  ylim(c(-10,10)) +
-  scale_colour_manual(values=c("grey30", "darkred")) +
-  theme_bw()
-ggsave(file="H252-br1-5.png", width=9, height=8)
 
-signatures %>%
-  filter(study=="Hamby173", barrel %in% c(1:5)) %>%
-  ggplot(aes( x= x, y = sig)) +
-  geom_line(aes(colour = damaged)) +
-  facet_grid(barrel+bullet~study+land, labeller="label_both") +
-  ylim(c(-10,10)) +
-  scale_colour_manual(values=c("grey30", "darkred")) +
-  theme_bw()
-ggsave(file="H173-br1-5.png", width=9, height=8)
-
-signatures %>%
-  filter(study=="Hamby252", barrel %in% c(6:10)) %>%
-  ggplot(aes( x= x, y = sig)) +
-  geom_line(aes(colour = damaged)) +
-  facet_grid(barrel+bullet~study+land, labeller="label_both") +
-  ylim(c(-10,10)) +
-  scale_colour_manual(values=c("grey30", "darkred")) +
-  theme_bw()
-ggsave(file="H252-br6-10.png", width=9, height=8)
-
-signatures %>%
-  filter(study=="Hamby173", barrel %in% c(6:10)) %>%
-  ggplot(aes( x= x, y = sig)) +
-  geom_line(aes(colour = damaged)) +
-  facet_grid(barrel+bullet~study+land, labeller="label_both") +
-  ylim(c(-10,10)) +
-  scale_colour_manual(values=c("grey30", "darkred")) +
-  theme_bw()
-ggsave(file="H173-br6-10.png", width=9, height=8)
-
-
-signatures %>%
-  filter(study=="Hamby252", barrel == "Ukn") %>%
-  ggplot(aes( x= x, y = sig)) +
-  geom_line(aes(colour = damaged)) +
-  facet_grid(barrel+bullet~study+land, labeller="label_both") +
-  ylim(c(-10,10)) +
-  scale_colour_manual(values=c("grey30", "darkred")) +
-  theme_bw()
-ggsave(file="H252-br-unk.png", width=9, height=10)
-
-signatures %>%
-  filter(study=="Hamby173", barrel == "Ukn") %>%
-  ggplot(aes( x= x, y = sig)) +
-  geom_line(aes(colour = damaged)) +
-  facet_grid(barrel+bullet~study+land, labeller="label_both") +
-  ylim(c(-10,10)) +
-  scale_colour_manual(values=c("grey30", "darkred")) +
-  theme_bw()
-ggsave(file="H173-br-unk.png", width=9, height=10)
-
-
+# ------------------------------------------------------------------------------
+# *** Step 6: Create pairwise comparisons **************************************
+# ------------------------------------------------------------------------------
 
 lands <- unique(bullets$land_id)
 comparisons <- data.frame(

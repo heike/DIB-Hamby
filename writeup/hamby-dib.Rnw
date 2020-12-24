@@ -421,22 +421,17 @@ Reproducibility is a critical component of work in forensic statistics, because 
 %
 % \noindent\textbf{Tip:} do not forget to describe any supplementary data files.]
 \noindent
-A large part of a forensic examiner's job consists of evaluating whether two pieces of evidence come from the same source or from different sources.
-\svp{In casework}, same source can never be established with 100\% certainty\svp{; as a result, error rate and proficiency studies are used to establish the validity of forensic evaluation \citep[as recommended in][]{nrc,pcast}}.
 
 One early study in the field of firearm examination was executed by \citet{hamby} and consists of over 300 sets of bullets sent out to firearm examiners worldwide.
 Each of these sets consists of 20 bullets with known provenance and 15 questioned bullets: two bullets each were fired from ten consecutively manufactured barrels of P-85 Ruger firearms. \svp{Barrels are labeled 1 - 10, and the bullets are labelled as bullet 1 and bullet 2 from a particular barrel.} %These two bullets were labeled as bullets 1 and 2 from barrels 1 through 10.
 The remaining fifteen bullets were each fired from one of the ten barrels (such that at at least one and at most 4 bullets came from the same barrel) and labeled with uppercase letters. Firearms examiners are then asked to match the questioned bullets to the corresponding barrels.
 
-In current practice a firearms and toolmark examiner will make use of a comparison microscope to determine whether two pieces of evidence were made by the same source by \svp{subjective} visual inspection. %This evaluation is in its nature, subjective, and was criticized for a lack of established error rates by  the \citet{nrc} and the \citet{pcast}.
-\svp{One alternative to subjective visual assessment is to use algorithms which automatically assess digital scans of the bullets and determine the degree of similarity between two items.
-Confocal microscopes can be used to produce a digitized assessment of the surface topology; from these scans, automatic algorithms such as \citet{aoas} and \citet{cmps} can be compared and evaluated objectively.
-These scans, which are by convention saved in x3p format\citep{x3p}, have an additional advantage: it is much easier to share the digital data than the physical bullets; the NIST database \citep{nist} contains the raw data for this study as well as many others.}
+\svp{Each barrel has 6 land engraved areas resulting from firing the gun; together with the Barrel and Bullet identifiers, the land identifier can be used to identify a single digital scan stored in x3p format\citep{x3p}.
 
-\svp{From these scans, we derive statistical features used as input to the classification algorithm; these features are described in more detail in \citet{aoas}.
-Information about each raw x3p data file is provided in \texttt{meta-info.csv}; here, each row describes a scan of a single bullet land.
-When features are computed, however, we work with two bullet lands: the features, which are stored in \texttt{hamby-comparisons.csv}, are the product of a pairwise comparison between two different scans.
-Finally, csafe-rf2.rds contains the binary files XXX}
+These scans have an additional advantage over conventional sets of physical bullets: it is much easier to share the digital data.
+The NIST database \citep{nist} contains the raw data for this study as well as many others.
+Information about the individual scans is provided in \texttt{meta-info.csv}; here, each row describes a scan of a single bullet land.
+When features are computed, however, we work with two bullet lands: the features, which are stored in \texttt{hamby-comparisons.csv}, are the product of a pairwise comparison between two different scans.}
 % \hh{Modern 3d scanning technology is suggested by }
 
 
@@ -538,6 +533,7 @@ long_rf %>%
   xlab("Value observed in the comparison of two LEA scans")
 @
 
+\svp{Finally, \texttt{csafe-rf2.rds} contains the binary files which describe the fitted random forest object. This random forest model is used to assess the similarity of two scans, with an output prediction of 0 indicative of dissimilarity between the scans, and an output prediction near 1 indicative of similarity between the scans. In addition to containing the weights used to make predictions, the fitted model also contains a record of the predictions made during the fitting process; and the features used to fit the model to the original set of scans. It is important to archive not only the code used to fit this model, but also the intermediate data, derived features, and full fitted model object, so that when the model is re-fit we have a record of changes between versions of the random forest models.}
 
 
 \begin{longtable}{p{127mm}}
@@ -566,6 +562,25 @@ interpretation, or background should be included in this section.
 
 \noindent\textbf{Tip:} do not describe your data (figures, tables, etc.) in this section,
 do this in the Data Description section above.]
+
+\subsection*{Materials and Data Collection Methods}
+A large part of a forensic examiner's job consists of evaluating whether two pieces of evidence come from the same source or from different sources.
+\svp{In casework}, same source can never be established with 100\% certainty\svp{; as a result, error rate and proficiency studies are used to establish the validity of forensic evaluation \citep[as recommended in][]{nrc,pcast}}.
+\svp{The random forest model provided in this paper is fitted based on two sets of bullets from a study conducted by \citeauthor{hamby}; the bullets in question were scanned at the National Institutes of Standards and Technology by Xiaoyu Zheng and Wei Chu using a NanoFocus V.6.12.6 confocal light microscope at 20x; the resulting scans have a resolution of 1.5625 $\mu$m per pixel.}
+
+\svp{The raw scans can be downloaded from \citet{nist} by searching for ``Hamby (2009) Barrel Set" and selecting the two study results matching that name. The studies should be downloaded separately and each placed into a folder.}
+
+\subsection*{Feature Development}
+Once the raw data files are downloaded, the code \texttt{create-features.R} can be run to generate the complete set of pairwise comparisons and intermediate results; the feature summaries for each pairwise comparison are, of course, provided in \texttt{hamby-comparisons.csv}}. These features are produced using functions from the R package \texttt{bulletxtrctr}; the feature derivation process will be described here.
+
+The initial x3p scans describe a curved surface with striations produced as the bullet is propelled through the barrel during the firing process. Though the source data is three-dimensional, the actual information we use to make the comparison is two-dimensional: it is essentially a cross-section of the scanned surface. The initial processing method is designed to reduce the 3D scan into a two-dimensional "signature" of a bullet land, without the underlying surface curvature. The protocol for the data reduction process is described in great detail in \citet{aoas} and the code provided here leverages \texttt{bulletxtrctr}, an R package designed to implement the process.
+
+\begin{enumerate}
+\item The scans are oriented so that the base of the bullet is at the bottom and the bullet scan is curving from left to right. Fired bullets have \emph{breakoff}, where some of the metal flies off of the bullet during firing as a result of heat and pressure. The scans are oriented such that any breakoff should be located in the bottom right corner of the scan. For Hamby 173, bullets were flipped along the $y$ axis; for Hamby 252, the bullets were rotated counterclockwise by 90 degrees and then flipped along the $y$ axis. Finally, scans are converted so that all measurements are in $\mu$m.
+\item Once scans are oriented properly, a stable cross-section (one that does not cross through any regions of breakoff) that is as low as possible on the bullet (so as to cross deeper, more well-engraved stria) is identified algorithmically using the cross-correlation between adjacent cross-sections to quantify stability.
+\item
+\end{enumerate}
+
 
 \section*{Ethics Statement}
 \noindent [Please refer to the journal's
