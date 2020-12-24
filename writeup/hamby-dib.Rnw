@@ -616,15 +616,12 @@ Each step in the file \texttt{create-features.R} is described briefly below; all
 \hh{The random forest model is fit within the statistical computing software R 4.0.1 \citep{R} using the package {\tt randomForest} 4.6-14 \citep{randomforest}. The following lines of code fit the forest object `csafe\_rf2`:}
 
 <<fit-forest, echo=TRUE, eval=FALSE, tidy=FALSE>>=
-# read the features
-features <- read.csv("data/hamby-comparisons.csv")
-
-##########
-# fit the random forest
 library(randomForest)
+# Read in the features
 features <- read.csv("data/hamby-comparisons.csv")
 
 set.seed(20140105)
+# fit the random forest
 csafe_rf2 <- randomForest(
   factor(samesource) ~ ccf + rough_cor + matches_per_mm + D + sd_D +
     cms_per_mm + mismatches_per_mm + overlap + abs_lag_mm + sum_peaks,
