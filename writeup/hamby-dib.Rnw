@@ -426,9 +426,9 @@ One early study in the field of firearm examination was executed by \citet{hamby
 Each of these sets consists of 20 bullets with known provenance and 15 questioned bullets: two bullets each were fired from ten consecutively manufactured barrels of P-85 Ruger firearms. \svp{Barrels are labeled 1 - 10, and the bullets are labelled as bullet 1 and bullet 2 from a particular barrel.} %These two bullets were labeled as bullets 1 and 2 from barrels 1 through 10.
 The remaining fifteen bullets were each fired from one of the ten barrels (such that at at least one and at most 4 bullets came from the same barrel) and labeled with uppercase letters. Firearms examiners are then asked to match the questioned bullets to the corresponding barrels.
 
-\svp{Each barrel has 6 land engraved areas resulting from firing the gun; together with the Barrel and Bullet identifiers, the land identifier can be used to identify a single digital scan stored in x3p format\citep{x3p}.
+\svp{Each barrel has 6 land engraved areas resulting from firing the gun; together with the Barrel and Bullet identifiers, the land identifier can be used to identify a single digital scan stored in x3p format\citep{x3p}}.
 
-These scans have an additional advantage over conventional sets of physical bullets: it is much easier to share the digital data.
+\svp{These scans have an additional advantage over conventional sets of physical bullets: it is much easier to share the digital data.
 The NIST database \citep{nist} contains the raw data for this study as well as many others.
 Information about the individual scans is provided in \texttt{meta-info.csv}; here, each row describes a scan of a single bullet land.
 When features are computed, however, we work with two bullet lands: the features, which are stored in \texttt{hamby-comparisons.csv}, are the product of a pairwise comparison between two different scans.}
@@ -613,7 +613,7 @@ A large part of a forensic examiner's job consists of evaluating whether two pie
 \svp{The raw scans can be downloaded from \citet{nist} by searching for ``Hamby (2009) Barrel Set" and selecting the two study results matching that name. The studies should be downloaded separately and each placed into a folder.}
 
 \subsection*{Feature Development}
-Once the raw data files are downloaded, the code \texttt{create-features.R} can be run to generate the complete set of pairwise comparisons and intermediate results; the feature summaries for each pairwise comparison are, of course, provided in \texttt{hamby-comparisons.csv}}. These features are produced using functions from the R package \texttt{bulletxtrctr}; the feature derivation process will be described here.
+Once the raw data files are downloaded, the code \texttt{create-features.R} can be run to generate the complete set of pairwise comparisons and intermediate results; the feature summaries for each pairwise comparison are, of course, provided in \texttt{hamby-comparisons.csv}. These features are produced using functions from the R package \texttt{bulletxtrctr}; the feature derivation process will be described here.
 
 The initial x3p scans describe a curved surface with striations produced as the bullet is propelled through the barrel during the firing process. Though the source data is three-dimensional, the actual information we use to make the comparison is two-dimensional: it is essentially a cross-section of the scanned surface. The initial processing method is designed to reduce the 3D scan into a two-dimensional "signature" of a bullet land, without the underlying surface curvature. The protocol for the data reduction process is described in great detail in \citet{aoas} and the code provided here leverages \texttt{bulletxtrctr}, an R package designed to implement the process.
 
