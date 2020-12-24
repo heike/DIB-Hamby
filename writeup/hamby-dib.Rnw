@@ -532,26 +532,7 @@ long_rf %>%
   xlab("Value observed in the comparison of two LEA scans")
 @
 
-\hh{Finally, csafe-rf2.rds is the binary file containing the random forest object fitted on the features in \texttt{hamby-comparisons.csv}. Random forests \citep{breiman} are a machine-learning method using an ensemble of decision trees. Here, the fit is done within the statistical computing software R 4.0.1 \citep{R} using the package {\tt randomForest} 4.6-14 \citep{randomforest}. The following lines of code fit the forest object `csafe\_rf2`:}
-
-<<fit-forest, echo=TRUE, eval=FALSE, tidy=FALSE>>=
-# read the features
-features <- read.csv("data/hamby-comparisons.csv")
-
-##########
-# fit the random forest
-library(randomForest)
-features <- read.csv("data/hamby-comparisons.csv")
-
-set.seed(20140105)
-csafe_rf2 <- randomForest(
-  factor(samesource) ~ ccf + rough_cor + matches_per_mm + D + sd_D +
-    cms_per_mm + mismatches_per_mm + overlap + abs_lag_mm + sum_peaks,
-  data = features)
-
-saveRDS(csafe_rf2, "data/csafe_rf2.rds")
-@
-
+\hh{Finally, csafe-rf2.rds is the binary file containing the random forest object fitted on the features in \texttt{hamby-comparisons.csv}. Random forests \citep{breiman} are a machine-learning method using an ensemble of decision trees. }
 \svp{This random forest model is used to assess the similarity of two scans, with an output prediction of 0 indicative of dissimilarity between the scans, and an output prediction near 1 indicative of similarity between the scans. In addition to containing the weights used to make predictions, the fitted model also contains a record of the predictions made during the fitting process; and the features used to fit the model to the original set of scans. It is important to archive not only the code used to fit this model, but also the intermediate data, derived features, and full fitted model object, so that when the model is re-fit we have a record of changes between versions of the random forest models.}
 
 
@@ -632,6 +613,25 @@ Each step in the file \texttt{create-features.R} is described briefly below; all
 \end{enumerate}
 
 \subsection*{Model Fitting}
+\hh{The random forest model is fit within the statistical computing software R 4.0.1 \citep{R} using the package {\tt randomForest} 4.6-14 \citep{randomforest}. The following lines of code fit the forest object `csafe\_rf2`:}
+
+<<fit-forest, echo=TRUE, eval=FALSE, tidy=FALSE>>=
+# read the features
+features <- read.csv("data/hamby-comparisons.csv")
+
+##########
+# fit the random forest
+library(randomForest)
+features <- read.csv("data/hamby-comparisons.csv")
+
+set.seed(20140105)
+csafe_rf2 <- randomForest(
+  factor(samesource) ~ ccf + rough_cor + matches_per_mm + D + sd_D +
+    cms_per_mm + mismatches_per_mm + overlap + abs_lag_mm + sum_peaks,
+  data = features)
+
+saveRDS(csafe_rf2, "data/csafe_rf2.rds")
+@
 
 
 \section*{Ethics Statement}
