@@ -436,6 +436,7 @@ These scans, which are by convention saved in x3p format\citep{x3p}, have an add
 \svp{From these scans, we derive statistical features used as input to the classification algorithm; these features are described in more detail in \citet{aoas}.
 Information about each raw x3p data file is provided in \texttt{meta-info.csv}; here, each row describes a scan of a single bullet land.
 When features are computed, however, we work with two bullet lands: the features, which are stored in \texttt{hamby-comparisons.csv}, are the product of a pairwise comparison between two different scans.}
+\hh{\autoref{fig:densities} gives an overview of some of the features in the `hamby-comparisons.csv` file. Values from same-source comparisons are shown in orange, different-source comparisons are shown in grey. Area under the curve (AUC) is a value between 0 and 1 describing the strength of one feature's strength in discriminating between same-source and different-source comparisons. The closer values are to 1, the better they discriminate. }
 \hh{Finally, csafe-rf2.rds is the binary file containing the random forest object fitted on the features in \texttt{hamby-comparisons.csv}. Random forests \citep{breiman} are a machine-learning method using an ensemble of decision trees. Here, the fit is done within the statistical computing software R 4.0.1 \citep{R} using the package {\tt randomForest} 4.6-14 \citep{randomforest}. The following lines of code fit the forest object `csafe\_rf2`:}
 
 <<fit-forest, echo=TRUE, eval=FALSE, tidy=FALSE>>=
@@ -458,6 +459,8 @@ saveRDS(csafe_rf2, "data/csafe_rf2.rds")
 
 \hh{
 The random forest object `csafe\_rf2` has an overall out-of-bag error rate estimated as 0.32\%. Out of the total 81,003 pairwise comparisons of the `hamby-comparisons.csv` data 80,743 comparisons or 99.68\% are correctly classified as same-source or different-source pairs.}
+
+\hh{\autoref{fig:outcomes} shows a summary of (out-of-bag) prediction values of the csafe\_rf2 random forest trained on the feature values. }
 
 
 
@@ -535,7 +538,7 @@ for (i in 1:nrow(important)) {
 detach(package:pROC)
 @
 
-<<densities, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 10, fig.height=8, out.width='\\textwidth', fig.cap="Densities of same-source and different source comparisons of each  feature used in fitting the random forest model. Features are sorted according to importance (most important features first). AUC (area under the curve) describes each features univariate strength to distinguish between same source and different source.">>=
+<<densities, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 10, fig.height=8, out.width='\\textwidth', fig.cap="Densities of same-source and different source comparisons of each  feature used in fitting the random forest model. Features are sorted according to importance (most important features first). AUC (area under the curve) describes each feature's univariate strength to distinguish between same source and different source.">>=
 
 long_rf <- features %>%
   filter(!doubles, land1 != land2) %>%
@@ -559,7 +562,23 @@ long_rf %>%
   xlab("Value observed in the comparison of two LEA scans")
 @
 
+<<outcomes, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 6, fig.height=4, out.width='\\textwidth', fig.cap="Summary of the out-of-bag predictions of the csafe\\_rf2 random forest object trained on `hamby-comparisons.csv'.">>=
+features$rf_oob <- predict(rf2, type="prob")[,2]
 
+features %>%
+  mutate(
+    samesource = factor(samesource, labels=c("Different-source", "Same-source")),
+    Comparison = samesource
+  ) %>%
+  ggplot(aes(x = rf_oob, fill = Comparison, colour=Comparison)) +
+  geom_density(alpha=0.6) +
+  scale_colour_manual(values = c("darkgrey", "darkorange")) +
+  scale_fill_manual(values = c("darkgrey", "darkorange")) +
+  theme_bw() +
+  xlab("Out-of-bag Random Forest Prediction values") +
+  facet_grid(samesource~.) +
+  theme(legend.position="bottom")
+@
 
 \begin{longtable}{p{127mm}}
 \hline
