@@ -612,16 +612,26 @@ A large part of a forensic examiner's job consists of evaluating whether two pie
 
 \svp{The raw scans can be downloaded from \citet{nist} by searching for ``Hamby (2009) Barrel Set" and selecting the two study results matching that name. The studies should be downloaded separately and each placed into a folder.}
 
-\subsection*{Feature Development}
+\subsection*{Feature Derivation}
 Once the raw data files are downloaded, the code \texttt{create-features.R} can be run to generate the complete set of pairwise comparisons and intermediate results; the feature summaries for each pairwise comparison are, of course, provided in \texttt{hamby-comparisons.csv}. These features are produced using functions from the R package \texttt{bulletxtrctr}; the feature derivation process will be described here.
 
 The initial x3p scans describe a curved surface with striations produced as the bullet is propelled through the barrel during the firing process. Though the source data is three-dimensional, the actual information we use to make the comparison is two-dimensional: it is essentially a cross-section of the scanned surface. The initial processing method is designed to reduce the 3D scan into a two-dimensional "signature" of a bullet land, without the underlying surface curvature. The protocol for the data reduction process is described in great detail in \citet{aoas} and the code provided here leverages \texttt{bulletxtrctr}, an R package designed to implement the process.
 
+Each step in the file \texttt{create-features.R} is described briefly below; all of the code necessary to reproduce the steps exactly is provided in the file. In order to replicate the entire process, you can download the data as directed and run the \texttt{create-features.R} file in the directory where the data is downloaded. The individual functions used are described in detail in the bulletxtrctr R package and the corresponding code can be found there.
+
 \begin{enumerate}
 \item The scans are oriented so that the base of the bullet is at the bottom and the bullet scan is curving from left to right. Fired bullets have \emph{breakoff}, where some of the metal flies off of the bullet during firing as a result of heat and pressure. The scans are oriented such that any breakoff should be located in the bottom right corner of the scan. For Hamby 173, bullets were flipped along the $y$ axis; for Hamby 252, the bullets were rotated counterclockwise by 90 degrees and then flipped along the $y$ axis. Finally, scans are converted so that all measurements are in $\mu$m.
-\item Once scans are oriented properly, a stable cross-section (one that does not cross through any regions of breakoff) that is as low as possible on the bullet (so as to cross deeper, more well-engraved stria) is identified algorithmically using the cross-correlation between adjacent cross-sections to quantify stability.
-\item
+\item Once scans are oriented properly, a stable cross-section (one that does not cross through any regions of breakoff) that is as low as possible on the bullet (so as to cross deeper, more well-engraved stria) is identified algorithmically using the cross-correlation between adjacent cross-sections to quantify stability. These cross sections are checked manually using graphics and are set by hand when the algorithmic identification fails. In this dataset, there were no manually identified cross sections.
+\item Using the cross-section location identified in step 2, the measurements at that crosscut are extracted from the scan.
+\item The grooves that demarcate the land engraved area are identified algorithmically and then manually checked and set as necessary using a Shiny app (code is provided in the file).
+\item The areas between the grooves are extracted and a smooth is fit to the data to remove the bullet surface curvature, producing a "bullet signature". This signature is used to represent the entire bullet land engraved area scan.
+\item Once signatures have been identified, each scan is compared to every other scan to produce a set of pairwise comparisions. The signatures in each pairwise scan are identified and features are computed using the bulletxtrctr software describing how well the two scans are aligned.
+\item The ground truth is included in the feature set for evaluating the prediction algorithm.
+\item Damaged scans which are not suitable for comparison are marked.
+\item Duplicate pairwise comparisons are removed so as not to compromise the model fitting process.
 \end{enumerate}
+
+\subsection*{Model Fitting}
 
 
 \section*{Ethics Statement}
