@@ -476,7 +476,7 @@ When features are computed, however, we work with two bullet lands: the features
 \bf lag, lag\_mm, abs\_lag, abs\_lag\_mm & (absolute) lag (in millimeter) between signatures to achieve alignment. \\
 \bf overlap & ratio of overlap between the signatures after alignment. The length of the shorter of the two signatures is used as denominator in the ratio. \\\rowcolor{lightgray}
 \bf matches, matches\_per\_mm & number of matching peaks (per millimeter) between aligned signatures. Matching in this context is defined as the same (or similar) location along the $x$ axis. \\
-\bf mismatches, mismatches\_per\_mm & number of peaks on a signature that does not have a counterpart peak in close proximaity along the $x$ axis on the aligned signature. \\\rowcolor{lightgray}
+\bf mismatches, mismatches\_per\_mm & number of peaks on a signature that does not have a counterpart peak in close proximity along the $x$ axis on the aligned signature. \\\rowcolor{lightgray}
 \bf cms, cms\_per\_mm, cms2, cms\_per\_mm, & CMS are \underline{c}onsecutively \underline{m}atching \underline{s}triae \citep{biasotti} between two aligned land engraved areas (LEAs). Striations, as defined by firearms and toolmarks examiners, exhibit as peaks in the  corresponding signature. Because confocal light microscopy also captures depths, we can expand the notion of striations to peaks and valleys. Correspondingly, {\bf cms} is defined as the number of consecutively matching peaks and valleys of two aligned signatures, while {\bf cms2} is the number of just the peaks. \\
 \bf non\_cms, non\_cms\_per\_mm & longest sequence of non-matching peaks (per millimeter) between two aligned signatures\\\rowcolor{lightgray}
 \bf left\_cms, right\_cms & longest sequence of matching striae from the left/right of two aligned signatures. \\
@@ -560,7 +560,7 @@ The random forest object `csafe\_rf2` has an overall out-of-bag error rate estim
 
 \hh{\autoref{fig:outcomes} shows a summary of (out-of-bag) prediction values of the csafe\_rf2 random forest trained on the feature values. }
 
-<<outcomes, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 6, fig.height=4, out.width='\\textwidth', fig.cap="Summary of the out-of-bag predictions of the csafe\\_rf2 random forest object trained on `hamby-comparisons.csv'.">>=
+<<outcomes, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 10, fig.height=8, out.width='\\textwidth', fig.cap="Summary of the out-of-bag predictions of the csafe\\_rf2 random forest object trained on the features in `hamby-comparisons.csv'.">>=
 features$rf_oob <- predict(rf2, type="prob")[,2]
 
 features %>%
