@@ -510,7 +510,7 @@ for (i in 1:nrow(important)) {
 detach(package:pROC)
 @
 
-<<densities, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 8, fig.height=6, out.width='\\textwidth', fig.cap="Densities of same-source and different source comparisons of each  feature used in fitting the random forest model. Features are sorted according to importance (most important features first). AUC (area under the curve) describes each feature's univariate strength to distinguish between same source and different source.">>=
+<<densities, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 10, fig.height=8, out.width='\\textwidth', fig.cap="Densities of same-source and different source comparisons of each  feature used in fitting the random forest model. Features are sorted according to importance (most important features first). AUC (area under the curve) describes each feature's univariate strength to distinguish between same source and different source.">>=
 
 long_rf <- features %>%
   filter(!doubles, land1 != land2) %>%
@@ -543,7 +543,7 @@ The random forest object `csafe\_rf2` has an overall out-of-bag error rate estim
 
 \hh{\autoref{fig:outcomes} shows a summary of (out-of-bag) prediction values of the csafe\_rf2 random forest trained on the feature values. }
 
-<<outcomes, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 10, fig.height=8, out.width='\\textwidth', fig.cap="Summary of the out-of-bag predictions of the csafe\\_rf2 random forest object trained on the features in `hamby-comparisons.csv'.">>=
+<<outcomes, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 7, fig.height=5, out.width='.7\\textwidth', fig.cap="Summary of the out-of-bag predictions of the csafe\\_rf2 random forest object trained on the features in `hamby-comparisons.csv'.">>=
 features$rf_oob <- predict(rf2, type="prob")[,2]
 
 features %>%
