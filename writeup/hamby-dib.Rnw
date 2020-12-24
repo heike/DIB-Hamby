@@ -340,7 +340,7 @@ Type of data           & Table: meta-info.csv\newline
                          Table: hamby-comparisons.csv\newline
                          Model: csafe-rf2.rds\\
 %\clearpage
-How data were acquired & Table (meta-info.csv): \newline
+How data were acquired & Table (meta-info.csv): assembled by the authors; consists of a collection of descriptive elements for each of the raw scans and corresponding land engraved areas.  \newline
  Table (hamby-comparisons.csv): features quantifying the similarity between pairs of 3d topographic surface scans detailing striation marks on land engraved areas (LEAs) of fired bullets. Features were extracted using the R software packages x3ptools (heike/x3ptools@164e631) and bulletxtrctr (heike/bulletxtrctr@dfa140a) as outlined in the pipeline by \citet{aoas} and detailed in the accompanying R script. From available meta information ground truth regarding source is added for each comparison. Values are stored in form of a comma separated value file.\newline
                         Model (csafe-rf2.rds): using the features as training data a random forest is fit to predict same source pairs and different source pairs (R package randomForest 4.6-14).\\
 \hline
@@ -430,13 +430,14 @@ The remaining fifteen bullets were each fired from one of the ten barrels (such 
 
 \svp{These scans have an additional advantage over conventional sets of physical bullets: it is much easier to share the digital data.
 The NIST database \citep{nist} contains the raw data for this study as well as many others.
-Information about the individual scans is provided in \texttt{meta-info.csv}; here, each row describes a scan of a single bullet land.
-When features are computed, however, we work with two bullet lands: the features, which are stored in \texttt{hamby-comparisons.csv}, are the product of a pairwise comparison between two different scans.}
+Information about the individual scans is provided in \autoref{meta}; here, each row describes a scan of a single bullet land,} \hh{its location on disk after the download, whether the corresponding land shows damage unrelated to the firing, and its relationship to Hamby set 173 bullet 1 from the same barrel.}
 
+\hh{\autoref{features} consists of a description of all features describing pairwise comparisons of scans. These features are aimed to distinguish between pairs of scans from the same source (corresponding to two bullets fired from the same barrel) and two different sources (corresponding to bullets fired from different barrels). }
 \hh{\autoref{fig:densities} gives an overview of some of the features in the `hamby-comparisons.csv` file. Values from same-source comparisons are shown in orange, different-source comparisons are shown in grey. Area under the curve (AUC) is a value between 0 and 1 describing the strength of one feature's strength in discriminating between same-source and different-source comparisons. The closer values are to 1, the better they discriminate. }
 
 
 \begin{longtable}{p{33mm}p{94mm}}
+\caption{\label{meta} Description of the variables in `meta-info.csv`.}
 \hline
 \bf Table   (meta-info.csv)              \\
 \bf Variable name & \bf Description\\ \hline
@@ -456,6 +457,7 @@ When features are computed, however, we work with two bullet lands: the features
 
 
 \begin{longtable}{p{33mm}p{94mm}}
+\caption{\label{features} Description of features extracted from pairwise comparisons of scans. These values are stored in file `hamby-comparisons.csv`.}
 \hline
 \multicolumn{2}{l}{\bf Table   (hamby-comparisons.csv)}             \\
 \bf Variable name & \bf Description\\ \hline
@@ -508,7 +510,7 @@ for (i in 1:nrow(important)) {
 detach(package:pROC)
 @
 
-<<densities, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 10, fig.height=8, out.width='\\textwidth', fig.cap="Densities of same-source and different source comparisons of each  feature used in fitting the random forest model. Features are sorted according to importance (most important features first). AUC (area under the curve) describes each feature's univariate strength to distinguish between same source and different source.">>=
+<<densities, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 8, fig.height=6, out.width='\\textwidth', fig.cap="Densities of same-source and different source comparisons of each  feature used in fitting the random forest model. Features are sorted according to importance (most important features first). AUC (area under the curve) describes each feature's univariate strength to distinguish between same source and different source.">>=
 
 long_rf <- features %>%
   filter(!doubles, land1 != land2) %>%
