@@ -432,10 +432,9 @@ These scans have an additional advantage over conventional sets of physical bull
 The NIST database \citep{nist} contains the raw data for this study as well as many others.
 Information about the individual scans is provided in \texttt{meta-info.csv}; here, each row describes a scan of a single bullet land.
 When features are computed, however, we work with two bullet lands: the features, which are stored in \texttt{hamby-comparisons.csv}, are the product of a pairwise comparison between two different scans.}
-% \hh{Modern 3d scanning technology is suggested by }
 
+\hh{\autoref{fig:densities} gives an overview of some of the features in the `hamby-comparisons.csv` file. Values from same-source comparisons are shown in orange, different-source comparisons are shown in grey. Area under the curve (AUC) is a value between 0 and 1 describing the strength of one feature's strength in discriminating between same-source and different-source comparisons. The closer values are to 1, the better they discriminate. }
 
-% confocal light microscopy and x3p format. That is the raw data, downloadable from the NIST database.
 
 \begin{longtable}{p{33mm}p{94mm}}
 \hline
@@ -494,7 +493,7 @@ When features are computed, however, we work with two bullet lands: the features
 library(tidyverse)
 library(randomForest)
 library(here)
-features <- read.csv(here("data/Hamby173-252-features.csv"))
+features <- read.csv(here("data/hamby-comparisons.csv"))
 rf2 <- readRDS(here("data/csafe_rf2.rds"))
 important <- data.frame(importance = rf2$importance) %>% arrange(desc(MeanDecreaseGini))
 important$name <- row.names(important)
@@ -509,7 +508,7 @@ for (i in 1:nrow(important)) {
 detach(package:pROC)
 @
 
-<<densities, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 10, fig.height=8, out.width='\\textwidth', fig.cap="Densities of same-source and different source comparisons of each  feature used in fitting the random forest model. Features are sorted according to importance (most important features first). AUC (area under the curve) describes each features univariate strength to distinguish between same source and different source.">>=
+<<densities, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 10, fig.height=8, out.width='\\textwidth', fig.cap="Densities of same-source and different source comparisons of each  feature used in fitting the random forest model. Features are sorted according to importance (most important features first). AUC (area under the curve) describes each feature's univariate strength to distinguish between same source and different source.">>=
 
 long_rf <- features %>%
   filter(!doubles, land1 != land2) %>%
@@ -533,8 +532,51 @@ long_rf %>%
   xlab("Value observed in the comparison of two LEA scans")
 @
 
-\svp{Finally, \texttt{csafe-rf2.rds} contains the binary files which describe the fitted random forest object. This random forest model is used to assess the similarity of two scans, with an output prediction of 0 indicative of dissimilarity between the scans, and an output prediction near 1 indicative of similarity between the scans. In addition to containing the weights used to make predictions, the fitted model also contains a record of the predictions made during the fitting process; and the features used to fit the model to the original set of scans. It is important to archive not only the code used to fit this model, but also the intermediate data, derived features, and full fitted model object, so that when the model is re-fit we have a record of changes between versions of the random forest models.}
+\hh{Finally, csafe-rf2.rds is the binary file containing the random forest object fitted on the features in \texttt{hamby-comparisons.csv}. Random forests \citep{breiman} are a machine-learning method using an ensemble of decision trees. Here, the fit is done within the statistical computing software R 4.0.1 \citep{R} using the package {\tt randomForest} 4.6-14 \citep{randomforest}. The following lines of code fit the forest object `csafe\_rf2`:}
 
+<<fit-forest, echo=TRUE, eval=FALSE, tidy=FALSE>>=
+# read the features
+features <- read.csv("data/hamby-comparisons.csv")
+
+##########
+# fit the random forest
+library(randomForest)
+features <- read.csv("data/hamby-comparisons.csv")
+
+set.seed(20140105)
+csafe_rf2 <- randomForest(
+  factor(samesource) ~ ccf + rough_cor + matches_per_mm + D + sd_D +
+    cms_per_mm + mismatches_per_mm + overlap + abs_lag_mm + sum_peaks,
+  data = features)
+
+saveRDS(csafe_rf2, "data/csafe_rf2.rds")
+@
+
+\svp{This random forest model is used to assess the similarity of two scans, with an output prediction of 0 indicative of dissimilarity between the scans, and an output prediction near 1 indicative of similarity between the scans. In addition to containing the weights used to make predictions, the fitted model also contains a record of the predictions made during the fitting process; and the features used to fit the model to the original set of scans. It is important to archive not only the code used to fit this model, but also the intermediate data, derived features, and full fitted model object, so that when the model is re-fit we have a record of changes between versions of the random forest models.}
+
+
+\hh{
+The random forest object `csafe\_rf2` has an overall out-of-bag error rate estimated as 0.32\%. Out of the total 81,003 pairwise comparisons of the `hamby-comparisons.csv` data 80,743 comparisons or 99.68\% are correctly classified as same-source or different-source pairs.}
+
+\hh{\autoref{fig:outcomes} shows a summary of (out-of-bag) prediction values of the csafe\_rf2 random forest trained on the feature values. }
+
+<<outcomes, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 6, fig.height=4, out.width='\\textwidth', fig.cap="Summary of the out-of-bag predictions of the csafe\\_rf2 random forest object trained on `hamby-comparisons.csv'.">>=
+features$rf_oob <- predict(rf2, type="prob")[,2]
+
+features %>%
+  mutate(
+    samesource = factor(samesource, labels=c("Different-source", "Same-source")),
+    Comparison = samesource
+  ) %>%
+  ggplot(aes(x = rf_oob, fill = Comparison, colour=Comparison)) +
+  geom_density(alpha=0.6) +
+  scale_colour_manual(values = c("darkgrey", "darkorange")) +
+  scale_fill_manual(values = c("darkgrey", "darkorange")) +
+  theme_bw() +
+  xlab("Out-of-bag Random Forest Prediction values") +
+  facet_grid(samesource~.) +
+  theme(legend.position="bottom")
+@
 
 \begin{longtable}{p{127mm}}
 \hline
