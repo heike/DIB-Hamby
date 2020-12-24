@@ -265,8 +265,9 @@ system.time(
 comparisons <- tibble(comparisons, features)
 saveRDS(comparisons, "comparisons.rds")
 
-##########
-# include ground truth
+# ------------------------------------------------------------------------------
+# *** Step 7: Include ground truth *********************************************
+# ------------------------------------------------------------------------------
 meta <- read.csv("meta-info.csv", stringsAsFactors = FALSE)
 
 comparisons <- comparisons %>%
@@ -276,8 +277,11 @@ comparisons <- comparisons %>%
 comparisons$samesource <- comparisons$index_land1 == comparisons$index_land2
 saveRDS(comparisons, "comparisons.rds")
 
-##########
-# mark comparisons from damaged LEAs
+
+# ------------------------------------------------------------------------------
+# *** Step 8: Mark damaged scans ***********************************************
+# ------------------------------------------------------------------------------
+
 
 comparisons <- comparisons %>%
   left_join(meta %>% select(land_id, flagged1=damaged), by=c("land1"="land_id")) %>%
@@ -285,7 +289,11 @@ comparisons <- comparisons %>%
 comparisons$damaged <- comparisons$flagged1|comparisons$flagged2
 comparisons %>% count(damaged)
 
-##########
+
+# ------------------------------------------------------------------------------
+# *** Step 9: Remove duplicate comparisons *************************************
+# ------------------------------------------------------------------------------
+
 # use only one comparison of a pair of scans
 
 comparisons <- comparisons %>%
@@ -298,6 +306,7 @@ features <- comparisons %>% select(-ccf) %>% unnest(features)
 doubles <- duplicated(features$id)
 features <- features %>% filter(!doubles, !damaged)
 features <- features %>% mutate(abs_lag_mm = abs(lag_mm))
-write.csv(features %>% select(-aligned,-striae, -legacy_features), "training-features.csv", row.names = FALSE)
+write.csv(features %>%
+            select(-aligned,-striae, -legacy_features), "training-features.csv", row.names = FALSE)
 
 
