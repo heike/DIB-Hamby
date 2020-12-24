@@ -1,0 +1,421 @@
+"source","study","barrel","bullet","land","land_id","barrel_index","land_index","H173_B1_index","damaged"
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br1_1_land1.x3p","Hamby173","1","1",1,"Hamby173-Br1-B1-L1",1,1,"Hamby173-Br1-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br1_1_land2.x3p","Hamby173","1","1",2,"Hamby173-Br1-B1-L2",1,2,"Hamby173-Br1-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br1_1_land3.x3p","Hamby173","1","1",3,"Hamby173-Br1-B1-L3",1,3,"Hamby173-Br1-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br1_1_land4.x3p","Hamby173","1","1",4,"Hamby173-Br1-B1-L4",1,4,"Hamby173-Br1-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br1_1_land5.x3p","Hamby173","1","1",5,"Hamby173-Br1-B1-L5",1,5,"Hamby173-Br1-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br1_1_land6.x3p","Hamby173","1","1",6,"Hamby173-Br1-B1-L6",1,6,"Hamby173-Br1-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br1_2_land1.x3p","Hamby173","1","2",1,"Hamby173-Br1-B2-L1",1,2,"Hamby173-Br1-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br1_2_land2.x3p","Hamby173","1","2",2,"Hamby173-Br1-B2-L2",1,3,"Hamby173-Br1-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br1_2_land3.x3p","Hamby173","1","2",3,"Hamby173-Br1-B2-L3",1,4,"Hamby173-Br1-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br1_2_land4.x3p","Hamby173","1","2",4,"Hamby173-Br1-B2-L4",1,5,"Hamby173-Br1-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br1_2_land5.x3p","Hamby173","1","2",5,"Hamby173-Br1-B2-L5",1,6,"Hamby173-Br1-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br1_2_land6.x3p","Hamby173","1","2",6,"Hamby173-Br1-B2-L6",1,1,"Hamby173-Br1-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br10_1_land1.x3p","Hamby173","10","1",1,"Hamby173-Br10-B1-L1",10,1,"Hamby173-Br10-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br10_1_land2.x3p","Hamby173","10","1",2,"Hamby173-Br10-B1-L2",10,2,"Hamby173-Br10-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br10_1_land3.x3p","Hamby173","10","1",3,"Hamby173-Br10-B1-L3",10,3,"Hamby173-Br10-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br10_1_land4.x3p","Hamby173","10","1",4,"Hamby173-Br10-B1-L4",10,4,"Hamby173-Br10-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br10_1_land5.x3p","Hamby173","10","1",5,"Hamby173-Br10-B1-L5",10,5,"Hamby173-Br10-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br10_1_land6.x3p","Hamby173","10","1",6,"Hamby173-Br10-B1-L6",10,6,"Hamby173-Br10-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br10_2_land1.x3p","Hamby173","10","2",1,"Hamby173-Br10-B2-L1",10,5,"Hamby173-Br10-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br10_2_land2.x3p","Hamby173","10","2",2,"Hamby173-Br10-B2-L2",10,6,"Hamby173-Br10-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br10_2_land3.x3p","Hamby173","10","2",3,"Hamby173-Br10-B2-L3",10,1,"Hamby173-Br10-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br10_2_land4.x3p","Hamby173","10","2",4,"Hamby173-Br10-B2-L4",10,2,"Hamby173-Br10-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br10_2_land5.x3p","Hamby173","10","2",5,"Hamby173-Br10-B2-L5",10,3,"Hamby173-Br10-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br10_2_land6.x3p","Hamby173","10","2",6,"Hamby173-Br10-B2-L6",10,4,"Hamby173-Br10-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br2_1_land1.x3p","Hamby173","2","1",1,"Hamby173-Br2-B1-L1",2,1,"Hamby173-Br2-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br2_1_land2.x3p","Hamby173","2","1",2,"Hamby173-Br2-B1-L2",2,2,"Hamby173-Br2-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br2_1_land3.x3p","Hamby173","2","1",3,"Hamby173-Br2-B1-L3",2,3,"Hamby173-Br2-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br2_1_land4.x3p","Hamby173","2","1",4,"Hamby173-Br2-B1-L4",2,4,"Hamby173-Br2-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br2_1_land5.x3p","Hamby173","2","1",5,"Hamby173-Br2-B1-L5",2,5,"Hamby173-Br2-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br2_1_land6.x3p","Hamby173","2","1",6,"Hamby173-Br2-B1-L6",2,6,"Hamby173-Br2-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br2_2_land1.x3p","Hamby173","2","2",1,"Hamby173-Br2-B2-L1",2,5,"Hamby173-Br2-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br2_2_land2.x3p","Hamby173","2","2",2,"Hamby173-Br2-B2-L2",2,6,"Hamby173-Br2-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br2_2_land3.x3p","Hamby173","2","2",3,"Hamby173-Br2-B2-L3",2,1,"Hamby173-Br2-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br2_2_land4.x3p","Hamby173","2","2",4,"Hamby173-Br2-B2-L4",2,2,"Hamby173-Br2-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br2_2_land5.x3p","Hamby173","2","2",5,"Hamby173-Br2-B2-L5",2,3,"Hamby173-Br2-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br2_2_land6.x3p","Hamby173","2","2",6,"Hamby173-Br2-B2-L6",2,4,"Hamby173-Br2-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br3_1_land1.x3p","Hamby173","3","1",1,"Hamby173-Br3-B1-L1",3,1,"Hamby173-Br3-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br3_1_land2.x3p","Hamby173","3","1",2,"Hamby173-Br3-B1-L2",3,2,"Hamby173-Br3-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br3_1_land3.x3p","Hamby173","3","1",3,"Hamby173-Br3-B1-L3",3,3,"Hamby173-Br3-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br3_1_land4.x3p","Hamby173","3","1",4,"Hamby173-Br3-B1-L4",3,4,"Hamby173-Br3-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br3_1_land5.x3p","Hamby173","3","1",5,"Hamby173-Br3-B1-L5",3,5,"Hamby173-Br3-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br3_1_land6.x3p","Hamby173","3","1",6,"Hamby173-Br3-B1-L6",3,6,"Hamby173-Br3-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br3_2_land1.x3p","Hamby173","3","2",1,"Hamby173-Br3-B2-L1",3,6,"Hamby173-Br3-B1-L6",TRUE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br3_2_land2.x3p","Hamby173","3","2",2,"Hamby173-Br3-B2-L2",3,1,"Hamby173-Br3-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br3_2_land3.x3p","Hamby173","3","2",3,"Hamby173-Br3-B2-L3",3,2,"Hamby173-Br3-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br3_2_land4.x3p","Hamby173","3","2",4,"Hamby173-Br3-B2-L4",3,3,"Hamby173-Br3-B1-L3",TRUE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br3_2_land5.x3p","Hamby173","3","2",5,"Hamby173-Br3-B2-L5",3,4,"Hamby173-Br3-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br3_2_land6.x3p","Hamby173","3","2",6,"Hamby173-Br3-B2-L6",3,5,"Hamby173-Br3-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br4_1_land1.x3p","Hamby173","4","1",1,"Hamby173-Br4-B1-L1",4,1,"Hamby173-Br4-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br4_1_land2.x3p","Hamby173","4","1",2,"Hamby173-Br4-B1-L2",4,2,"Hamby173-Br4-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br4_1_land3.x3p","Hamby173","4","1",3,"Hamby173-Br4-B1-L3",4,3,"Hamby173-Br4-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br4_1_land4.x3p","Hamby173","4","1",4,"Hamby173-Br4-B1-L4",4,4,"Hamby173-Br4-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br4_1_land5.x3p","Hamby173","4","1",5,"Hamby173-Br4-B1-L5",4,5,"Hamby173-Br4-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br4_1_land6.x3p","Hamby173","4","1",6,"Hamby173-Br4-B1-L6",4,6,"Hamby173-Br4-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br4_2_land1.x3p","Hamby173","4","2",1,"Hamby173-Br4-B2-L1",4,4,"Hamby173-Br4-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br4_2_land2.x3p","Hamby173","4","2",2,"Hamby173-Br4-B2-L2",4,5,"Hamby173-Br4-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br4_2_land3.x3p","Hamby173","4","2",3,"Hamby173-Br4-B2-L3",4,6,"Hamby173-Br4-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br4_2_land4.x3p","Hamby173","4","2",4,"Hamby173-Br4-B2-L4",4,1,"Hamby173-Br4-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br4_2_land5.x3p","Hamby173","4","2",5,"Hamby173-Br4-B2-L5",4,2,"Hamby173-Br4-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br4_2_land6.x3p","Hamby173","4","2",6,"Hamby173-Br4-B2-L6",4,3,"Hamby173-Br4-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br5_1_land1.x3p","Hamby173","5","1",1,"Hamby173-Br5-B1-L1",5,1,"Hamby173-Br5-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br5_1_land2.x3p","Hamby173","5","1",2,"Hamby173-Br5-B1-L2",5,2,"Hamby173-Br5-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br5_1_land3.x3p","Hamby173","5","1",3,"Hamby173-Br5-B1-L3",5,3,"Hamby173-Br5-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br5_1_land4.x3p","Hamby173","5","1",4,"Hamby173-Br5-B1-L4",5,4,"Hamby173-Br5-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br5_1_land5.x3p","Hamby173","5","1",5,"Hamby173-Br5-B1-L5",5,5,"Hamby173-Br5-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br5_1_land6.x3p","Hamby173","5","1",6,"Hamby173-Br5-B1-L6",5,6,"Hamby173-Br5-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br5_2_land1.x3p","Hamby173","5","2",1,"Hamby173-Br5-B2-L1",5,5,"Hamby173-Br5-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br5_2_land2.x3p","Hamby173","5","2",2,"Hamby173-Br5-B2-L2",5,6,"Hamby173-Br5-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br5_2_land3.x3p","Hamby173","5","2",3,"Hamby173-Br5-B2-L3",5,1,"Hamby173-Br5-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br5_2_land4.x3p","Hamby173","5","2",4,"Hamby173-Br5-B2-L4",5,2,"Hamby173-Br5-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br5_2_land5.x3p","Hamby173","5","2",5,"Hamby173-Br5-B2-L5",5,3,"Hamby173-Br5-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br5_2_land6.x3p","Hamby173","5","2",6,"Hamby173-Br5-B2-L6",5,4,"Hamby173-Br5-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br6_1_land1.x3p","Hamby173","6","1",1,"Hamby173-Br6-B1-L1",6,1,"Hamby173-Br6-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br6_1_land2.x3p","Hamby173","6","1",2,"Hamby173-Br6-B1-L2",6,2,"Hamby173-Br6-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br6_1_land3.x3p","Hamby173","6","1",3,"Hamby173-Br6-B1-L3",6,3,"Hamby173-Br6-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br6_1_land4.x3p","Hamby173","6","1",4,"Hamby173-Br6-B1-L4",6,4,"Hamby173-Br6-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br6_1_land5.x3p","Hamby173","6","1",5,"Hamby173-Br6-B1-L5",6,5,"Hamby173-Br6-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br6_1_land6.x3p","Hamby173","6","1",6,"Hamby173-Br6-B1-L6",6,6,"Hamby173-Br6-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br6_2_land1.x3p","Hamby173","6","2",1,"Hamby173-Br6-B2-L1",6,6,"Hamby173-Br6-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br6_2_land2.x3p","Hamby173","6","2",2,"Hamby173-Br6-B2-L2",6,1,"Hamby173-Br6-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br6_2_land3.x3p","Hamby173","6","2",3,"Hamby173-Br6-B2-L3",6,2,"Hamby173-Br6-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br6_2_land4.x3p","Hamby173","6","2",4,"Hamby173-Br6-B2-L4",6,3,"Hamby173-Br6-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br6_2_land5.x3p","Hamby173","6","2",5,"Hamby173-Br6-B2-L5",6,4,"Hamby173-Br6-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br6_2_land6.x3p","Hamby173","6","2",6,"Hamby173-Br6-B2-L6",6,5,"Hamby173-Br6-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br7_1_land1.x3p","Hamby173","7","1",1,"Hamby173-Br7-B1-L1",7,1,"Hamby173-Br7-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br7_1_land2.x3p","Hamby173","7","1",2,"Hamby173-Br7-B1-L2",7,2,"Hamby173-Br7-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br7_1_land3.x3p","Hamby173","7","1",3,"Hamby173-Br7-B1-L3",7,3,"Hamby173-Br7-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br7_1_land4.x3p","Hamby173","7","1",4,"Hamby173-Br7-B1-L4",7,4,"Hamby173-Br7-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br7_1_land5.x3p","Hamby173","7","1",5,"Hamby173-Br7-B1-L5",7,5,"Hamby173-Br7-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br7_1_land6.x3p","Hamby173","7","1",6,"Hamby173-Br7-B1-L6",7,6,"Hamby173-Br7-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br7_2_land1.x3p","Hamby173","7","2",1,"Hamby173-Br7-B2-L1",7,1,"Hamby173-Br7-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br7_2_land2.x3p","Hamby173","7","2",2,"Hamby173-Br7-B2-L2",7,2,"Hamby173-Br7-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br7_2_land3.x3p","Hamby173","7","2",3,"Hamby173-Br7-B2-L3",7,3,"Hamby173-Br7-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br7_2_land4.x3p","Hamby173","7","2",4,"Hamby173-Br7-B2-L4",7,4,"Hamby173-Br7-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br7_2_land5.x3p","Hamby173","7","2",5,"Hamby173-Br7-B2-L5",7,5,"Hamby173-Br7-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br7_2_land6.x3p","Hamby173","7","2",6,"Hamby173-Br7-B2-L6",7,6,"Hamby173-Br7-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br8_1_land1.x3p","Hamby173","8","1",1,"Hamby173-Br8-B1-L1",8,1,"Hamby173-Br8-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br8_1_land2.x3p","Hamby173","8","1",2,"Hamby173-Br8-B1-L2",8,2,"Hamby173-Br8-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br8_1_land3.x3p","Hamby173","8","1",3,"Hamby173-Br8-B1-L3",8,3,"Hamby173-Br8-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br8_1_land4.x3p","Hamby173","8","1",4,"Hamby173-Br8-B1-L4",8,4,"Hamby173-Br8-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br8_1_land5.x3p","Hamby173","8","1",5,"Hamby173-Br8-B1-L5",8,5,"Hamby173-Br8-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br8_1_land6.x3p","Hamby173","8","1",6,"Hamby173-Br8-B1-L6",8,6,"Hamby173-Br8-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br8_2_land1.x3p","Hamby173","8","2",1,"Hamby173-Br8-B2-L1",8,4,"Hamby173-Br8-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br8_2_land2.x3p","Hamby173","8","2",2,"Hamby173-Br8-B2-L2",8,5,"Hamby173-Br8-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br8_2_land3.x3p","Hamby173","8","2",3,"Hamby173-Br8-B2-L3",8,6,"Hamby173-Br8-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br8_2_land4.x3p","Hamby173","8","2",4,"Hamby173-Br8-B2-L4",8,1,"Hamby173-Br8-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br8_2_land5.x3p","Hamby173","8","2",5,"Hamby173-Br8-B2-L5",8,2,"Hamby173-Br8-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br8_2_land6.x3p","Hamby173","8","2",6,"Hamby173-Br8-B2-L6",8,3,"Hamby173-Br8-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br9_1_land1.x3p","Hamby173","9","1",1,"Hamby173-Br9-B1-L1",9,1,"Hamby173-Br9-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br9_1_land2.x3p","Hamby173","9","1",2,"Hamby173-Br9-B1-L2",9,2,"Hamby173-Br9-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br9_1_land3.x3p","Hamby173","9","1",3,"Hamby173-Br9-B1-L3",9,3,"Hamby173-Br9-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br9_1_land4.x3p","Hamby173","9","1",4,"Hamby173-Br9-B1-L4",9,4,"Hamby173-Br9-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br9_1_land5.x3p","Hamby173","9","1",5,"Hamby173-Br9-B1-L5",9,5,"Hamby173-Br9-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br9_1_land6.x3p","Hamby173","9","1",6,"Hamby173-Br9-B1-L6",9,6,"Hamby173-Br9-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br9_2_land1.x3p","Hamby173","9","2",1,"Hamby173-Br9-B2-L1",9,5,"Hamby173-Br9-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br9_2_land2.x3p","Hamby173","9","2",2,"Hamby173-Br9-B2-L2",9,6,"Hamby173-Br9-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br9_2_land3.x3p","Hamby173","9","2",3,"Hamby173-Br9-B2-L3",9,1,"Hamby173-Br9-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br9_2_land4.x3p","Hamby173","9","2",4,"Hamby173-Br9-B2-L4",9,2,"Hamby173-Br9-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br9_2_land5.x3p","Hamby173","9","2",5,"Hamby173-Br9-B2-L5",9,3,"Hamby173-Br9-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//br9_2_land6.x3p","Hamby173","9","2",6,"Hamby173-Br9-B2-L6",9,4,"Hamby173-Br9-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brA_1_land1.x3p","Hamby173","Ukn","A",1,"Hamby173-BrUkn-BA-L1",1,3,"Hamby173-Br1-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brA_1_land2.x3p","Hamby173","Ukn","A",2,"Hamby173-BrUkn-BA-L2",1,4,"Hamby173-Br1-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brA_1_land3.x3p","Hamby173","Ukn","A",3,"Hamby173-BrUkn-BA-L3",1,5,"Hamby173-Br1-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brA_1_land4.x3p","Hamby173","Ukn","A",4,"Hamby173-BrUkn-BA-L4",1,6,"Hamby173-Br1-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brA_1_land5.x3p","Hamby173","Ukn","A",5,"Hamby173-BrUkn-BA-L5",1,1,"Hamby173-Br1-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brA_1_land6.x3p","Hamby173","Ukn","A",6,"Hamby173-BrUkn-BA-L6",1,2,"Hamby173-Br1-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brB_1_land1.x3p","Hamby173","Ukn","B",1,"Hamby173-BrUkn-BB-L1",5,1,"Hamby173-Br5-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brB_1_land2.x3p","Hamby173","Ukn","B",2,"Hamby173-BrUkn-BB-L2",5,2,"Hamby173-Br5-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brB_1_land3.x3p","Hamby173","Ukn","B",3,"Hamby173-BrUkn-BB-L3",5,3,"Hamby173-Br5-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brB_1_land4.x3p","Hamby173","Ukn","B",4,"Hamby173-BrUkn-BB-L4",5,4,"Hamby173-Br5-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brB_1_land5.x3p","Hamby173","Ukn","B",5,"Hamby173-BrUkn-BB-L5",5,5,"Hamby173-Br5-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brB_1_land6.x3p","Hamby173","Ukn","B",6,"Hamby173-BrUkn-BB-L6",5,6,"Hamby173-Br5-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brC_1_land1.x3p","Hamby173","Ukn","C",1,"Hamby173-BrUkn-BC-L1",1,4,"Hamby173-Br1-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brC_1_land2.x3p","Hamby173","Ukn","C",2,"Hamby173-BrUkn-BC-L2",1,5,"Hamby173-Br1-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brC_1_land3.x3p","Hamby173","Ukn","C",3,"Hamby173-BrUkn-BC-L3",1,6,"Hamby173-Br1-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brC_1_land4.x3p","Hamby173","Ukn","C",4,"Hamby173-BrUkn-BC-L4",1,1,"Hamby173-Br1-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brC_1_land5.x3p","Hamby173","Ukn","C",5,"Hamby173-BrUkn-BC-L5",1,2,"Hamby173-Br1-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brC_1_land6.x3p","Hamby173","Ukn","C",6,"Hamby173-BrUkn-BC-L6",1,3,"Hamby173-Br1-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brE_1_land1.x3p","Hamby173","Ukn","E",1,"Hamby173-BrUkn-BE-L1",1,1,"Hamby173-Br1-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brE_1_land2.x3p","Hamby173","Ukn","E",2,"Hamby173-BrUkn-BE-L2",1,2,"Hamby173-Br1-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brE_1_land3.x3p","Hamby173","Ukn","E",3,"Hamby173-BrUkn-BE-L3",1,3,"Hamby173-Br1-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brE_1_land4.x3p","Hamby173","Ukn","E",4,"Hamby173-BrUkn-BE-L4",1,4,"Hamby173-Br1-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brE_1_land5.x3p","Hamby173","Ukn","E",5,"Hamby173-BrUkn-BE-L5",1,5,"Hamby173-Br1-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brE_1_land6.x3p","Hamby173","Ukn","E",6,"Hamby173-BrUkn-BE-L6",1,6,"Hamby173-Br1-B1-L6",TRUE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brG_1_land1.x3p","Hamby173","Ukn","G",1,"Hamby173-BrUkn-BG-L1",7,6,"Hamby173-Br7-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brG_1_land2.x3p","Hamby173","Ukn","G",2,"Hamby173-BrUkn-BG-L2",7,1,"Hamby173-Br7-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brG_1_land3.x3p","Hamby173","Ukn","G",3,"Hamby173-BrUkn-BG-L3",7,2,"Hamby173-Br7-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brG_1_land4.x3p","Hamby173","Ukn","G",4,"Hamby173-BrUkn-BG-L4",7,3,"Hamby173-Br7-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brG_1_land5.x3p","Hamby173","Ukn","G",5,"Hamby173-BrUkn-BG-L5",7,4,"Hamby173-Br7-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brG_1_land6.x3p","Hamby173","Ukn","G",6,"Hamby173-BrUkn-BG-L6",7,5,"Hamby173-Br7-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brH_1_land1.x3p","Hamby173","Ukn","H",1,"Hamby173-BrUkn-BH-L1",10,2,"Hamby173-Br10-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brH_1_land2.x3p","Hamby173","Ukn","H",2,"Hamby173-BrUkn-BH-L2",10,3,"Hamby173-Br10-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brH_1_land3.x3p","Hamby173","Ukn","H",3,"Hamby173-BrUkn-BH-L3",10,4,"Hamby173-Br10-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brH_1_land4.x3p","Hamby173","Ukn","H",4,"Hamby173-BrUkn-BH-L4",10,5,"Hamby173-Br10-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brH_1_land5.x3p","Hamby173","Ukn","H",5,"Hamby173-BrUkn-BH-L5",10,6,"Hamby173-Br10-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brH_1_land6.x3p","Hamby173","Ukn","H",6,"Hamby173-BrUkn-BH-L6",10,1,"Hamby173-Br10-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brI_1_land1.x3p","Hamby173","Ukn","I",1,"Hamby173-BrUkn-BI-L1",9,5,"Hamby173-Br9-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brI_1_land2.x3p","Hamby173","Ukn","I",2,"Hamby173-BrUkn-BI-L2",9,6,"Hamby173-Br9-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brI_1_land3.x3p","Hamby173","Ukn","I",3,"Hamby173-BrUkn-BI-L3",9,1,"Hamby173-Br9-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brI_1_land4.x3p","Hamby173","Ukn","I",4,"Hamby173-BrUkn-BI-L4",9,2,"Hamby173-Br9-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brI_1_land5.x3p","Hamby173","Ukn","I",5,"Hamby173-BrUkn-BI-L5",9,3,"Hamby173-Br9-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brI_1_land6.x3p","Hamby173","Ukn","I",6,"Hamby173-BrUkn-BI-L6",9,4,"Hamby173-Br9-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brL_1_land1.x3p","Hamby173","Ukn","L",1,"Hamby173-BrUkn-BL-L1",8,1,"Hamby173-Br8-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brL_1_land2.x3p","Hamby173","Ukn","L",2,"Hamby173-BrUkn-BL-L2",8,2,"Hamby173-Br8-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brL_1_land3.x3p","Hamby173","Ukn","L",3,"Hamby173-BrUkn-BL-L3",8,3,"Hamby173-Br8-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brL_1_land4.x3p","Hamby173","Ukn","L",4,"Hamby173-BrUkn-BL-L4",8,4,"Hamby173-Br8-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brL_1_land5.x3p","Hamby173","Ukn","L",5,"Hamby173-BrUkn-BL-L5",8,5,"Hamby173-Br8-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brL_1_land6.x3p","Hamby173","Ukn","L",6,"Hamby173-BrUkn-BL-L6",8,6,"Hamby173-Br8-B1-L6",TRUE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brM_1_land1.x3p","Hamby173","Ukn","M",1,"Hamby173-BrUkn-BM-L1",7,5,"Hamby173-Br7-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brM_1_land2.x3p","Hamby173","Ukn","M",2,"Hamby173-BrUkn-BM-L2",7,6,"Hamby173-Br7-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brM_1_land3.x3p","Hamby173","Ukn","M",3,"Hamby173-BrUkn-BM-L3",7,1,"Hamby173-Br7-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brM_1_land4.x3p","Hamby173","Ukn","M",4,"Hamby173-BrUkn-BM-L4",7,2,"Hamby173-Br7-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brM_1_land5.x3p","Hamby173","Ukn","M",5,"Hamby173-BrUkn-BM-L5",7,3,"Hamby173-Br7-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brM_1_land6.x3p","Hamby173","Ukn","M",6,"Hamby173-BrUkn-BM-L6",7,4,"Hamby173-Br7-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brN_1_land1.x3p","Hamby173","Ukn","N",1,"Hamby173-BrUkn-BN-L1",5,1,"Hamby173-Br5-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brN_1_land2.x3p","Hamby173","Ukn","N",2,"Hamby173-BrUkn-BN-L2",5,2,"Hamby173-Br5-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brN_1_land3.x3p","Hamby173","Ukn","N",3,"Hamby173-BrUkn-BN-L3",5,3,"Hamby173-Br5-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brN_1_land4.x3p","Hamby173","Ukn","N",4,"Hamby173-BrUkn-BN-L4",5,4,"Hamby173-Br5-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brN_1_land5.x3p","Hamby173","Ukn","N",5,"Hamby173-BrUkn-BN-L5",5,5,"Hamby173-Br5-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brN_1_land6.x3p","Hamby173","Ukn","N",6,"Hamby173-BrUkn-BN-L6",5,6,"Hamby173-Br5-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brR_1_land1.x3p","Hamby173","Ukn","R",1,"Hamby173-BrUkn-BR-L1",4,4,"Hamby173-Br4-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brR_1_land2.x3p","Hamby173","Ukn","R",2,"Hamby173-BrUkn-BR-L2",4,5,"Hamby173-Br4-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brR_1_land3.x3p","Hamby173","Ukn","R",3,"Hamby173-BrUkn-BR-L3",4,6,"Hamby173-Br4-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brR_1_land4.x3p","Hamby173","Ukn","R",4,"Hamby173-BrUkn-BR-L4",4,1,"Hamby173-Br4-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brR_1_land5.x3p","Hamby173","Ukn","R",5,"Hamby173-BrUkn-BR-L5",4,2,"Hamby173-Br4-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brR_1_land6.x3p","Hamby173","Ukn","R",6,"Hamby173-BrUkn-BR-L6",4,3,"Hamby173-Br4-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brU_1_land1.x3p","Hamby173","Ukn","U",1,"Hamby173-BrUkn-BU-L1",3,6,"Hamby173-Br3-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brU_1_land2.x3p","Hamby173","Ukn","U",2,"Hamby173-BrUkn-BU-L2",3,1,"Hamby173-Br3-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brU_1_land3.x3p","Hamby173","Ukn","U",3,"Hamby173-BrUkn-BU-L3",3,2,"Hamby173-Br3-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brU_1_land4.x3p","Hamby173","Ukn","U",4,"Hamby173-BrUkn-BU-L4",3,3,"Hamby173-Br3-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brU_1_land5.x3p","Hamby173","Ukn","U",5,"Hamby173-BrUkn-BU-L5",3,4,"Hamby173-Br3-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brU_1_land6.x3p","Hamby173","Ukn","U",6,"Hamby173-BrUkn-BU-L6",3,5,"Hamby173-Br3-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brV_1_land1.x3p","Hamby173","Ukn","V",1,"Hamby173-BrUkn-BV-L1",6,1,"Hamby173-Br6-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brV_1_land2.x3p","Hamby173","Ukn","V",2,"Hamby173-BrUkn-BV-L2",6,2,"Hamby173-Br6-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brV_1_land3.x3p","Hamby173","Ukn","V",3,"Hamby173-BrUkn-BV-L3",6,3,"Hamby173-Br6-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brV_1_land4.x3p","Hamby173","Ukn","V",4,"Hamby173-BrUkn-BV-L4",6,4,"Hamby173-Br6-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brV_1_land5.x3p","Hamby173","Ukn","V",5,"Hamby173-BrUkn-BV-L5",6,5,"Hamby173-Br6-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brV_1_land6.x3p","Hamby173","Ukn","V",6,"Hamby173-BrUkn-BV-L6",6,6,"Hamby173-Br6-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brW_1_land1.x3p","Hamby173","Ukn","W",1,"Hamby173-BrUkn-BW-L1",2,2,"Hamby173-Br2-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brW_1_land2.x3p","Hamby173","Ukn","W",2,"Hamby173-BrUkn-BW-L2",2,3,"Hamby173-Br2-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brW_1_land3.x3p","Hamby173","Ukn","W",3,"Hamby173-BrUkn-BW-L3",2,4,"Hamby173-Br2-B1-L4",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brW_1_land4.x3p","Hamby173","Ukn","W",4,"Hamby173-BrUkn-BW-L4",2,5,"Hamby173-Br2-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brW_1_land5.x3p","Hamby173","Ukn","W",5,"Hamby173-BrUkn-BW-L5",2,6,"Hamby173-Br2-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brW_1_land6.x3p","Hamby173","Ukn","W",6,"Hamby173-BrUkn-BW-L6",2,1,"Hamby173-Br2-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brX_1_land1.x3p","Hamby173","Ukn","X",1,"Hamby173-BrUkn-BX-L1",4,5,"Hamby173-Br4-B1-L5",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brX_1_land2.x3p","Hamby173","Ukn","X",2,"Hamby173-BrUkn-BX-L2",4,6,"Hamby173-Br4-B1-L6",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brX_1_land3.x3p","Hamby173","Ukn","X",3,"Hamby173-BrUkn-BX-L3",4,1,"Hamby173-Br4-B1-L1",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brX_1_land4.x3p","Hamby173","Ukn","X",4,"Hamby173-BrUkn-BX-L4",4,2,"Hamby173-Br4-B1-L2",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brX_1_land5.x3p","Hamby173","Ukn","X",5,"Hamby173-BrUkn-BX-L5",4,3,"Hamby173-Br4-B1-L3",FALSE
+"NBTRD/Hamby 173 (2009) Barrel/bullets//brX_1_land6.x3p","Hamby173","Ukn","X",6,"Hamby173-BrUkn-BX-L6",4,4,"Hamby173-Br4-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br1 Bullet 1-1.x3p","Hamby252","1","1",1,"Hamby252-Br1-B1-L1",1,6,"Hamby173-Br1-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br1 Bullet 1-2.x3p","Hamby252","1","1",2,"Hamby252-Br1-B1-L2",1,1,"Hamby173-Br1-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br1 Bullet 1-3.x3p","Hamby252","1","1",3,"Hamby252-Br1-B1-L3",1,2,"Hamby173-Br1-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br1 Bullet 1-4.x3p","Hamby252","1","1",4,"Hamby252-Br1-B1-L4",1,3,"Hamby173-Br1-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br1 Bullet 1-5.x3p","Hamby252","1","1",5,"Hamby252-Br1-B1-L5",1,4,"Hamby173-Br1-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br1 Bullet 1-6.x3p","Hamby252","1","1",6,"Hamby252-Br1-B1-L6",1,5,"Hamby173-Br1-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br1 Bullet 2-1.x3p","Hamby252","1","2",1,"Hamby252-Br1-B2-L1",1,4,"Hamby173-Br1-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br1 Bullet 2-2.x3p","Hamby252","1","2",2,"Hamby252-Br1-B2-L2",1,5,"Hamby173-Br1-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br1 Bullet 2-3.x3p","Hamby252","1","2",3,"Hamby252-Br1-B2-L3",1,6,"Hamby173-Br1-B1-L6",TRUE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br1 Bullet 2-4.x3p","Hamby252","1","2",4,"Hamby252-Br1-B2-L4",1,1,"Hamby173-Br1-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br1 Bullet 2-5.x3p","Hamby252","1","2",5,"Hamby252-Br1-B2-L5",1,2,"Hamby173-Br1-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br1 Bullet 2-6.x3p","Hamby252","1","2",6,"Hamby252-Br1-B2-L6",1,3,"Hamby173-Br1-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br10 Bullet 1-1.x3p","Hamby252","10","1",1,"Hamby252-Br10-B1-L1",10,3,"Hamby173-Br10-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br10 Bullet 1-2.x3p","Hamby252","10","1",2,"Hamby252-Br10-B1-L2",10,4,"Hamby173-Br10-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br10 Bullet 1-3.x3p","Hamby252","10","1",3,"Hamby252-Br10-B1-L3",10,5,"Hamby173-Br10-B1-L5",TRUE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br10 Bullet 1-4.x3p","Hamby252","10","1",4,"Hamby252-Br10-B1-L4",10,6,"Hamby173-Br10-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br10 Bullet 1-5.x3p","Hamby252","10","1",5,"Hamby252-Br10-B1-L5",10,1,"Hamby173-Br10-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br10 Bullet 1-6.x3p","Hamby252","10","1",6,"Hamby252-Br10-B1-L6",10,2,"Hamby173-Br10-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br10 Bullet 2-1.x3p","Hamby252","10","2",1,"Hamby252-Br10-B2-L1",10,1,"Hamby173-Br10-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br10 Bullet 2-2.x3p","Hamby252","10","2",2,"Hamby252-Br10-B2-L2",10,2,"Hamby173-Br10-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br10 Bullet 2-3.x3p","Hamby252","10","2",3,"Hamby252-Br10-B2-L3",10,3,"Hamby173-Br10-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br10 Bullet 2-4.x3p","Hamby252","10","2",4,"Hamby252-Br10-B2-L4",10,4,"Hamby173-Br10-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br10 Bullet 2-5.x3p","Hamby252","10","2",5,"Hamby252-Br10-B2-L5",10,5,"Hamby173-Br10-B1-L5",TRUE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br10 Bullet 2-6.x3p","Hamby252","10","2",6,"Hamby252-Br10-B2-L6",10,6,"Hamby173-Br10-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br2 Bullet 1-1.x3p","Hamby252","2","1",1,"Hamby252-Br2-B1-L1",2,2,"Hamby173-Br2-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br2 Bullet 1-2.x3p","Hamby252","2","1",2,"Hamby252-Br2-B1-L2",2,3,"Hamby173-Br2-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br2 Bullet 1-3.x3p","Hamby252","2","1",3,"Hamby252-Br2-B1-L3",2,4,"Hamby173-Br2-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br2 Bullet 1-4.x3p","Hamby252","2","1",4,"Hamby252-Br2-B1-L4",2,5,"Hamby173-Br2-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br2 Bullet 1-5.x3p","Hamby252","2","1",5,"Hamby252-Br2-B1-L5",2,6,"Hamby173-Br2-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br2 Bullet 1-6.x3p","Hamby252","2","1",6,"Hamby252-Br2-B1-L6",2,1,"Hamby173-Br2-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br2 Bullet 2-1.x3p","Hamby252","2","2",1,"Hamby252-Br2-B2-L1",2,1,"Hamby173-Br2-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br2 Bullet 2-2.x3p","Hamby252","2","2",2,"Hamby252-Br2-B2-L2",2,2,"Hamby173-Br2-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br2 Bullet 2-3.x3p","Hamby252","2","2",3,"Hamby252-Br2-B2-L3",2,3,"Hamby173-Br2-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br2 Bullet 2-4.x3p","Hamby252","2","2",4,"Hamby252-Br2-B2-L4",2,4,"Hamby173-Br2-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br2 Bullet 2-5.x3p","Hamby252","2","2",5,"Hamby252-Br2-B2-L5",2,5,"Hamby173-Br2-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br2 Bullet 2-6.x3p","Hamby252","2","2",6,"Hamby252-Br2-B2-L6",2,6,"Hamby173-Br2-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br3 Bullet 1-1.x3p","Hamby252","3","1",1,"Hamby252-Br3-B1-L1",3,5,"Hamby173-Br3-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br3 Bullet 1-2.x3p","Hamby252","3","1",2,"Hamby252-Br3-B1-L2",3,6,"Hamby173-Br3-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br3 Bullet 1-3.x3p","Hamby252","3","1",3,"Hamby252-Br3-B1-L3",3,1,"Hamby173-Br3-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br3 Bullet 1-4.x3p","Hamby252","3","1",4,"Hamby252-Br3-B1-L4",3,2,"Hamby173-Br3-B1-L2",TRUE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br3 Bullet 1-5.x3p","Hamby252","3","1",5,"Hamby252-Br3-B1-L5",3,3,"Hamby173-Br3-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br3 Bullet 1-6.x3p","Hamby252","3","1",6,"Hamby252-Br3-B1-L6",3,4,"Hamby173-Br3-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br3 Bullet 2-1.x3p","Hamby252","3","2",1,"Hamby252-Br3-B2-L1",3,3,"Hamby173-Br3-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br3 Bullet 2-2.x3p","Hamby252","3","2",2,"Hamby252-Br3-B2-L2",3,4,"Hamby173-Br3-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br3 Bullet 2-3.x3p","Hamby252","3","2",3,"Hamby252-Br3-B2-L3",3,5,"Hamby173-Br3-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br3 Bullet 2-4.x3p","Hamby252","3","2",4,"Hamby252-Br3-B2-L4",3,6,"Hamby173-Br3-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br3 Bullet 2-5.x3p","Hamby252","3","2",5,"Hamby252-Br3-B2-L5",3,1,"Hamby173-Br3-B1-L1",TRUE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br3 Bullet 2-6.x3p","Hamby252","3","2",6,"Hamby252-Br3-B2-L6",3,2,"Hamby173-Br3-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br4 Bullet 1-1.x3p","Hamby252","4","1",1,"Hamby252-Br4-B1-L1",4,6,"Hamby173-Br4-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br4 Bullet 1-2.x3p","Hamby252","4","1",2,"Hamby252-Br4-B1-L2",4,1,"Hamby173-Br4-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br4 Bullet 1-3.x3p","Hamby252","4","1",3,"Hamby252-Br4-B1-L3",4,2,"Hamby173-Br4-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br4 Bullet 1-4.x3p","Hamby252","4","1",4,"Hamby252-Br4-B1-L4",4,3,"Hamby173-Br4-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br4 Bullet 1-5.x3p","Hamby252","4","1",5,"Hamby252-Br4-B1-L5",4,4,"Hamby173-Br4-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br4 Bullet 1-6.x3p","Hamby252","4","1",6,"Hamby252-Br4-B1-L6",4,5,"Hamby173-Br4-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br4 Bullet 2-1.x3p","Hamby252","4","2",1,"Hamby252-Br4-B2-L1",4,4,"Hamby173-Br4-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br4 Bullet 2-2.x3p","Hamby252","4","2",2,"Hamby252-Br4-B2-L2",4,5,"Hamby173-Br4-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br4 Bullet 2-3.x3p","Hamby252","4","2",3,"Hamby252-Br4-B2-L3",4,6,"Hamby173-Br4-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br4 Bullet 2-4.x3p","Hamby252","4","2",4,"Hamby252-Br4-B2-L4",4,1,"Hamby173-Br4-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br4 Bullet 2-5.x3p","Hamby252","4","2",5,"Hamby252-Br4-B2-L5",4,2,"Hamby173-Br4-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br4 Bullet 2-6.x3p","Hamby252","4","2",6,"Hamby252-Br4-B2-L6",4,3,"Hamby173-Br4-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br5 Bullet 1-1.x3p","Hamby252","5","1",1,"Hamby252-Br5-B1-L1",5,5,"Hamby173-Br5-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br5 Bullet 1-2.x3p","Hamby252","5","1",2,"Hamby252-Br5-B1-L2",5,6,"Hamby173-Br5-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br5 Bullet 1-3.x3p","Hamby252","5","1",3,"Hamby252-Br5-B1-L3",5,1,"Hamby173-Br5-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br5 Bullet 1-4.x3p","Hamby252","5","1",4,"Hamby252-Br5-B1-L4",5,2,"Hamby173-Br5-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br5 Bullet 1-5.x3p","Hamby252","5","1",5,"Hamby252-Br5-B1-L5",5,3,"Hamby173-Br5-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br5 Bullet 1-6.x3p","Hamby252","5","1",6,"Hamby252-Br5-B1-L6",5,4,"Hamby173-Br5-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br5 Bullet 2-1.x3p","Hamby252","5","2",1,"Hamby252-Br5-B2-L1",5,3,"Hamby173-Br5-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br5 Bullet 2-2.x3p","Hamby252","5","2",2,"Hamby252-Br5-B2-L2",5,4,"Hamby173-Br5-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br5 Bullet 2-3.x3p","Hamby252","5","2",3,"Hamby252-Br5-B2-L3",5,5,"Hamby173-Br5-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br5 Bullet 2-4.x3p","Hamby252","5","2",4,"Hamby252-Br5-B2-L4",5,6,"Hamby173-Br5-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br5 Bullet 2-5.x3p","Hamby252","5","2",5,"Hamby252-Br5-B2-L5",5,1,"Hamby173-Br5-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br5 Bullet 2-6.x3p","Hamby252","5","2",6,"Hamby252-Br5-B2-L6",5,2,"Hamby173-Br5-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br6 Bullet 1-1.x3p","Hamby252","6","1",1,"Hamby252-Br6-B1-L1",6,6,"Hamby173-Br6-B1-L6",TRUE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br6 Bullet 1-2.x3p","Hamby252","6","1",2,"Hamby252-Br6-B1-L2",6,1,"Hamby173-Br6-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br6 Bullet 1-3.x3p","Hamby252","6","1",3,"Hamby252-Br6-B1-L3",6,2,"Hamby173-Br6-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br6 Bullet 1-4.x3p","Hamby252","6","1",4,"Hamby252-Br6-B1-L4",6,3,"Hamby173-Br6-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br6 Bullet 1-5.x3p","Hamby252","6","1",5,"Hamby252-Br6-B1-L5",6,4,"Hamby173-Br6-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br6 Bullet 1-6.x3p","Hamby252","6","1",6,"Hamby252-Br6-B1-L6",6,5,"Hamby173-Br6-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br6 Bullet 2-1.x3p","Hamby252","6","2",1,"Hamby252-Br6-B2-L1",6,3,"Hamby173-Br6-B1-L3",TRUE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br6 Bullet 2-2.x3p","Hamby252","6","2",2,"Hamby252-Br6-B2-L2",6,4,"Hamby173-Br6-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br6 Bullet 2-3.x3p","Hamby252","6","2",3,"Hamby252-Br6-B2-L3",6,5,"Hamby173-Br6-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br6 Bullet 2-4.x3p","Hamby252","6","2",4,"Hamby252-Br6-B2-L4",6,6,"Hamby173-Br6-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br6 Bullet 2-5.x3p","Hamby252","6","2",5,"Hamby252-Br6-B2-L5",6,1,"Hamby173-Br6-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br6 Bullet 2-6.x3p","Hamby252","6","2",6,"Hamby252-Br6-B2-L6",6,2,"Hamby173-Br6-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br7 Bullet 1-1.x3p","Hamby252","7","1",1,"Hamby252-Br7-B1-L1",7,6,"Hamby173-Br7-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br7 Bullet 1-2.x3p","Hamby252","7","1",2,"Hamby252-Br7-B1-L2",7,1,"Hamby173-Br7-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br7 Bullet 1-3.x3p","Hamby252","7","1",3,"Hamby252-Br7-B1-L3",7,2,"Hamby173-Br7-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br7 Bullet 1-4.x3p","Hamby252","7","1",4,"Hamby252-Br7-B1-L4",7,3,"Hamby173-Br7-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br7 Bullet 1-5.x3p","Hamby252","7","1",5,"Hamby252-Br7-B1-L5",7,4,"Hamby173-Br7-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br7 Bullet 1-6.x3p","Hamby252","7","1",6,"Hamby252-Br7-B1-L6",7,5,"Hamby173-Br7-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br7 Bullet 2-1.x3p","Hamby252","7","2",1,"Hamby252-Br7-B2-L1",7,5,"Hamby173-Br7-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br7 Bullet 2-2.x3p","Hamby252","7","2",2,"Hamby252-Br7-B2-L2",7,6,"Hamby173-Br7-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br7 Bullet 2-3.x3p","Hamby252","7","2",3,"Hamby252-Br7-B2-L3",7,1,"Hamby173-Br7-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br7 Bullet 2-4.x3p","Hamby252","7","2",4,"Hamby252-Br7-B2-L4",7,2,"Hamby173-Br7-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br7 Bullet 2-5.x3p","Hamby252","7","2",5,"Hamby252-Br7-B2-L5",7,3,"Hamby173-Br7-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br7 Bullet 2-6.x3p","Hamby252","7","2",6,"Hamby252-Br7-B2-L6",7,4,"Hamby173-Br7-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br8 Bullet 1-1.x3p","Hamby252","8","1",1,"Hamby252-Br8-B1-L1",8,6,"Hamby173-Br8-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br8 Bullet 1-2.x3p","Hamby252","8","1",2,"Hamby252-Br8-B1-L2",8,1,"Hamby173-Br8-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br8 Bullet 1-3.x3p","Hamby252","8","1",3,"Hamby252-Br8-B1-L3",8,2,"Hamby173-Br8-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br8 Bullet 1-4.x3p","Hamby252","8","1",4,"Hamby252-Br8-B1-L4",8,3,"Hamby173-Br8-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br8 Bullet 1-5.x3p","Hamby252","8","1",5,"Hamby252-Br8-B1-L5",8,4,"Hamby173-Br8-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br8 Bullet 1-6.x3p","Hamby252","8","1",6,"Hamby252-Br8-B1-L6",8,5,"Hamby173-Br8-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br8 Bullet 2-1.x3p","Hamby252","8","2",1,"Hamby252-Br8-B2-L1",8,6,"Hamby173-Br8-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br8 Bullet 2-2.x3p","Hamby252","8","2",2,"Hamby252-Br8-B2-L2",8,1,"Hamby173-Br8-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br8 Bullet 2-3.x3p","Hamby252","8","2",3,"Hamby252-Br8-B2-L3",8,2,"Hamby173-Br8-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br8 Bullet 2-4.x3p","Hamby252","8","2",4,"Hamby252-Br8-B2-L4",8,3,"Hamby173-Br8-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br8 Bullet 2-5.x3p","Hamby252","8","2",5,"Hamby252-Br8-B2-L5",8,4,"Hamby173-Br8-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br8 Bullet 2-6.x3p","Hamby252","8","2",6,"Hamby252-Br8-B2-L6",8,5,"Hamby173-Br8-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br9 Bullet 1-1.x3p","Hamby252","9","1",1,"Hamby252-Br9-B1-L1",9,6,"Hamby173-Br9-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br9 Bullet 1-2.x3p","Hamby252","9","1",2,"Hamby252-Br9-B1-L2",9,1,"Hamby173-Br9-B1-L1",TRUE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br9 Bullet 1-3.x3p","Hamby252","9","1",3,"Hamby252-Br9-B1-L3",9,2,"Hamby173-Br9-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br9 Bullet 1-4.x3p","Hamby252","9","1",4,"Hamby252-Br9-B1-L4",9,3,"Hamby173-Br9-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br9 Bullet 1-5.x3p","Hamby252","9","1",5,"Hamby252-Br9-B1-L5",9,4,"Hamby173-Br9-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br9 Bullet 1-6.x3p","Hamby252","9","1",6,"Hamby252-Br9-B1-L6",9,5,"Hamby173-Br9-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br9 Bullet 2-1.x3p","Hamby252","9","2",1,"Hamby252-Br9-B2-L1",9,5,"Hamby173-Br9-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br9 Bullet 2-2.x3p","Hamby252","9","2",2,"Hamby252-Br9-B2-L2",9,6,"Hamby173-Br9-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br9 Bullet 2-3.x3p","Hamby252","9","2",3,"Hamby252-Br9-B2-L3",9,1,"Hamby173-Br9-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br9 Bullet 2-4.x3p","Hamby252","9","2",4,"Hamby252-Br9-B2-L4",9,2,"Hamby173-Br9-B1-L2",TRUE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br9 Bullet 2-5.x3p","Hamby252","9","2",5,"Hamby252-Br9-B2-L5",9,3,"Hamby173-Br9-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Br9 Bullet 2-6.x3p","Hamby252","9","2",6,"Hamby252-Br9-B2-L6",9,4,"Hamby173-Br9-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet B-1.x3p","Hamby252","Ukn","B",1,"Hamby252-BrUkn-BB-L1",4,1,"Hamby173-Br4-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet B-2.x3p","Hamby252","Ukn","B",2,"Hamby252-BrUkn-BB-L2",4,2,"Hamby173-Br4-B1-L2",TRUE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet B-3.x3p","Hamby252","Ukn","B",3,"Hamby252-BrUkn-BB-L3",4,3,"Hamby173-Br4-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet B-4.x3p","Hamby252","Ukn","B",4,"Hamby252-BrUkn-BB-L4",4,4,"Hamby173-Br4-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet B-5.x3p","Hamby252","Ukn","B",5,"Hamby252-BrUkn-BB-L5",4,5,"Hamby173-Br4-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet B-6.x3p","Hamby252","Ukn","B",6,"Hamby252-BrUkn-BB-L6",4,6,"Hamby173-Br4-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet C-1.x3p","Hamby252","Ukn","C",1,"Hamby252-BrUkn-BC-L1",1,2,"Hamby173-Br1-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet C-2.x3p","Hamby252","Ukn","C",2,"Hamby252-BrUkn-BC-L2",1,3,"Hamby173-Br1-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet C-3.x3p","Hamby252","Ukn","C",3,"Hamby252-BrUkn-BC-L3",1,4,"Hamby173-Br1-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet C-4.x3p","Hamby252","Ukn","C",4,"Hamby252-BrUkn-BC-L4",1,5,"Hamby173-Br1-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet C-5.x3p","Hamby252","Ukn","C",5,"Hamby252-BrUkn-BC-L5",1,6,"Hamby173-Br1-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet C-6.x3p","Hamby252","Ukn","C",6,"Hamby252-BrUkn-BC-L6",1,1,"Hamby173-Br1-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet D-1.x3p","Hamby252","Ukn","D",1,"Hamby252-BrUkn-BD-L1",5,3,"Hamby173-Br5-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet D-2.x3p","Hamby252","Ukn","D",2,"Hamby252-BrUkn-BD-L2",5,4,"Hamby173-Br5-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet D-3.x3p","Hamby252","Ukn","D",3,"Hamby252-BrUkn-BD-L3",5,5,"Hamby173-Br5-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet D-4.x3p","Hamby252","Ukn","D",4,"Hamby252-BrUkn-BD-L4",5,6,"Hamby173-Br5-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet D-5.x3p","Hamby252","Ukn","D",5,"Hamby252-BrUkn-BD-L5",5,1,"Hamby173-Br5-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet D-6.x3p","Hamby252","Ukn","D",6,"Hamby252-BrUkn-BD-L6",5,2,"Hamby173-Br5-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet E-1.x3p","Hamby252","Ukn","E",1,"Hamby252-BrUkn-BE-L1",6,3,"Hamby173-Br6-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet E-2.x3p","Hamby252","Ukn","E",2,"Hamby252-BrUkn-BE-L2",6,4,"Hamby173-Br6-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet E-3.x3p","Hamby252","Ukn","E",3,"Hamby252-BrUkn-BE-L3",6,5,"Hamby173-Br6-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet E-4.x3p","Hamby252","Ukn","E",4,"Hamby252-BrUkn-BE-L4",6,6,"Hamby173-Br6-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet E-5.x3p","Hamby252","Ukn","E",5,"Hamby252-BrUkn-BE-L5",6,1,"Hamby173-Br6-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet E-6.x3p","Hamby252","Ukn","E",6,"Hamby252-BrUkn-BE-L6",6,2,"Hamby173-Br6-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet F-1.x3p","Hamby252","Ukn","F",1,"Hamby252-BrUkn-BF-L1",1,6,"Hamby173-Br1-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet F-2.x3p","Hamby252","Ukn","F",2,"Hamby252-BrUkn-BF-L2",1,1,"Hamby173-Br1-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet F-3.x3p","Hamby252","Ukn","F",3,"Hamby252-BrUkn-BF-L3",1,2,"Hamby173-Br1-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet F-4.x3p","Hamby252","Ukn","F",4,"Hamby252-BrUkn-BF-L4",1,3,"Hamby173-Br1-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet F-5.x3p","Hamby252","Ukn","F",5,"Hamby252-BrUkn-BF-L5",1,4,"Hamby173-Br1-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet F-6.x3p","Hamby252","Ukn","F",6,"Hamby252-BrUkn-BF-L6",1,5,"Hamby173-Br1-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet H-1.x3p","Hamby252","Ukn","H",1,"Hamby252-BrUkn-BH-L1",2,4,"Hamby173-Br2-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet H-2.x3p","Hamby252","Ukn","H",2,"Hamby252-BrUkn-BH-L2",2,5,"Hamby173-Br2-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet H-3.x3p","Hamby252","Ukn","H",3,"Hamby252-BrUkn-BH-L3",2,6,"Hamby173-Br2-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet H-4.x3p","Hamby252","Ukn","H",4,"Hamby252-BrUkn-BH-L4",2,1,"Hamby173-Br2-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet H-5.x3p","Hamby252","Ukn","H",5,"Hamby252-BrUkn-BH-L5",2,2,"Hamby173-Br2-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet H-6.x3p","Hamby252","Ukn","H",6,"Hamby252-BrUkn-BH-L6",2,3,"Hamby173-Br2-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet J-1.x3p","Hamby252","Ukn","J",1,"Hamby252-BrUkn-BJ-L1",7,5,"Hamby173-Br7-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet J-2.x3p","Hamby252","Ukn","J",2,"Hamby252-BrUkn-BJ-L2",7,6,"Hamby173-Br7-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet J-3.x3p","Hamby252","Ukn","J",3,"Hamby252-BrUkn-BJ-L3",7,1,"Hamby173-Br7-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet J-4.x3p","Hamby252","Ukn","J",4,"Hamby252-BrUkn-BJ-L4",7,2,"Hamby173-Br7-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet J-5.x3p","Hamby252","Ukn","J",5,"Hamby252-BrUkn-BJ-L5",7,3,"Hamby173-Br7-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet J-6.x3p","Hamby252","Ukn","J",6,"Hamby252-BrUkn-BJ-L6",7,4,"Hamby173-Br7-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet L-1.x3p","Hamby252","Ukn","L",1,"Hamby252-BrUkn-BL-L1",8,6,"Hamby173-Br8-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet L-2.x3p","Hamby252","Ukn","L",2,"Hamby252-BrUkn-BL-L2",8,1,"Hamby173-Br8-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet L-3.x3p","Hamby252","Ukn","L",3,"Hamby252-BrUkn-BL-L3",8,2,"Hamby173-Br8-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet L-4.x3p","Hamby252","Ukn","L",4,"Hamby252-BrUkn-BL-L4",8,3,"Hamby173-Br8-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet L-5.x3p","Hamby252","Ukn","L",5,"Hamby252-BrUkn-BL-L5",8,4,"Hamby173-Br8-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet L-6.x3p","Hamby252","Ukn","L",6,"Hamby252-BrUkn-BL-L6",8,5,"Hamby173-Br8-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet M-1.x3p","Hamby252","Ukn","M",1,"Hamby252-BrUkn-BM-L1",6,1,"Hamby173-Br6-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet M-2.x3p","Hamby252","Ukn","M",2,"Hamby252-BrUkn-BM-L2",6,2,"Hamby173-Br6-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet M-3.x3p","Hamby252","Ukn","M",3,"Hamby252-BrUkn-BM-L3",6,3,"Hamby173-Br6-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet M-4.x3p","Hamby252","Ukn","M",4,"Hamby252-BrUkn-BM-L4",6,4,"Hamby173-Br6-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet M-5.x3p","Hamby252","Ukn","M",5,"Hamby252-BrUkn-BM-L5",6,5,"Hamby173-Br6-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet M-6.x3p","Hamby252","Ukn","M",6,"Hamby252-BrUkn-BM-L6",6,6,"Hamby173-Br6-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Q-1.x3p","Hamby252","Ukn","Q",1,"Hamby252-BrUkn-BQ-L1",10,4,"Hamby173-Br10-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Q-2.x3p","Hamby252","Ukn","Q",2,"Hamby252-BrUkn-BQ-L2",10,5,"Hamby173-Br10-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Q-3.x3p","Hamby252","Ukn","Q",3,"Hamby252-BrUkn-BQ-L3",10,6,"Hamby173-Br10-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Q-4.x3p","Hamby252","Ukn","Q",4,"Hamby252-BrUkn-BQ-L4",10,1,"Hamby173-Br10-B1-L1",TRUE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Q-5.x3p","Hamby252","Ukn","Q",5,"Hamby252-BrUkn-BQ-L5",10,2,"Hamby173-Br10-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Q-6.x3p","Hamby252","Ukn","Q",6,"Hamby252-BrUkn-BQ-L6",10,3,"Hamby173-Br10-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet S-1.x3p","Hamby252","Ukn","S",1,"Hamby252-BrUkn-BS-L1",3,5,"Hamby173-Br3-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet S-2.x3p","Hamby252","Ukn","S",2,"Hamby252-BrUkn-BS-L2",3,6,"Hamby173-Br3-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet S-3.x3p","Hamby252","Ukn","S",3,"Hamby252-BrUkn-BS-L3",3,1,"Hamby173-Br3-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet S-4.x3p","Hamby252","Ukn","S",4,"Hamby252-BrUkn-BS-L4",3,2,"Hamby173-Br3-B1-L2",TRUE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet S-5.x3p","Hamby252","Ukn","S",5,"Hamby252-BrUkn-BS-L5",3,3,"Hamby173-Br3-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet S-6.x3p","Hamby252","Ukn","S",6,"Hamby252-BrUkn-BS-L6",3,4,"Hamby173-Br3-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet U-1.x3p","Hamby252","Ukn","U",1,"Hamby252-BrUkn-BU-L1",9,1,"Hamby173-Br9-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet U-2.x3p","Hamby252","Ukn","U",2,"Hamby252-BrUkn-BU-L2",9,2,"Hamby173-Br9-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet U-3.x3p","Hamby252","Ukn","U",3,"Hamby252-BrUkn-BU-L3",9,3,"Hamby173-Br9-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet U-4.x3p","Hamby252","Ukn","U",4,"Hamby252-BrUkn-BU-L4",9,4,"Hamby173-Br9-B1-L4",TRUE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet U-5.x3p","Hamby252","Ukn","U",5,"Hamby252-BrUkn-BU-L5",9,5,"Hamby173-Br9-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet U-6.x3p","Hamby252","Ukn","U",6,"Hamby252-BrUkn-BU-L6",9,6,"Hamby173-Br9-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet X-1.x3p","Hamby252","Ukn","X",1,"Hamby252-BrUkn-BX-L1",3,6,"Hamby173-Br3-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet X-2.x3p","Hamby252","Ukn","X",2,"Hamby252-BrUkn-BX-L2",3,1,"Hamby173-Br3-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet X-3.x3p","Hamby252","Ukn","X",3,"Hamby252-BrUkn-BX-L3",3,2,"Hamby173-Br3-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet X-4.x3p","Hamby252","Ukn","X",4,"Hamby252-BrUkn-BX-L4",3,3,"Hamby173-Br3-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet X-5.x3p","Hamby252","Ukn","X",5,"Hamby252-BrUkn-BX-L5",3,4,"Hamby173-Br3-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet X-6.x3p","Hamby252","Ukn","X",6,"Hamby252-BrUkn-BX-L6",3,5,"Hamby173-Br3-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Y-1.x3p","Hamby252","Ukn","Y",1,"Hamby252-BrUkn-BY-L1",6,6,"Hamby173-Br6-B1-L6",TRUE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Y-2.x3p","Hamby252","Ukn","Y",2,"Hamby252-BrUkn-BY-L2",6,1,"Hamby173-Br6-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Y-3.x3p","Hamby252","Ukn","Y",3,"Hamby252-BrUkn-BY-L3",6,2,"Hamby173-Br6-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Y-4.x3p","Hamby252","Ukn","Y",4,"Hamby252-BrUkn-BY-L4",6,3,"Hamby173-Br6-B1-L3",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Y-5.x3p","Hamby252","Ukn","Y",5,"Hamby252-BrUkn-BY-L5",6,4,"Hamby173-Br6-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Y-6.x3p","Hamby252","Ukn","Y",6,"Hamby252-BrUkn-BY-L6",6,5,"Hamby173-Br6-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Z-1.x3p","Hamby252","Ukn","Z",1,"Hamby252-BrUkn-BZ-L1",5,4,"Hamby173-Br5-B1-L4",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Z-2.x3p","Hamby252","Ukn","Z",2,"Hamby252-BrUkn-BZ-L2",5,5,"Hamby173-Br5-B1-L5",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Z-3.x3p","Hamby252","Ukn","Z",3,"Hamby252-BrUkn-BZ-L3",5,6,"Hamby173-Br5-B1-L6",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Z-4.x3p","Hamby252","Ukn","Z",4,"Hamby252-BrUkn-BZ-L4",5,1,"Hamby173-Br5-B1-L1",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Z-5.x3p","Hamby252","Ukn","Z",5,"Hamby252-BrUkn-BZ-L5",5,2,"Hamby173-Br5-B1-L2",FALSE
+"NBTRD/Hamby 252 (2009) Barrel/bullets//Ukn Bullet Z-6.x3p","Hamby252","Ukn","Z",6,"Hamby252-BrUkn-BZ-L6",5,3,"Hamby173-Br5-B1-L3",FALSE
