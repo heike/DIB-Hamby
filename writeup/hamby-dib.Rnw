@@ -117,18 +117,19 @@
 
 
 \begin{abstract}
+\svp{This data consists of descriptive information, statistically derived features, and a fitted Random Forest model object which can be used to assess the similarity or differences between two scans of fired bullet land engraved areas. The original raw data is available from \citeauthor{nist}; here, we provide the code and intermediate data necessary to create the Random Forest model described in \citet{aoas} with the hopes of making this work more accessible and reproducible, as well as allowing new algorithms to be benchmarked against the random forest bullet matching model.}
 %%%%
 Please Type your abstract here.
 
-\noindent[The Abstract should describe the data collection process, the analysis
-performed, the data, and their reuse potential. It should not provide
-conclusions or interpretive insights. If your article is being
-submitted via another Elsevier journal as a co-submission, please cite
-this research article in the abstract.
-
-\noindent\textbf{Tip:} do not use words such as
-`study', `results', and `conclusions' because a data article should be
-describing your data only.  Min 100 words - Max 500 words.]
+% \noindent[The Abstract should describe the data collection process, the analysis
+% performed, the data, and their reuse potential. It should not provide
+% conclusions or interpretive insights. If your article is being
+% submitted via another Elsevier journal as a co-submission, please cite
+% this research article in the abstract.
+%
+% \noindent\textbf{Tip:} do not use words such as
+% `study', `results', and `conclusions' because a data article should be
+% describing your data only.  Min 100 words - Max 500 words.]
 %%%%
 \end{abstract}
 
@@ -139,194 +140,194 @@ describing your data only.  Min 100 words - Max 500 words.]
 %\noindent\textbf{Tip:} Try Google Scholar to find which terms are most common in your
 %field. In biomedical fields, MeSH terms are a good 'common vocabulary'
 %to draw from]
-\KWD Keyword1\sep Keyword2\sep Keyword3
+\KWD Land engraved area\sep Forensics\sep Bullets\sep Toolmark\sep Statistics \sep Machine learning
 \end{keyword}
 
 \end{frontmatter}
 
 %% For linenumbers
 %\linenumbers
-\section*{Data in Brief Article Template}
-%% main text
-\noindent \href{https://www.journals.elsevier.com/data-in-brief/about-data-in-brief/data-in-brief-faq}%
-{\textit{Data in Brief}}
-is an open access journal that publishes data articles.
-Please note:
-\begin{itemize}
-\item A data article is different to a research article, so it is
-important to \textbf{use the template} below to prepare your manuscript for Data
-in Brief.
-\item A data article should \textbf{simply describe data} without providing
-conclusions or interpretive insights.
-\item Before you start writing your data article you should read the
-guidance on
-\href{https://www.journals.elsevier.com/data-in-brief/policies-and-guidelines/what-data-are-suitable-for-data-in-brief}%
-{What Data are Suitable for Data in Brief}.
-\item It is mandatory that Data in Brief authors share their research data:
-\begin{itemize}
-\item If you have \textbf{raw data} (also referred to as primary, source or
-unprocessed data) relating to any charts, graphs or figures in the
-manuscript, these data must be publicly available, either with the data
-article (e.g. as a supplementary file) or hosted on a trusted data
-repository.
-
-\item If you are describing \textbf{secondary data} you are required to provide
-a list of the primary data sources used \underline{and} to make the full secondary
-dataset publicly available, either with the data article (e.g. as a
-supplementary file) or hosted on a trusted data repository.
-
-\item Although we allow supplementary files, it is preferred that
-authors deposit their data in a trusted data repository ($>$70\% of
-Data in Brief authors now do this). See our?
-\href{https://www.elsevier.com/authors/author-resources/research-data/data-base-linking#repositories}%
-{list of supported data repositories}.
-
-\item For data that, for ethical reasons, require access controls a
-mechanism must be provided so that our Editors and reviewers may access
-these data without revealing their identities to authors (more
-information is provided in the template \hyperlink{target1}{below}).
-\end{itemize}
-\end{itemize}
-
-Have you any questions? See a list of frequently asked questions
-\href{https://www.journals.elsevier.com/data-in-brief/about-data-in-brief/data-in-brief-faq}{here},
-or email our Managing Editors:
-\href{mailto:dib-me@elsevier.com}{dib-me@elsevier.com}. This
-step-by-step?
-\href{https://www.journals.elsevier.com/data-in-brief/about-data-in-brief/how-to-submit-your-research-data-article-data-in-brief}%
-{video}?guide will also tell you how to complete the
-template correctly to maximise your chances of acceptance.
-
-\vskip6pt
-\noindent Authors can submit to Data in Brief in two ways:
-
-\begin{enumerate}
-\item[\bf(1)] \textbf{If you are submitting your data article directly to Data in
-Brief, you can now skip the next section and complete the}
-\hyperlink{target2}{\textbf{Data Article template}}.
-
-\item[\bf(2)] \textbf{If you are submitting your data article to Data in Brief via
-another Elsevier journal as a co-submission (i.e. with a Research
-Article), please read the} \hyperlink{target3}{\textbf{Co-submission Instructions}}
-\textbf{on the next page
-before completing the} \hyperlink{target2}{\textbf{Data Article template}}.
-
-\end{enumerate}
-
-\hypertarget{target3}{}
-\section*{Co-submission Instructions}
-A co-submission to~\textit{Data in Brief}~is done at the same time that you
-submit (or resubmit, after revision) a research article to another
-Elsevier journal. For co-submissions you therefore submit your
-\textit{Data in Brief} data article manuscript via the other journal's
-submission system and \underline{not} directly to
-\textit{Data in Brief} itself.
-
-\vskip6pt\noindent
-The other Elsevier journal's Guide for Authors will state if a
-co-submission is offered by that journal, and any revision letter/email
-you receive from a participating journal will contain an offer to
-submit a data article to \textit{Data in Brief}.
-
-\vskip6pt\noindent
-\textbf{To complete a co-submission you will need to zip your
-~\textit{Data in Brief}~
-manuscript file and all other files relevant to the
-~\textit{Data in Brief}~
-submission (including any supplementary data files) into a single .zip
-file, and upload this as a "Data in Brief"-labelled item in the other
-journal's submission system when you submit manuscript to that journal.
-The .zip file will then be automatically transferred to
-~\textit{Data in Brief}~
-when your research article is accepted for publication in the other
-journal, and when published your original research article and data
-article will link to each other on ScienceDirect.}
-
-\vskip6pt\noindent
-\textbf{As~\textit{Data in Brief}~is open access, a moderate article publication charge
-(APC) fee is payable on publication. For more information about the
-APC, please see
-\href{https://www.elsevier.com/journals/data-in-brief/2352-3409/open-access-journal}%
-{here}.}
-
-\vskip6pt\noindent
-\textit{Data in Brief} \underline{requires} that authors share their research data. This can
-be done by submitting it with the data article (e.g. as a supplementary
-file) or by hosting on a trusted data repository (the latter is
-preferred). Failure to do this will delay publication of your
-co-submission.
-
-\vskip6pt\noindent
-\textbf{If you have any questions, please contact:
-\href{mailto:DIB@Elsevier.com}{DIB@Elsevier.com}}
-
-\vskip6pt\noindent
-Please note, authors should not republish the same data presented in
-their original research article in a \textit{Data in Brief} co-submission, as
-this could constitute duplicate publication; however, \textit{Data in Brief}
-welcomes the publication of any data article that fulfils one or more
-of the following criteria:
-
-\checkmark A description of the supplementary data that would
-previously have been hosted as supplementary electronic files alongside
-your original research article.*
-
-\checkmark A description of the full dataset or additional information
-that will aid reuse of the data.
-
-\checkmark A detailed description of the raw data relating to the
-charts, graphs or figures in your companion research article, if making
-these data available will substantially enhance reproducibility and/or
-reanalysis of the data.
-
-\checkmark Any negative datasets or data from intermediate experiments
-related to your research.
-
-\textsf{X} Review articles or supplemental files from a review article
-are not considered original data and are typically unsuitable for Data
-in Brief.
-
-\vskip12pt\noindent
-* If describing supplementary data that you previously planned to
-publish as supplem
-entary electronic files hosted alongside the original
-research article, it is requested that you either\break
-deposit these in a
-repository (preferred) or submit these to \textit{Data in Brief} alongside the
-data article. \textbf{They should not be published as supplementary files with
-your research article in the other journal}.
-
-\clearpage
+% \section*{Data in Brief Article Template}
+% %% main text
+% \noindent \href{https://www.journals.elsevier.com/data-in-brief/about-data-in-brief/data-in-brief-faq}%
+% {\textit{Data in Brief}}
+% is an open access journal that publishes data articles.
+% Please note:
+% \begin{itemize}
+% \item A data article is different to a research article, so it is
+% important to \textbf{use the template} below to prepare your manuscript for Data
+% in Brief.
+% \item A data article should \textbf{simply describe data} without providing
+% conclusions or interpretive insights.
+% \item Before you start writing your data article you should read the
+% guidance on
+% \href{https://www.journals.elsevier.com/data-in-brief/policies-and-guidelines/what-data-are-suitable-for-data-in-brief}%
+% {What Data are Suitable for Data in Brief}.
+% \item It is mandatory that Data in Brief authors share their research data:
+% \begin{itemize}
+% \item If you have \textbf{raw data} (also referred to as primary, source or
+% unprocessed data) relating to any charts, graphs or figures in the
+% manuscript, these data must be publicly available, either with the data
+% article (e.g. as a supplementary file) or hosted on a trusted data
+% repository.
+%
+% \item If you are describing \textbf{secondary data} you are required to provide
+% a list of the primary data sources used \underline{and} to make the full secondary
+% dataset publicly available, either with the data article (e.g. as a
+% supplementary file) or hosted on a trusted data repository.
+%
+% \item Although we allow supplementary files, it is preferred that
+% authors deposit their data in a trusted data repository ($>$70\% of
+% Data in Brief authors now do this). See our?
+% \href{https://www.elsevier.com/authors/author-resources/research-data/data-base-linking#repositories}%
+% {list of supported data repositories}.
+%
+% \item For data that, for ethical reasons, require access controls a
+% mechanism must be provided so that our Editors and reviewers may access
+% these data without revealing their identities to authors (more
+% information is provided in the template \hyperlink{target1}{below}).
+% \end{itemize}
+% \end{itemize}
+%
+% Have you any questions? See a list of frequently asked questions
+% \href{https://www.journals.elsevier.com/data-in-brief/about-data-in-brief/data-in-brief-faq}{here},
+% or email our Managing Editors:
+% \href{mailto:dib-me@elsevier.com}{dib-me@elsevier.com}. This
+% step-by-step?
+% \href{https://www.journals.elsevier.com/data-in-brief/about-data-in-brief/how-to-submit-your-research-data-article-data-in-brief}%
+% {video}?guide will also tell you how to complete the
+% template correctly to maximise your chances of acceptance.
+%
+% \vskip6pt
+% \noindent Authors can submit to Data in Brief in two ways:
+%
+% \begin{enumerate}
+% \item[\bf(1)] \textbf{If you are submitting your data article directly to Data in
+% Brief, you can now skip the next section and complete the}
+% \hyperlink{target2}{\textbf{Data Article template}}.
+%
+% \item[\bf(2)] \textbf{If you are submitting your data article to Data in Brief via
+% another Elsevier journal as a co-submission (i.e. with a Research
+% Article), please read the} \hyperlink{target3}{\textbf{Co-submission Instructions}}
+% \textbf{on the next page
+% before completing the} \hyperlink{target2}{\textbf{Data Article template}}.
+%
+% \end{enumerate}
+%
+% \hypertarget{target3}{}
+% \section*{Co-submission Instructions}
+% A co-submission to~\textit{Data in Brief}~is done at the same time that you
+% submit (or resubmit, after revision) a research article to another
+% Elsevier journal. For co-submissions you therefore submit your
+% \textit{Data in Brief} data article manuscript via the other journal's
+% submission system and \underline{not} directly to
+% \textit{Data in Brief} itself.
+%
+% \vskip6pt\noindent
+% The other Elsevier journal's Guide for Authors will state if a
+% co-submission is offered by that journal, and any revision letter/email
+% you receive from a participating journal will contain an offer to
+% submit a data article to \textit{Data in Brief}.
+%
+% \vskip6pt\noindent
+% \textbf{To complete a co-submission you will need to zip your
+% ~\textit{Data in Brief}~
+% manuscript file and all other files relevant to the
+% ~\textit{Data in Brief}~
+% submission (including any supplementary data files) into a single .zip
+% file, and upload this as a "Data in Brief"-labelled item in the other
+% journal's submission system when you submit manuscript to that journal.
+% The .zip file will then be automatically transferred to
+% ~\textit{Data in Brief}~
+% when your research article is accepted for publication in the other
+% journal, and when published your original research article and data
+% article will link to each other on ScienceDirect.}
+%
+% \vskip6pt\noindent
+% \textbf{As~\textit{Data in Brief}~is open access, a moderate article publication charge
+% (APC) fee is payable on publication. For more information about the
+% APC, please see
+% \href{https://www.elsevier.com/journals/data-in-brief/2352-3409/open-access-journal}%
+% {here}.}
+%
+% \vskip6pt\noindent
+% \textit{Data in Brief} \underline{requires} that authors share their research data. This can
+% be done by submitting it with the data article (e.g. as a supplementary
+% file) or by hosting on a trusted data repository (the latter is
+% preferred). Failure to do this will delay publication of your
+% co-submission.
+%
+% \vskip6pt\noindent
+% \textbf{If you have any questions, please contact:
+% \href{mailto:DIB@Elsevier.com}{DIB@Elsevier.com}}
+%
+% \vskip6pt\noindent
+% Please note, authors should not republish the same data presented in
+% their original research article in a \textit{Data in Brief} co-submission, as
+% this could constitute duplicate publication; however, \textit{Data in Brief}
+% welcomes the publication of any data article that fulfils one or more
+% of the following criteria:
+%
+% \checkmark A description of the supplementary data that would
+% previously have been hosted as supplementary electronic files alongside
+% your original research article.*
+%
+% \checkmark A description of the full dataset or additional information
+% that will aid reuse of the data.
+%
+% \checkmark A detailed description of the raw data relating to the
+% charts, graphs or figures in your companion research article, if making
+% these data available will substantially enhance reproducibility and/or
+% reanalysis of the data.
+%
+% \checkmark Any negative datasets or data from intermediate experiments
+% related to your research.
+%
+% \textsf{X} Review articles or supplemental files from a review article
+% are not considered original data and are typically unsuitable for Data
+% in Brief.
+%
+% \vskip12pt\noindent
+% * If describing supplementary data that you previously planned to
+% publish as supplem
+% entary electronic files hosted alongside the original
+% research article, it is requested that you either\break
+% deposit these in a
+% repository (preferred) or submit these to \textit{Data in Brief} alongside the
+% data article. \textbf{They should not be published as supplementary files with
+% your research article in the other journal}.
+%
+% \clearpage
 \hypertarget{target2}{}
 \section*{Data Article template}
-\noindent
-Please fill in the template below. All sections are mandatory unless
-otherwise indicated. Please read all instructions in [square brackets]
-carefully and ensure that you delete all instruction text (including
-the questions) from the template before submitting your article.
-
-\vskip6pt\noindent
-Reminder: A data article simply describes data and should not provide
-conclusions or interpretive insights, so \textbf{avoid} using words such as
-`study', `results' and `conclusions'.
-
-\vskip6pt\noindent
-We would welcome feedback on this template and how it might be
-improved. To provide anonymous feedback via a very short survey, please
-click \href{https://forms.office.com/Pages/ResponsePage.aspx?id=P-50kiWUCUGif5-xXBBnXTeXkbO343VFrbpYVBvxdZtUM05UVjIwM0U4WlRKUldCOTNMRUQwOVRHTy4u}%
-{here}.
-
-\vskip6pt\noindent
-{\small\textbf{\textit{Please delete this line and everything above it before submitting your
-article, in addition to anything in [square brackets] below, including
-in the Specifications Table}}\vskip6pt\hrule\vskip12pt}
+% \noindent
+% Please fill in the template below. All sections are mandatory unless
+% otherwise indicated. Please read all instructions in [square brackets]
+% carefully and ensure that you delete all instruction text (including
+% the questions) from the template before submitting your article.
+%
+% \vskip6pt\noindent
+% Reminder: A data article simply describes data and should not provide
+% conclusions or interpretive insights, so \textbf{avoid} using words such as
+% `study', `results' and `conclusions'.
+%
+% \vskip6pt\noindent
+% We would welcome feedback on this template and how it might be
+% improved. To provide anonymous feedback via a very short survey, please
+% click \href{https://forms.office.com/Pages/ResponsePage.aspx?id=P-50kiWUCUGif5-xXBBnXTeXkbO343VFrbpYVBvxdZtUM05UVjIwM0U4WlRKUldCOTNMRUQwOVRHTy4u}%
+% {here}.
+%
+% \vskip6pt\noindent
+% {\small\textbf{\textit{Please delete this line and everything above it before submitting your
+% article, in addition to anything in [square brackets] below, including
+% in the Specifications Table}}\vskip6pt\hrule\vskip12pt}
 
 {\fontsize{7.5pt}{9pt}\selectfont
 %%%
 \noindent\textbf{Specifications Table}
 
-Every section of this table is mandatory.
-Please enter information in the right-hand column and remove all the instructions
+% Every section of this table is mandatory.
+% Please enter information in the right-hand column and remove all the instructions
 \begin{longtable}{|p{33mm}|p{94mm}|}
 \hline
 \endhead
@@ -372,14 +373,14 @@ Data source location   &  Institution: Iowa State University\newline
                          Direct URL to data: [e.g. https://www.data.edu.com - please note,\newline
                          this URL should be working at the time of submission]\newline
 
-                         Instructions for accessing these data:\newline
+                         Instructions for accessing these data:\newline\\
 
-
-                         [\textit{Important: if your data have access controls a mechanism must also be
-                         provided so that our Editors and reviewers may access these data
-                         without revealing their identities to authors, please include
-                         these instructions with your submission. Please contact the Managing
-                         Editors (DIB-ME@DIB.com) if you have any questions.}]\\
+%
+%                          [\textit{Important: if your data have access controls a mechanism must also be
+%                          provided so that our Editors and reviewers may access these data
+%                          without revealing their identities to authors, please include
+%                          these instructions with your submission. Please contact the Managing
+%                          Editors (DIB-ME@DIB.com) if you have any questions.}]\\
 \hline
 Related
 research\newline
@@ -422,7 +423,7 @@ Reproducibility is a critical component of work in forensic statistics, because 
 % \noindent\textbf{Tip:} do not forget to describe any supplementary data files.]
 \noindent
 
-One early study in the field of firearm examination was executed by \citet{hamby} and consists of over 300 sets of bullets sent out to firearm examiners worldwide.
+An early study in the field of firearm examination was executed by \citet{hamby} and consists of over 300 sets of bullets sent out to firearm examiners worldwide.
 Each of these sets consists of 20 bullets with known provenance and 15 questioned bullets: two bullets each were fired from ten consecutively manufactured barrels of P-85 Ruger firearms. \svp{Barrels are labeled 1 - 10, and the bullets are labelled as bullet 1 and bullet 2 from a particular barrel.} %These two bullets were labeled as bullets 1 and 2 from barrels 1 through 10.
 The remaining fifteen bullets were each fired from one of the ten barrels (such that at at least one and at most 4 bullets came from the same barrel) and labeled with uppercase letters. Firearms examiners are then asked to match the questioned bullets to the corresponding barrels.
 
@@ -634,12 +635,11 @@ saveRDS(csafe_rf2, "data/csafe_rf2.rds")
 
 
 \section*{Ethics Statement}
-\noindent [Please refer to the journal's
-\href{https://www.elsevier.com/journals/data-in-brief/2352-3409/guide-for-authors}{Guide for Authors}
-for more information on
-the ethical requirements for publication in Data in Brief. In addition
-to these requirements:
-
+% \noindent [Please refer to the journal's
+% \href{https://www.elsevier.com/journals/data-in-brief/2352-3409/guide-for-authors}{Guide for Authors}
+% for more information on
+% the ethical requirements for publication in Data in Brief. In addition
+% to these requirements:
 %\noindent\textbf{If the work involved the use of human subjects:}
 %please include a statement here confirming that informed consent was
 %obtained for experimentation with human subjects;
@@ -652,65 +652,70 @@ to these requirements:
 % National Institutes of Health guide for the care and use of Laboratory
 % animals (NIH Publications No. 8023, revised 1978)]
 
+
+\noindent \svp{This study was conducted using publicly available data and open-source code; no human subjects or animal research was involved in this experiment. The authors are not aware of any conflicts of interest.}
+
 \section*{Acknowledgments}
-Acknowledgments should be inserted at the end of the paper, before the
-references, not as a footnote to the title. Use the unnumbered
-Acknowledgements Head style for the Acknowledgments heading.
+% Acknowledgments should be inserted at the end of the paper, before the
+% references, not as a footnote to the title. Use the unnumbered
+% Acknowledgements Head style for the Acknowledgments heading.
+
+\svp{This work was funded (or partially funded) by the Center for Statistics and Applications in Forensic Evidence (CSAFE) through Cooperative Agreement 70NANB20H019 between NIST and Iowa State University, which includes activities carried out at Carnegie Mellon University, Duke University, University of California Irvine, University of Virginia, West Virginia University, University of Pennsylvania, Swarthmore College and University of Nebraska, Lincoln.}
 
 \section*{Declaration of Competing Interest}
-
-\noindent [All authors are required to report the following information:
-\begin{enumerate}
-\item[(1)] All third-party financial support for the work this article;
-
-\item[(2)] All financial relationships with any entity that could be
-viewed as relevant to data described in this manuscript;
-
-\item[(3)] All sources of revenue with relevance to this work where
-payments have been made to authors, or their institutions on their
-behalf, within the 36 months prior to submission;
-
-\item[(4)] Any other interactions with the sponsor, outside of the
-submitted work;
-
-\item[(5)] Any relevant patents or copyrights (planned, pending or
-issued);
-
-\item[(6)] Any other relationships or affiliations that may be
-perceived by readers to have influenced, or give the appearance of
-potentially influencing, what has been written in this article.
-\end{enumerate}
-As a general guideline, it is usually better to
-disclose a relationship than not. This information will be acknowledged
-at publication in the manuscript. If there is no known competing
-financial interests or personal relationships that could have appeared
-to influence the work reported in this paper, please include this
-statement.]
+%
+% \noindent [All authors are required to report the following information:
+% \begin{enumerate}
+% \item[(1)] All third-party financial support for the work this article;
+%
+% \item[(2)] All financial relationships with any entity that could be
+% viewed as relevant to data described in this manuscript;
+%
+% \item[(3)] All sources of revenue with relevance to this work where
+% payments have been made to authors, or their institutions on their
+% behalf, within the 36 months prior to submission;
+%
+% \item[(4)] Any other interactions with the sponsor, outside of the
+% submitted work;
+%
+% \item[(5)] Any relevant patents or copyrights (planned, pending or
+% issued);
+%
+% \item[(6)] Any other relationships or affiliations that may be
+% perceived by readers to have influenced, or give the appearance of
+% potentially influencing, what has been written in this article.
+% \end{enumerate}
+% As a general guideline, it is usually better to
+% disclose a relationship than not. This information will be acknowledged
+% at publication in the manuscript. If there is no known competing
+% financial interests or personal relationships that could have appeared
+% to influence the work reported in this paper, please include this
+% statement.]
 
 \vskip12pt\noindent
 The authors declare that they have no known competing
 financial interests or personal relationships which have, or could be
 perceived to have, influenced the work reported in this article.
 
-\vskip12pt\noindent
-[If there are financial interests/personal relationships which may be
-considered as potential competing interests, please declare them here.]
+% \vskip12pt\noindent
+% [If there are financial interests/personal relationships which may be
+% considered as potential competing interests, please declare them here.]
 
-\subsection*{Note}
-\label{sec1}
-Any instructions relevant to the \verb+elsarticle.cls+ are applicable
-here as well. See the online instruction available on:
-\makeatletter
-\if@twocolumn
-\begin{verbatim}
- http://support.river-valley.com/wiki/
- index.php?title=Elsarticle.cls
-\end{verbatim}
-\else
-\begin{verbatim}
- http://support.river-valley.com/wiki/index.php?title=Elsarticle.cls
-\end{verbatim}
-\fi
+% \subsection*{Note}
+% \label{sec1}
+% Any instructions relevant to the \verb+elsarticle.cls+ are applicable
+% here as well. See the online instruction available on:
+% \makeatletter
+% \if@twocolumn
+% \begin{verbatim}
+%  http://support.river-valley.com/wiki/
+%  index.php?title=Elsarticle.cls
+% \end{verbatim}
+% \else
+% \begin{verbatim}
+%  http://support.river-valley.com/wiki/index.php?title=Elsarticle.cls
+% \end{verbatim}
+% \fi
 
 \section*{References}
 
