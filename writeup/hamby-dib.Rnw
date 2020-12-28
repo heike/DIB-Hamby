@@ -117,10 +117,12 @@
 
 
 \begin{abstract}
-\svp{This data consists of descriptive information, statistically derived features, and a fitted Random Forest model object which can be used to assess the similarity or differences between two scans of fired bullet land engraved areas. The original raw data is available from \citeauthor{nist}; here, we provide the code and intermediate data necessary to create the Random Forest model described in \citet{aoas} with the hopes of making this work more accessible and reproducible, as well as allowing new algorithms to be benchmarked against the random forest bullet matching model.}
+\hh{Land engraved areas (LEAs) on fired bullets form the basis of forensic examinations regarding whether these bullets were fired from the same source (the same barrel).  For algorithmic comparisons of similarity 3d topographic imaging forms the basis of assessing similarity. Here, three parts of the statistical analysis are included: }
+(a) descriptive information for each scan\hh{, including its suitability for comparisons}, (b) statistically derived features \hh{characterizing similarity and differences of each pair of topographic LEA scans}, and (c) a fitted Random Forest model object used to \hh{predict the similarity of two scans based on their corresponding similarity features.}
+The original raw data is available from the NIST Ballistics Toolmark Database \citep{nist}; here, we provide the code and intermediate data necessary to create the Random Forest model described in \citet{aoas} to make this work  accessible and reproducible. This also allows  future algorithms to be benchmarked against this random forest bullet matching model.
 %%%%
-Please Type your abstract here.
-
+% Please Type your abstract here.
+%
 % \noindent[The Abstract should describe the data collection process, the analysis
 % performed, the data, and their reuse potential. It should not provide
 % conclusions or interpretive insights. If your article is being
@@ -140,7 +142,7 @@ Please Type your abstract here.
 %\noindent\textbf{Tip:} Try Google Scholar to find which terms are most common in your
 %field. In biomedical fields, MeSH terms are a good 'common vocabulary'
 %to draw from]
-\KWD Land engraved area\sep Forensics\sep Bullets\sep Toolmark\sep Statistics \sep Machine learning
+\KWD Land engraved area\sep Forensic Pattern Analysis\sep Topographic Microscopy\sep 3d Imaging\sep Statistics \sep Machine learning
 \end{keyword}
 
 \end{frontmatter}
@@ -424,17 +426,17 @@ Reproducibility is a critical component of work in forensic statistics, because 
 \noindent
 
 An early study in the field of firearm examination was executed by \citet{hamby} and consists of over 300 sets of bullets sent out to firearm examiners worldwide.
-Each of these sets consists of 20 bullets with known provenance and 15 questioned bullets: two bullets each were fired from ten consecutively manufactured barrels of P-85 Ruger firearms. \svp{Barrels are labeled 1 - 10, and the bullets are labelled as bullet 1 and bullet 2 from a particular barrel.} %These two bullets were labeled as bullets 1 and 2 from barrels 1 through 10.
+Each of these sets consists of 20 bullets with known provenance and 15 questioned bullets: two bullets each were fired from ten consecutively manufactured barrels of P-85 Ruger firearms. Barrels are labeled 1 - 10, and the bullets are labelled as bullet 1 and bullet 2 from a particular barrel. %These two bullets were labeled as bullets 1 and 2 from barrels 1 through 10.
 The remaining fifteen bullets were each fired from one of the ten barrels (such that at at least one and at most 4 bullets came from the same barrel) and labeled with uppercase letters. Firearms examiners are then asked to match the questioned bullets to the corresponding barrels.
 
-\svp{Each barrel has 6 land engraved areas resulting from firing the gun; together with the Barrel and Bullet identifiers, the land identifier can be used to identify a single digital scan stored in x3p format\citep{x3p}}.
+Each barrel has six land engraved areas resulting from firing the gun; together with the Barrel and Bullet identifiers, the land identifier can be used to identify a single digital scan stored in x3p format\citep{x3p}.
 
-\svp{These scans have an additional advantage over conventional sets of physical bullets: it is much easier to share the digital data.
+These scans have an additional advantage over conventional sets of physical bullets: it is much easier to share the digital data.
 The NIST database \citep{nist} contains the raw data for this study as well as many others.
-Information about the individual scans is provided in \autoref{meta}; here, each row describes a scan of a single bullet land,} \hh{its location on disk after the download, whether the corresponding land shows damage unrelated to the firing, and its relationship to Hamby set 173 bullet 1 from the same barrel.}
+Information about the individual scans is provided in \autoref{meta}; here, each row describes a scan of a single bullet land, its location on disk after the download, whether the corresponding land shows damage unrelated to the firing, and its relationship to Hamby set 173 bullet 1 from the same barrel.
 
-\hh{\autoref{features} consists of a description of all features describing pairwise comparisons of scans. These features are aimed to distinguish between pairs of scans from the same source (corresponding to two bullets fired from the same barrel) and two different sources (corresponding to bullets fired from different barrels). }
-\hh{\autoref{fig:densities} gives an overview of some of the features in the `hamby-comparisons.csv` file. Values from same-source comparisons are shown in orange, different-source comparisons are shown in grey. Area under the curve (AUC) is a value between 0 and 1 describing the strength of one feature's strength in discriminating between same-source and different-source comparisons. The closer values are to 1, the better they discriminate. }
+\autoref{features} consists of a description of all features describing pairwise comparisons of scans. These features are aimed to distinguish between pairs of scans from the same source (corresponding to two bullets fired from the same barrel) and two different sources (corresponding to bullets fired from different barrels).
+\autoref{fig:densities} gives an overview of some of the features in the `hamby-comparisons.csv` file. Values from same-source comparisons are shown in orange, different-source comparisons are shown in grey. Area under the curve (AUC) is a value between 0 and 1 describing the strength of one feature's strength in discriminating between same-source and different-source comparisons. The closer values are to 1, the better they discriminate.
 
 
 \begin{longtable}{p{33mm}p{94mm}}
@@ -490,7 +492,6 @@ Information about the individual scans is provided in \autoref{meta}; here, each
 \hline
 \end{longtable}
 
-\autoref{fig:densities} gives an overview of the feature densities by the source of the comparisons.
 
 <<data-import, echo=FALSE, message=FALSE, warning=FALSE>>=
 library(tidyverse)
@@ -535,16 +536,15 @@ long_rf %>%
   xlab("Value observed in the comparison of two LEA scans")
 @
 
-\hh{Finally, csafe-rf2.rds is the binary file containing the random forest object fitted on the features in \texttt{hamby-comparisons.csv}. Random forests \citep{breiman} are a machine-learning method using an ensemble of decision trees. }
-\svp{This random forest model is used to assess the similarity of two scans, with an output prediction of 0 indicative of dissimilarity between the scans, and an output prediction near 1 indicative of similarity between the scans. In addition to containing the weights used to make predictions, the fitted model also contains a record of the predictions made during the fitting process; and the features used to fit the model to the original set of scans. It is important to archive not only the code used to fit this model, but also the intermediate data, derived features, and full fitted model object, so that when the model is re-fit we have a record of changes between versions of the random forest models.}
+Finally, csafe-rf2.rds is the binary file containing the random forest object fitted on the features in \texttt{hamby-comparisons.csv}. Random forests \citep{breiman} are a machine-learning method using an ensemble of decision trees.
+This random forest model is used to assess the similarity of two scans, with an output prediction of 0 indicative of dissimilarity between the scans, and an output prediction near 1 indicative of similarity between the scans. In addition to containing the weights used to make predictions, the fitted model also contains a record of the predictions made during the fitting process; and the features used to fit the model to the original set of scans. It is important to archive not only the code used to fit this model, but also the intermediate data, derived features, and full fitted model object, so that when the model is re-fit we have a record of changes between versions of the random forest models.
 
 
-\hh{
-The random forest object `csafe\_rf2` has an overall out-of-bag error rate estimated as 0.32\%. Out of the total 81,003 pairwise comparisons of the `hamby-comparisons.csv` data 80,743 comparisons or 99.68\% are correctly classified as same-source or different-source pairs.}
+The random forest object `csafe\_rf2` has an overall out-of-bag error rate estimated as 0.32\%. Out of the total 81,003 pairwise comparisons of the `hamby-comparisons.csv` data 80,743 comparisons or 99.68\% are correctly classified as same-source or different-source pairs.
 
-\hh{\autoref{fig:outcomes} shows a summary of (out-of-bag) prediction values of the csafe\_rf2 random forest trained on the feature values. }
+\autoref{fig:outcomes} shows a summary of (out-of-bag) prediction values of the csafe\_rf2 random forest trained on the feature values.
 
-<<outcomes, echo=FALSE, message=FALSE, warning=FALSE, fig.align="center", fig.width = 7, fig.height=5, out.width='.7\\textwidth', fig.cap="Summary of the out-of-bag predictions of the csafe\\_rf2 random forest object trained on the features in `hamby-comparisons.csv'.">>=
+<<outcomes, echo=FALSE, message=FALSE, warning=FALSE, fig.align="center", fig.width = 6, fig.height=4, out.width='.7\\textwidth', fig.cap="Summary of the out-of-bag predictions of the csafe\\_rf2 random forest object trained on the features in `hamby-comparisons.csv'.">>=
 features$rf_oob <- predict(rf2, type="prob")[,2]
 
 features %>%
@@ -577,24 +577,26 @@ Random forest object for assessing similarity of two land engraved areas based o
 
 \section*{Experimental Design, Materials and Methods}
 
-\noindent [Offer a complete description of the experimental design and methods
-used to acquire these data. Please provide any programs or code files
-used for filtering and analyzing these data. It is very important that
-this section is as comprehensive as possible. If you are submitting via
-another Elsevier journal (a co-submission) you are encouraged to
-provide more detail than in your accompanying research article. There
-is no character limit for this section; however, no insight,
-interpretation, or background should be included in this section.
-
-\noindent\textbf{Tip:} do not describe your data (figures, tables, etc.) in this section,
-do this in the Data Description section above.]
+% \noindent [Offer a complete description of the experimental design and methods
+% used to acquire these data. Please provide any programs or code files
+% used for filtering and analyzing these data. It is very important that
+% this section is as comprehensive as possible. If you are submitting via
+% another Elsevier journal (a co-submission) you are encouraged to
+% provide more detail than in your accompanying research article. There
+% is no character limit for this section; however, no insight,
+% interpretation, or background should be included in this section.
+%
+% \noindent\textbf{Tip:} do not describe your data (figures, tables, etc.) in this section,
+% do this in the Data Description section above.]
 
 \subsection*{Materials and Data Collection Methods}
 A large part of a forensic examiner's job consists of evaluating whether two pieces of evidence come from the same source or from different sources.
-\svp{In casework}, same source can never be established with 100\% certainty\svp{; as a result, error rate and proficiency studies are used to establish the validity of forensic evaluation \citep[as recommended in][]{nrc,pcast}}.
-\svp{The random forest model provided in this paper is fitted based on two sets of bullets from a study conducted by \citeauthor{hamby}; the bullets in question were scanned at the National Institutes of Standards and Technology by Xiaoyu Zheng and Wei Chu using a NanoFocus V.6.12.6 confocal light microscope at 20x; the resulting scans have a resolution of 1.5625 $\mu$m per pixel.}
+In casework, same source can never be established with 100\% certainty; as a result, error rate and proficiency studies are used to establish the validity of forensic evaluation \citep[as recommended in][]{nrc,pcast}.
+The random forest model provided in this paper is fitted based on two sets of bullets from a study conducted by \citeauthor{hamby}; the bullets in question were scanned at the National Institutes of Standards and Technology by Xiaoyu Zheng and Wei Chu using a NanoFocus V.6.12.6 confocal light microscope at 20x; the resulting scans have a resolution of 1.5625 $\mu$m per pixel.
 
-\svp{The raw scans can be downloaded from \citet{nist} by searching for ``Hamby (2009) Barrel Set" and selecting the two study results matching that name. The studies should be downloaded separately and each placed into a folder.}
+The raw scans can be downloaded from \citet{nist} by searching for ``Hamby (2009) Barrel Set" and selecting the two study results matching that name. The studies should be downloaded separately and each placed into a folder.
+
+\newpage
 
 \subsection*{Feature Derivation}
 Once the raw data files are downloaded, the code \texttt{create-features.R} can be run to generate the complete set of pairwise comparisons and intermediate results; the feature summaries for each pairwise comparison are, of course, provided in \texttt{hamby-comparisons.csv}. These features are produced using functions from the R package \texttt{bulletxtrctr}; the feature derivation process will be described here.
@@ -616,7 +618,7 @@ Each step in the file \texttt{create-features.R} is described briefly below; all
 \end{enumerate}
 
 \subsection*{Model Fitting}
-\hh{The random forest model is fit within the statistical computing software R 4.0.1 \citep{R} using the package {\tt randomForest} 4.6-14 \citep{randomforest}. The following lines of code fit the forest object `csafe\_rf2`:}
+The random forest model is fit within the statistical computing software R 4.0.1 \citep{R} using the package {\tt randomForest} 4.6-14 \citep{randomforest}. The following lines of code fit the forest object `csafe\_rf2`:
 
 <<fit-forest, echo=TRUE, eval=FALSE, tidy=FALSE>>=
 library(randomForest)
@@ -653,14 +655,15 @@ saveRDS(csafe_rf2, "data/csafe_rf2.rds")
 % animals (NIH Publications No. 8023, revised 1978)]
 
 
-\noindent \svp{This study was conducted using publicly available data and open-source code; no human subjects or animal research was involved in this experiment. The authors are not aware of any conflicts of interest.}
+\noindent This study was conducted using publicly available data and open-source code; no human subjects or animal research was involved in this experiment. The authors are not aware of any conflicts of interest.
 
 \section*{Acknowledgments}
 % Acknowledgments should be inserted at the end of the paper, before the
 % references, not as a footnote to the title. Use the unnumbered
 % Acknowledgements Head style for the Acknowledgments heading.
 
-\svp{This work was funded (or partially funded) by the Center for Statistics and Applications in Forensic Evidence (CSAFE) through Cooperative Agreement 70NANB20H019 between NIST and Iowa State University, which includes activities carried out at Carnegie Mellon University, Duke University, University of California Irvine, University of Virginia, West Virginia University, University of Pennsylvania, Swarthmore College and University of Nebraska, Lincoln.}
+\noindent
+This work was funded (or partially funded) by the Center for Statistics and Applications in Forensic Evidence (CSAFE) through Cooperative Agreement 70NANB20H019 between NIST and Iowa State University, which includes activities carried out at Carnegie Mellon University, Duke University, University of California Irvine, University of Virginia, West Virginia University, University of Pennsylvania, Swarthmore College and University of Nebraska, Lincoln.
 
 \section*{Declaration of Competing Interest}
 %
@@ -692,7 +695,7 @@ saveRDS(csafe_rf2, "data/csafe_rf2.rds")
 % to influence the work reported in this paper, please include this
 % statement.]
 
-\vskip12pt\noindent
+\noindent
 The authors declare that they have no known competing
 financial interests or personal relationships which have, or could be
 perceived to have, influenced the work reported in this article.
@@ -717,12 +720,12 @@ perceived to have, influenced the work reported in this article.
 % \end{verbatim}
 % \fi
 
-\section*{References}
+%\section*{References}
 
-\noindent [References are limited (approx. 15) and excessive self-citation is not
-allowed. \textbf{If your data article is co-submitted via another Elsevier
-journal, please cite your associated research article here.}
-\hh{Associated research article is \cite{aoas}.}
+% \noindent [References are limited (approx. 15) and excessive self-citation is not
+% allowed. \textbf{If your data article is co-submitted via another Elsevier
+% journal, please cite your associated research article here.}
+% \hh{Associated research article is \cite{aoas}.}
 
 
 
