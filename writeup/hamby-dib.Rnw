@@ -543,7 +543,7 @@ The random forest object `csafe\_rf2` has an overall out-of-bag error rate estim
 
 \hh{\autoref{fig:outcomes} shows a summary of (out-of-bag) prediction values of the csafe\_rf2 random forest trained on the feature values. }
 
-<<outcomes, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 7, fig.height=5, out.width='.7\\textwidth', fig.cap="Summary of the out-of-bag predictions of the csafe\\_rf2 random forest object trained on the features in `hamby-comparisons.csv'.">>=
+<<outcomes, echo=FALSE, message=FALSE, warning=FALSE, fig.align="center", fig.width = 7, fig.height=5, out.width='.7\\textwidth', fig.cap="Summary of the out-of-bag predictions of the csafe\\_rf2 random forest object trained on the features in `hamby-comparisons.csv'.">>=
 features$rf_oob <- predict(rf2, type="prob")[,2]
 
 features %>%
@@ -606,11 +606,11 @@ Each step in the file \texttt{create-features.R} is described briefly below; all
 \item The scans are oriented so that the base of the bullet is at the bottom and the bullet scan is curving from left to right. Fired bullets have \emph{breakoff}, where some of the metal flies off of the bullet during firing as a result of heat and pressure. The scans are oriented such that any breakoff should be located in the bottom right corner of the scan. For Hamby 173, bullets were flipped along the $y$ axis; for Hamby 252, the bullets were rotated counterclockwise by 90 degrees and then flipped along the $y$ axis. Finally, scans are converted so that all measurements are in $\mu$m.
 \item Once scans are oriented properly, a stable cross-section (one that does not cross through any regions of breakoff) that is as low as possible on the bullet (so as to cross deeper, more well-engraved stria) is identified algorithmically using the cross-correlation between adjacent cross-sections to quantify stability. These cross sections are checked manually using graphics and are set by hand when the algorithmic identification fails. In this dataset, there were no manually identified cross sections.
 \item Using the cross-section location identified in step 2, the measurements at that crosscut are extracted from the scan.
+\item Damaged scans not suitable for comparison are marked.
 \item The grooves that demarcate the land engraved area are identified algorithmically and then manually checked and set as necessary using a Shiny app (code is provided in the file).
 \item The areas between the grooves are extracted and a smooth is fit to the data to remove the bullet surface curvature, producing a "bullet signature". This signature is used to represent the entire bullet land engraved area scan.
 \item Once signatures have been identified, each scan is compared to every other scan to produce a set of pairwise comparisions. The signatures in each pairwise scan are identified and features are computed using the bulletxtrctr software describing how well the two scans are aligned.
 \item The ground truth is included in the feature set for evaluating the prediction algorithm.
-\item Damaged scans which are not suitable for comparison are marked.
 \item Duplicate pairwise comparisons are removed so as not to compromise the model fitting process.
 \end{enumerate}
 
