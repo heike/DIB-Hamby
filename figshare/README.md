@@ -24,7 +24,7 @@ AUTHORS:
   Author: Eric Hare
 	ORCID: 0000-0002-4277-3146
 	Institution: OmniAnalytics
-	Email: ericrhare@gmail.com
+	Email: eric@omnianalytics.io
 
   Author: Alicia Carriquiry
 	ORCID: 0000-0002-6428-9427
