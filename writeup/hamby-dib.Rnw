@@ -365,7 +365,7 @@ Data source location   &  Institution: Iowa State University\newline
 
                          Primary data sources: \newline
                          x3p files containing topographic surface data from microscopic scans of 35 bullets each from Hamby Set 173 and Hamby Set 252. These scans are available from the
-                         National Ballistic and Toolmark Reseach Database at https://tsapps.nist.gov/NRBTD/. In particular, scans for Hamby Set 173 is available from \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/b5fbda3e-d889-4211-be7e-654e19b7cd40?nm=True&mt=1&m=3&sp=1};  and scans for Hamby Set 252 are available from \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/c09aaa86-5d60-4acb-9031-46dad2c0ad32?nm=True&mt=1&m=3&sp=1}. \\
+                         National Ballistic and Toolmark Research Database at https://tsapps.nist.gov/NRBTD/. In particular, scans for Hamby Set 173 is available from \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/b5fbda3e-d889-4211-be7e-654e19b7cd40?nm=True&mt=1&m=3&sp=1};  and scans for Hamby Set 252 are available from \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/c09aaa86-5d60-4acb-9031-46dad2c0ad32?nm=True&mt=1&m=3&sp=1}. \\
 \hline
 \hypertarget{target1}
 {Data accessibility}   & Primary sources are hosted on a database established by NIST (National Institute of Standards and Technology); data described here, are hosted by the data share service provided by Iowa State, handled through figshare. \newline
@@ -411,7 +411,7 @@ Reproducibility is a critical component of work in forensic statistics, because 
 \item This data enables researchers to compare the method described in \citep{aoas} to other methods for analysis of bullet land scans, including those previously published, such as in \citet{cmps}, and methods developed in the future. In addition, this data has been used internally for validation of the method for use across other types of ammunition and other models of handguns; thus, experiments which examine the robustness of the model's application on external test sets may produce new insights by leveraging this data. %\svp{XXX It would also be possible to e.g. predict the change in the model's predictions based on updates to include new data sources, but I don't know whether we want to mention that...XXX}
 % Forensic handwriting analysis is used to evaluate the source of ransom notes, forgeries, and other such pieces of handwritten evidence. The dataset serves as a sample to build statistical approaches to handwriting analysis. These data, and the methods based upon them, have potential implications in the judicial process, to ensure a transparent, accessible, repeatable, and more objective consideration of handwritten evidence.
 
-\item Open source algorithms supplemented by open data are a critical component of a fairer justice system, equally accessible to both prosecution and defense. Currently, many closed-source or closed-data algorithms are used to supplement the discretion of law enforcment agents and prosecutors, and these algorithms cannot be easily audited by affected parties. By making the source and intermediate data relating to this algorithm available, we are ensuring that the algorithm's details are fully transparent to all parties who may be affected by its use in forensic casework.
+\item Open source algorithms supplemented by open data are a critical component of a fairer justice system, equally accessible to both prosecution and defense. Currently, many closed-source or closed-data algorithms are used to supplement the discretion of law enforcement agents and prosecutors, and these algorithms cannot be easily audited by affected parties. By making the source and intermediate data relating to this algorithm available, we are ensuring that the algorithm's details are fully transparent to all parties who may be affected by its use in forensic casework.
 \end{itemize}
 
 \section*{Data Description}
@@ -612,7 +612,7 @@ Each step in the file \texttt{create-features.R} is described briefly below; all
 \item Damaged scans not suitable for comparison are marked.
 \item The grooves that demarcate the land engraved area are identified algorithmically and then manually checked and set as necessary using a Shiny app (code is provided in the file).
 \item The areas between the grooves are extracted and a smooth is fit to the data to remove the bullet surface curvature, producing a "bullet signature". This signature is used to represent the entire bullet land engraved area scan.
-\item Once signatures have been identified, each scan is compared to every other scan to produce a set of pairwise comparisions. The signatures in each pairwise scan are identified and features are computed using the bulletxtrctr software describing how well the two scans are aligned.
+\item Once signatures have been identified, each scan is compared to every other scan to produce a set of pairwise comparisons. The signatures in each pairwise scan are identified and features are computed using the bulletxtrctr software describing how well the two scans are aligned.
 \item The ground truth is included in the feature set for evaluating the prediction algorithm.
 \item Duplicate pairwise comparisons are removed so as not to compromise the model fitting process.
 \end{enumerate}
@@ -660,7 +660,7 @@ saveRDS(csafe_rf2, "data/csafe_rf2.rds")
 \section*{Acknowledgments}
 % Acknowledgments should be inserted at the end of the paper, before the
 % references, not as a footnote to the title. Use the unnumbered
-% Acknowledgements Head style for the Acknowledgments heading.
+% Acknowledgments Head style for the Acknowledgments heading.
 
 \noindent
 This work was funded (or partially funded) by the Center for Statistics and Applications in Forensic Evidence (CSAFE) through Cooperative Agreement 70NANB20H019 between NIST and Iowa State University, which includes activities carried out at Carnegie Mellon University, Duke University, University of California Irvine, University of Virginia, West Virginia University, University of Pennsylvania, Swarthmore College and University of Nebraska, Lincoln.
