@@ -307,6 +307,6 @@ doubles <- duplicated(features$id)
 features <- features %>% filter(!doubles, !damaged)
 features <- features %>% mutate(abs_lag_mm = abs(lag_mm))
 write.csv(features %>%
-            select(-aligned,-striae, -legacy_features), "training-features.csv", row.names = FALSE)
+            select(-aligned,-striae, -legacy_features), "data/hamby-comparisons.csv", row.names = FALSE)
 
 

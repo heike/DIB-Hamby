@@ -1,7 +1,7 @@
 library(tidyverse)
-features <- read.csv("~/CSAFE/features-hamby.csv", stringsAsFactors = FALSE)
+features <- read.csv("data/hamby-comparisons.csv", stringsAsFactors = FALSE)
 
-hamby <- features %>% 
+hamby <- features %>%
   filter(study1 %in% c("Hamby44", "Hamby252"), study2 %in% c("Hamby44", "Hamby252"))
 
 hamby <- hamby %>% mutate(
@@ -39,22 +39,22 @@ hamby <- hamby %>% mutate(
 )
 
 publish <- hamby %>% filter(!flag) %>%
-   select(land_id1, land_id2, ccf, rough_cor, lag, abs_lag, D, sd_D, 
+   select(land_id1, land_id2, ccf, rough_cor, lag, abs_lag, D, sd_D,
                             matches, mismatches, cms, overlap,
                             non_cms, sum_peaks, signature_length, same_source=match)
 
-write.csv(publish, "~/CSAFE/hamby-comparisons.csv", row.names = FALSE)
+write.csv(publish, "data/hamby-comparisons.csv", row.names = FALSE)
 ####
-hamby <- read.csv("~/CSAFE/hamby-comparisons.csv", stringsAsFactors = FALSE)
+hamby <- read.csv("data/hamby-comparisons.csv", stringsAsFactors = FALSE)
 
 
-  
+
 # fit the forest
 library(randomForest)
 set.seed(20140501)
 rtrees <- randomForest(factor(same_source) ~ ccf + rough_cor + abs_lag + D + sd_D + matches + mismatches + cms + non_cms + sum_peaks + overlap, data = hamby)
 
-saveRDS(rtrees, "~/CSAFE/rtrees.rds")
+saveRDS(rtrees, "data/rtrees.rds")
 
 hamby$rfscore <- predict(rtrees, type="prob", newdata = hamby)[,2]
 
@@ -62,7 +62,7 @@ hamby$rfscore <- predict(rtrees, type="prob", newdata = hamby)[,2]
 hamby %>% ggplot(aes(x = ccf, y = rfscore)) + geom_point() + facet_wrap(~same_source, labeller = "label_both")
 
 hamby %>% ggplot(aes(x = lag, y = ccf, colour =same_source)) + geom_point() + facet_wrap(~same_source)
-hamby %>% ggplot(aes(x = ccf, y = rough_cor)) + geom_point() + 
+hamby %>% ggplot(aes(x = ccf, y = rough_cor)) + geom_point() +
   facet_wrap(~same_source) +
   geom_point(aes(colour = flag), data = hamby %>% filter(flag))
 
@@ -72,12 +72,12 @@ hambyrev$land_id1 <- hamby$land_id2
 hambyrev$land_id2 <- hamby$land_id1
 hamby2 <- rbind(hamby, hambyrev)
 hamby2 %>% group_by(land_id2) %>% tally() %>% arrange(desc(n))
-hamby2 <- hamby2 %>% 
-  separate(land_id1, remove = FALSE, sep="-", 
+hamby2 <- hamby2 %>%
+  separate(land_id1, remove = FALSE, sep="-",
            into=c("study1", "barrel1", "bullet1", "land1")) %>%
-  separate(land_id2, remove = FALSE, sep="-", 
+  separate(land_id2, remove = FALSE, sep="-",
            into=c("study2", "barrel2", "bullet2", "land2"))
 
-hamby2 %>% filter(barrel1 %in% c("BrUnk"), bullet1 %in% "BU") %>% 
+hamby2 %>% filter(barrel1 %in% c("BrUnk"), bullet1 %in% "BU") %>%
   group_by(study1, bullet1, land1) %>% tally() %>% data.frame()
 
