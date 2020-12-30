@@ -1,5 +1,5 @@
 # read the features
-features <- read.csv("data/hamby-comparisons.csv")
+features <- read.csv("hamby-comparisons.csv")
 
 ##########
 # fit the random forest
@@ -10,4 +10,4 @@ csafe_rf2 <- randomForest(factor(samesource) ~ ccf + rough_cor + matches_per_mm 
                           mismatches_per_mm + overlap + abs_lag_mm + sum_peaks,
                         data = features)
 
-saveRDS(csafe_rf2, "data/csafe_rf2.rds")
+saveRDS(csafe_rf2, "csafe_rf2.rds")

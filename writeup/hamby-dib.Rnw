@@ -117,7 +117,7 @@
 
 
 \begin{abstract}
-Land engraved areas (LEAs) on fired bullets form the basis of forensic examinations regarding whether these bullets were fired from the same source (the same barrel).  For algorithmic comparisons of similarity 3d topographic imaging forms the basis of assessing similarity. Here, three parts of the statistical analysis are included: 
+Land engraved areas (LEAs) on fired bullets form the basis of forensic examinations regarding whether these bullets were fired from the same source (the same barrel).  For algorithmic comparisons of similarity 3d topographic imaging forms the basis of assessing similarity. Here, three parts of the statistical analysis are included:
 (a) descriptive information for each scan, including its suitability for comparisons, (b) statistically derived features characterizing similarity and differences of each pair of topographic LEA scans, and (c) a fitted Random Forest model object used to predict the similarity of two scans based on their corresponding similarity features.
 The original raw data is available from the NIST Ballistics Toolmark Database \citep{nist}; here, we provide the code and intermediate data necessary to create the Random Forest model described in \citet{aoas} to make this work  accessible and reproducible. This also allows  future algorithms to be benchmarked against this random forest bullet matching model.6
 %%%%
