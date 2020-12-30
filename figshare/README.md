@@ -1,6 +1,5 @@
 ## GENERAL INFORMATION 
 
-*This section establishes basic information about the data, particularly the ???who??? and ???what???.* 
 
 DATA TITLE: Comparison Features Data from pairs of Bullet Land Engraved Areas
 PROJECT TITLE: CSAFE Firearms and Toolmark Analysis
@@ -111,8 +110,6 @@ csafe_rf2 <- randomForest(
 
 ### SOFTWARE
 
-*This section informs users about any specialized software used to generate/process the data or needed to use the data. Create a new entry for each program and/or add-on.*
- 
 Name: R
 Version: 4.0.1
 URL: https://r-project.org
@@ -139,12 +136,8 @@ Developer: Leo Breiman, Adele Cutler, Andy Liaw, Matthew Wiener
 
 ### LICENSING 
 
-*This section should include a statement on how other people can access, reuse, and/or redistribute the data, i.e. licensing information. Template language for CC-BY and CC-0 licenses are included below, delete the license information that does not apply.* 
 
 This work is licensed under the Creative Commons Attribution (CC-BY) 4.0 International License. 
 For more information visit: [https://creativecommons.org/licenses/by/4.0 ](https://creativecommons.org/licenses/by/4.0)
 
-
-This work is licensed under the Creative Commons Universal Public Domain Dedication (CC0 1.0) License. 
-For more information visit: [https://creativecommons.org/publicdomain/zero/1.0/ ](https://creativecommons.org/publicdomain/zero/1.0/)
 
