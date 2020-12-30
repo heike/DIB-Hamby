@@ -45,29 +45,32 @@ COLLECTION INFORMATION:
 
 ### FILE DIRECTORY 
 
-*This section will help users navigate the folders and files that make up the data set.*
-
 #### FILE LIST
-
-*Provide a complete list of all of the files/folders in your data set. Include the file???s name and a short description.*
-*If you have multiple files that make up a series you only need to make one entry per series as long as you explain the enumeration. You may use the format below or use your own.*
 
 1. `meta-info.csv` - descriptive information about each raw x3p file containing a 3-dimensional scan of a bullet land surface. 
 2. `hamby-comparisons.csv` -  features quantifying the similarity between pairs of 3d topographic surface scans detailing striation marks on land engraved areas (LEAs) of fired bullets. Features were extracted using the R software packages [x3ptools](github.com/heike/x3ptools@164e631) and [bulletxtrctr](github.com/heike/bulletxtrctr@dfa140a) as outlined in the pipeline in Hare et al (2017) and detailed in the accompanying R script. From available meta information ground truth regarding source is added for each comparison. 
 3. `csafe_rf2.rds` - the fitted random forest model object, containing all of the component trees and the features used to fit the random forest. This model uses `hamby-comparisons.csv` as training data to predict same source pairs and different source pairs. Fitted using R package randomForest 4.6-14
 4. `codebook.md` - a codebook describing variable names and associated information.
+5. `create-features.R` - code which generates the features in `hamby-comparisons.csv` using `x3ptools` and `bulletxtrctr`
+6. `fitting-randomforest.R` - code which fits the random forest using `hamby-comparisons.csv`
 
 
 ## METHODS AND MATERIALS
-  
-*This section is devoted to the ???when??? and ???how??? of the data.*
 
 ### DATA COLLECTION METHODS 
 
-*Include information on how the data was collected. You should provide technical information as well as information found in the  methods section of 
-related papers. Remember this is about the data, not the research.*
+The random forest model provided in this paper is fitted based on two sets of bullets from a study conducted by Hamby and Brundage.
 
+The raw scans can be downloaded from the [NBTRD](https://tsapps.nist.gov/NRBTD/Studies/Search) by searching for ``Hamby (2009) Barrel Set" and selecting the two study results matching that name. The studies should be downloaded separately and each placed into a folder. Our code assumes that the files have the following file structure:
 
+- NBTRD
+    - Hamby 173 (2009) Barrel
+        - bullets
+            - ... 210 x3p files ...
+    - Hamby 252 (2009) Barrel
+        - bullets
+            - ... 210 x3p files ...
+            
 
 ### DATA PROCESSING METHODS 
 
