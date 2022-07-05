@@ -233,25 +233,25 @@ comparisons <- tibble(comparisons, aligned, striae)
 saveRDS(comparisons, "comparisons.rds")
 
 
-# comparisons <- comparisons %>% mutate(
-#   legacy_features = purrr::map(striae, extract_features_all_legacy, resolution = 1.5625)
+# # comparisons <- comparisons %>% mutate(
+# #   legacy_features = purrr::map(striae, extract_features_all_legacy, resolution = 1.5625)
+# # )
+#
+# legacy_i <- function(i) {
+#   extract_features_all_legacy(striae[[i]], resolution = 1.5625)
+# }
+#
+# system.time(
+#   legacy_features <- mclapply(1:nrow(comparisons), FUN = legacy_i, mc.cores = numCores-1)
 # )
-
-legacy_i <- function(i) {
-  extract_features_all_legacy(striae[[i]], resolution = 1.5625)
-}
-
-system.time(
-  legacy_features <- mclapply(1:nrow(comparisons), FUN = legacy_i, mc.cores = numCores-1)
-)
-#     user   system  elapsed
-# 9445.579  392.776  754.253
-comparisons <- tibble(comparisons, legacy_features)
-saveRDS(comparisons, "comparisons.rds")
-
-# comparisons <- comparisons %>% mutate(
-#   legacy_features = purrr::map(striae, extract_features_all_legacy, resolution = 1.5625)
-# )
+# #     user   system  elapsed
+# # 9445.579  392.776  754.253
+# comparisons <- tibble(comparisons, legacy_features)
+# saveRDS(comparisons, "comparisons.rds")
+#
+# # comparisons <- comparisons %>% mutate(
+# #   legacy_features = purrr::map(striae, extract_features_all_legacy, resolution = 1.5625)
+# # )
 
 feature_i <- function(i) {
   extract_features_all(aligned[[i]], striae[[i]], resolution = 1.5625)

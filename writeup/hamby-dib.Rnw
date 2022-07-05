@@ -607,10 +607,10 @@ Each step in the file \texttt{create-features.R} is described briefly below; all
 
 \begin{enumerate}
 \item The scans are oriented so that the base of the bullet is at the bottom and the bullet scan is curving from left to right. Fired bullets have \emph{breakoff}, where some of the metal flies off of the bullet during firing as a result of heat and pressure. The scans are oriented such that any breakoff should be located in the bottom right corner of the scan. For Hamby 173, bullets were flipped along the $y$ axis; for Hamby 252, the bullets were rotated counterclockwise by 90 degrees and then flipped along the $y$ axis. Finally, scans are converted so that all measurements are in $\mu$m.
+\item Damaged scans not suitable for comparison are marked.
 \item Once scans are oriented properly, a stable cross-section (one that does not cross through any regions of breakoff) that is as low as possible on the bullet (so as to cross deeper, more well-engraved stria) is identified algorithmically using the cross-correlation between adjacent cross-sections to quantify stability. These cross sections are checked manually using graphics and are set by hand when the algorithmic identification fails. In this dataset, there were no manually identified cross sections.
 \item Using the cross-section location identified in step 2, the measurements at that crosscut are extracted from the scan.
-\item Damaged scans not suitable for comparison are marked.
-\item The grooves that demarcate the land engraved area are identified algorithmically and then manually checked and set as necessary using a Shiny app (code is provided in the file).
+\item The grooves that demarcate the land engraved area are identified algorithmically and then manually checked and set as necessary using a web-app (code is provided in the file).
 \item The areas between the grooves are extracted and a smooth is fit to the data to remove the bullet surface curvature, producing a "bullet signature". This signature is used to represent the entire bullet land engraved area scan.
 \item Once signatures have been identified, each scan is compared to every other scan to produce a set of pairwise comparisons. The signatures in each pairwise scan are identified and features are computed using the bulletxtrctr software describing how well the two scans are aligned.
 \item The ground truth is included in the feature set for evaluating the prediction algorithm.
@@ -727,7 +727,7 @@ perceived to have, influenced the work reported in this article.
 % journal, please cite your associated research article here.}
 % \hh{Associated research article is \cite{aoas}.}
 
-
+\hh{XXX add session info to the submission}
 
 %% Numbered
 %%If
