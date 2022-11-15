@@ -9,7 +9,7 @@ There are three R scripts in the code folder:
     ├── code
     │   ├── create-features.R
     │   ├── fitting-randomforest.R
-    │   └── fitting-randomforest.R
+    │   └── publishing-data.R
 
 #### code/create-features.R
 
