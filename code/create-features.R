@@ -1,14 +1,36 @@
-# Go to https://tsapps.nist.gov/NRBTD/Studies/Search and select the studies
-# matching Hamby (2009) Barrel Set X (but download each set on its own;
-# they are structured differently!)
-# Click Download for each set.
-# Unzip downloaded file into NBTRD folder for each study
-# The studies are formatted and scanned slightly differently; it is best to
-# process them separately.
-
 library(tidyverse)
 library(x3ptools)
 library(bulletxtrctr) # remotes::install_github("heike/bulletxtrctr")
+
+# ------------------------------------------------------------------------------
+# *** Step 0: Download scans for the Hamby Study 173 and 225    ****************
+# ------------------------------------------------------------------------------
+nbtrd <- "https://tsapps.nist.gov"
+
+h252 <- read.csv("data/Hamby225.csv")
+
+p252 <- "NBTRD/Hamby 252 (2009) Barrel/bullets/"
+if (!file.exists(p252)) dir.create(p252, recursive = TRUE)
+
+h252 %>% mutate(
+  foo = purrr::map2(.x=file, .y=link, .f = function(.x,.y) {
+    download.file(url=paste0(nrbtd, .y),
+                  destfile=paste0(p252, .x),
+                  mode="wb")
+})
+)
+
+h173 <- read.csv("data/Hamby173.csv")
+p173 <- "NBTRD/Hamby 173 (2009) Barrel/bullets/"
+if (!file.exists(p173)) dir.create(p173, recursive = TRUE)
+
+h173 %>% mutate(
+  foo = purrr::map2(.x=file, .y=link, .f = function(.x,.y) {
+    download.file(url=paste0(nrbtd, .y),
+                  destfile=paste0(p173, .x),
+                  mode="wb")
+  })
+)
 
 
 # ------------------------------------------------------------------------------
