@@ -31,7 +31,6 @@ h173 %>% mutate(
   })
 )
 
-
 # ------------------------------------------------------------------------------
 # *** Step 1: Read in data and orient scans, convert to microns ****************
 # ------------------------------------------------------------------------------
@@ -75,12 +74,18 @@ b173 <- b173 %>% mutate(
 )
 
 bullets <- rbind(b173, b252)
-#write.csv(bullets %>% select(-x3p), "meta-info.csv", row.names = FALSE)
 
+if (!file.exists("data/meta-info.csv")) {
+  write.csv(bullets %>% select(-x3p), "meta-info.csv", row.names = FALSE)
+}
+meta <- read.csv("data/meta-info.csv")
 
 # ------------------------------------------------------------------------------
 # *** Step 2: Identify a stable crosscut ***************************************
 # ------------------------------------------------------------------------------
+
+# only execute this step when there is no cc
+if (is.null(meta$cc)) {
 
 bullets <- bullets %>% mutate(
   cc = x3p %>% purrr::map_dbl(.f = function(x) x3p_crosscut_optimize(x))
@@ -92,6 +97,7 @@ for (i in 1:nrow(bullets)) {
   x3p <- x3p %>% x3p_add_hline(yintercept = bullets$cc[[i]], size = 10, color = "white")
   x3p %>% image_x3p(file=paste0("images/",bullets$land_id[[i]],".png"))
 }
+
 # identify problematic crosscuts
 cc_manual <- dir("images/crosscut/")
 cc_manual <- gsub(".png", "", cc_manual)
@@ -103,6 +109,8 @@ for (i in which(bullets$land_id %in% cc_manual)) {
   x3p %>% image_x3p(file=paste0("images/crosscut/",bullets$land_id[[i]],"-manual.png"))
 }
 
+meta$cc <- bullets$cc
+}
 
 # ------------------------------------------------------------------------------
 # *** Step 3: Get measurements at the identified crosscut **********************
@@ -114,6 +122,10 @@ bullets <- bullets %>% mutate(
 # ------------------------------------------------------------------------------
 # *** Step 4: Identify the grooves between GEA and LEAs on the scans ***********
 # ------------------------------------------------------------------------------
+
+# only run this code if grooves have not been identified
+if (is.null(meta$groove_left)) {
+
 bullets <- bullets %>% mutate(
   grooves = ccdata %>% purrr::map(.f = function(x) cc_locate_grooves(x, return_plot = TRUE))
 )
@@ -187,6 +199,10 @@ shinyApp(
 bullets$grooves_pred <- bullets$grooves
 bullets$grooves <- grooves
 
+meta$groove_left <- bullets$grooves %>% purrr::map_dbl(.f = function(g) g[1])
+meta$groove_right <- bullets$grooves %>% purrr::map_dbl(.f = function(g) g[2])
+write.csv(meta, file="data/meta-info.csv", row.names = FALSE)
+}
 
 # ------------------------------------------------------------------------------
 # *** Step 5: Remove bullet curvature and groove areas, get signature **********
