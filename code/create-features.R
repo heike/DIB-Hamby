@@ -7,8 +7,7 @@ library(bulletxtrctr) # remotes::install_github("heike/bulletxtrctr")
 # ------------------------------------------------------------------------------
 nbtrd <- "https://tsapps.nist.gov"
 
-h252 <- read.csv("data/Hamby225.csv")
-
+h252 <- read.csv("data/Hamby252.csv")
 p252 <- "NBTRD/Hamby 252 (2009) Barrel/bullets/"
 if (!file.exists(p252)) dir.create(p252, recursive = TRUE)
 
