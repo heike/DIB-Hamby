@@ -76,7 +76,7 @@ b173 <- b173 %>% mutate(
 bullets <- rbind(b173, b252)
 
 if (!file.exists("data/meta-info.csv")) {
-  write.csv(bullets %>% select(-x3p), "meta-info.csv", row.names = FALSE)
+  write.csv(bullets %>% select(-x3p), "data/meta-info.csv", row.names = FALSE)
 }
 meta <- read.csv("data/meta-info.csv")
 
@@ -204,6 +204,9 @@ bullets$grooves <- grooves
 meta$groove_left <- bullets$grooves %>% purrr::map_dbl(.f = function(g) g[1])
 meta$groove_right <- bullets$grooves %>% purrr::map_dbl(.f = function(g) g[2])
 write.csv(meta, file="data/meta-info.csv", row.names = FALSE)
+} else {
+bullet$grooves <-  purrr::map2(meta$groove_left, meta$groove_right,
+                        .f = function(left, right) list(groove = c(left, right)))
 }
 
 # ------------------------------------------------------------------------------
