@@ -110,6 +110,8 @@ for (i in which(bullets$land_id %in% cc_manual)) {
 }
 
 meta$cc <- bullets$cc
+} else {
+  bullets$cc <- meta$cc
 }
 
 # ------------------------------------------------------------------------------
