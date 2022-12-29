@@ -344,7 +344,7 @@ Type of data           & Table: meta-info.csv\newline
                          Model: csafe-rf2.rds\\
 %\clearpage
 How data were acquired & Table (meta-info.csv): assembled by the authors; consists of a collection of descriptive elements for each of the raw scans and corresponding land engraved areas.  \newline
- Table (hamby-comparisons.csv): features quantifying the similarity between pairs of 3d topographic surface scans detailing striation marks on land engraved areas (LEAs) of fired bullets. Features were extracted using the R software packages x3ptools (heike/x3ptools@164e631) and bulletxtrctr (heike/bulletxtrctr@dfa140a) as outlined in the pipeline by \citet{aoas} and detailed in the accompanying R script. From available meta information ground truth regarding source is added for each comparison. Values are stored in form of a comma separated value file.\newline
+ Table (hamby-comparisons.csv): features quantifying the similarity between pairs of 3d topographic surface scans detailing striation marks on land engraved areas (LEAs) of fired bullets. Features were extracted using the R software packages x3ptools (heike/x3ptools@29d71ec) and bulletxtrctr (heike/bulletxtrctr@758321b) as outlined in the pipeline by \citet{aoas} and detailed in the accompanying R script. From available meta information ground truth regarding source is added for each comparison. Values are stored in form of a comma separated value file.\newline
                         Model (csafe-rf2.rds): using the features as training data a random forest is fit to predict same source pairs and different source pairs (R package randomForest 4.6-14).\\
 \hline
 Data format            & Raw \& Analyzed\\
@@ -453,8 +453,10 @@ Information about the individual scans is provided in \autoref{meta}; here, each
 \bf land\_id          & identifier of a land engraved area of the form {\tt study\_barrel\_bullet\_land}. \\
 \bf study, barrel, bullet, land & elements describing the provenance of a LEA. \\\rowcolor{lightgray}
 \bf source & path to the x3p file corresponding to the LEA. \\
-\bf damaged & logical variable indicating whether the land engraved area is exhibiting damage not associated with the barrel and the firing process. \\\rowcolor{lightgray}
-\bf H173\_B1\_index & matching land id to bullet 1 of the Hamby 173 set of the barrel the bullet was fired from.  This index enables to determine ground truth in any comparison: two land engraved areas come from the same source if their corresponding {\bf H173\_B1\_index} matches.\\
+\bf H173\_B1\_index & matching land id to bullet 1 of the Hamby 173 set of the barrel the bullet was fired from.  This index enables to determine ground truth in any comparison: two land engraved areas come from the same source if their corresponding {\bf H173\_B1\_index} matches.\\\rowcolor{lightgray}
+\bf damaged & logical variable indicating whether the land engraved area is exhibiting damage not associated with the barrel and the firing process. \\
+\bf cc & index of a horizontal crosscut suitable for matching striations. \\\rowcolor{lightgray}
+\bf groove\_left, groove\_right & positions of left and right groove along the extracted cross-cut (manually determined). \\
 \hline
 \end{longtable}
 
@@ -594,9 +596,8 @@ A large part of a forensic examiner's job consists of evaluating whether two pie
 In casework, same source can never be established with 100\% certainty; as a result, error rate and proficiency studies are used to establish the validity of forensic evaluation \citep[as recommended in][]{nrc,pcast}.
 The random forest model provided in this paper is fitted based on two sets of bullets from a study conducted by \citeauthor{hamby}; the bullets in question were scanned at the National Institutes of Standards and Technology by Xiaoyu Zheng and Wei Chu using a NanoFocus V.6.12.6 confocal light microscope at 20x; the resulting scans have a resolution of 1.5625 $\mu$m per pixel.
 
-The raw scans can be downloaded from \citet{nist} by searching for ``Hamby (2009) Barrel Set" and selecting the two study results matching that name. The studies should be downloaded separately and each placed into a folder.
+The raw scans can be downloaded from \citet{nist} by searching for ``Hamby (2009) Barrel Set" and selecting the two study results matching that name. The studies should be downloaded separately and each placed into a folder. We are providing code (as part of step 0 in `create-features.R`) for downloading the files in case the database download changes in the future.
 
-\newpage
 
 \subsection*{Feature Derivation}
 Once the raw data files are downloaded, the code \texttt{create-features.R} can be run to generate the complete set of pairwise comparisons and intermediate results; the feature summaries for each pairwise comparison are, of course, provided in \texttt{hamby-comparisons.csv}. These features are produced using functions from the R package \texttt{bulletxtrctr}; the feature derivation process will be described here.
