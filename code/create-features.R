@@ -201,8 +201,8 @@ shinyApp(
 bullets$grooves_pred <- bullets$grooves
 bullets$grooves <- grooves
 
-meta$groove_left <- bullets$grooves %>% purrr::map_dbl(.f = function(g) g[1])
-meta$groove_right <- bullets$grooves %>% purrr::map_dbl(.f = function(g) g[2])
+meta$groove_left <- bullets$grooves %>% purrr::map_dbl(.f = function(g) g$groove[1])
+meta$groove_right <- bullets$grooves %>% purrr::map_dbl(.f = function(g) g$groove[2])
 write.csv(meta, file="data/meta-info.csv", row.names = FALSE)
 } else {
 bullet$grooves <-  purrr::map2(meta$groove_left, meta$groove_right,
