@@ -658,6 +658,14 @@ saveRDS(csafe_rf2, "data/csafe_rf2.rds")
 
 \noindent This study was conducted using publicly available data and open-source code; no human subjects or animal research was involved in this experiment. The authors are not aware of any conflicts of interest.
 
+\section*{CRediT author statement}
+\noindent
+{\bf Heike Hofmann:} Conceptualization, Methodology, Software, Writing - Review & Editing, Data Curation, Supervision
+{\bf Susan VanderPlas:} Software, Writing - Review & Editing
+{\bf Eric Hare:}  Methodology, Software, Writing - Original Draft
+{\bf Nathan Rethwisch: } Validation
+{\bf Alicia Carriquiry:} Funding acquisition
+
 \section*{Acknowledgments}
 % Acknowledgments should be inserted at the end of the paper, before the
 % references, not as a footnote to the title. Use the unnumbered
