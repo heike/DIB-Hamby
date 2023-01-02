@@ -5,9 +5,17 @@ features <- read.csv("data/hamby-comparisons.csv")
 # fit the random forest
 library(randomForest)
 
+# train random forest
 set.seed(20140105)
-csafe_rf2 <- randomForest(factor(samesource) ~ ccf + rough_cor + matches_per_mm + D + sd_D+ cms_per_mm +
+csafe_rf3 <- randomForest(factor(samesource) ~ ccf + rough_cor + matches_per_mm + D + sd_D+ cms_per_mm +
                           mismatches_per_mm + overlap + abs_lag_mm + sum_peaks,
-                        data = features)
+                          importance=TRUE, ntree=1000,
+                          data = features)
+set.seed(20140105)
+csafe_rf3sub <- randomForest(factor(samesource) ~ ccf + rough_cor + matches_per_mm + D + sd_D+ cms_per_mm +
+                            mismatches_per_mm + overlap + abs_lag_mm + sum_peaks,
+                          importance=TRUE, ntree=313,
+                          data = features)
 
-saveRDS(csafe_rf2, "data/csafe_rf2.rds")
+
+saveRDS(csafe_rf3sub, "data/csafe_rf3.rds")

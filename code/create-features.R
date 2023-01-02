@@ -13,7 +13,7 @@ if (!file.exists(p252)) dir.create(p252, recursive = TRUE)
 
 h252 %>% mutate(
   foo = purrr::map2(.x=file, .y=link, .f = function(.x,.y) {
-    download.file(url=paste0(nrbtd, .y),
+    download.file(url=paste0(nbtrd, .y),
                   destfile=paste0(p252, .x),
                   mode="wb")
 })
@@ -25,7 +25,7 @@ if (!file.exists(p173)) dir.create(p173, recursive = TRUE)
 
 h173 %>% mutate(
   foo = purrr::map2(.x=file, .y=link, .f = function(.x,.y) {
-    download.file(url=paste0(nrbtd, .y),
+    download.file(url=paste0(nbtrd, .y),
                   destfile=paste0(p173, .x),
                   mode="wb")
   })
@@ -92,24 +92,43 @@ bullets <- bullets %>% mutate(
 )
 
 # check crosscuts manually
+if (!file.exists("images")) dir.create("images")
 for (i in 1:nrow(bullets)) {
   x3p <- bullets$x3p[[i]]
   x3p <- x3p %>% x3p_add_hline(yintercept = bullets$cc[[i]], size = 10, color = "white")
   x3p %>% image_x3p(file=paste0("images/",bullets$land_id[[i]],".png"))
 }
 
-# identify problematic crosscuts
+# check scans. move  scans that are unsuitable for comparisons
+# (because of tank rash or extreme pitting) into a folder
+# called 'damaged'
+damaged <- dir("images/damaged/")
+length(damaged) # 30 scans were identified as problematic
+damaged <- gsub(".png", "", damaged)
+
+meta$damaged <- FALSE
+idx <- which(bullets$land_id %in% damaged)
+meta$damaged[idx] <- TRUE
+
+# identify problematic crosscuts and move them into
+# into a folder called 'crosscut'
 cc_manual <- dir("images/crosscut/")
 cc_manual <- gsub(".png", "", cc_manual)
-bullets$cc[which(bullets$land_id %in% cc_manual)]
-bullets$cc[which(bullets$land_id %in% cc_manual)] <- c(4,3)*bullets$cc[which(bullets$land_id %in% cc_manual)]
-for (i in which(bullets$land_id %in% cc_manual)) {
-  x3p <- bullets$x3p[[i]]
-  x3p <- x3p %>% x3p_add_hline(yintercept = bullets$cc[[i]], size = 10, color = "white")
-  x3p %>% image_x3p(file=paste0("images/crosscut/",bullets$land_id[[i]],"-manual.png"))
-}
 
+
+###
+# shiny app to check manual cross cuts
+idx <- which(bullets$land_id %in% cc_manual)
+bullets$cc_manual <- FALSE
+bullets$cc_manual[idx] <- TRUE
+bullets$cc_pred <- bullets$cc
+
+runApp("code/apps/check-crosscut.R")
+
+meta$cc_manual <- bullets$cc_manual
 meta$cc <- bullets$cc
+meta$cc_pred <- bullets$cc_pred
+write.csv(meta, "data/meta-info.csv", row.names = FALSE)
 } else {
   bullets$cc <- meta$cc
 }
@@ -117,8 +136,23 @@ meta$cc <- bullets$cc
 # ------------------------------------------------------------------------------
 # *** Step 3: Get measurements at the identified crosscut **********************
 # ------------------------------------------------------------------------------
+
+resolution <- bullets$x3p[[1]] %>% x3p_get_scale()
+
 bullets <- bullets %>% mutate(
-  ccdata = purrr::map2(.x = x3p, .y = cc, .f = function(x, y) x3p_crosscut(x3p=x, y = y))
+  ccdata = purrr::map2(.x = x3p, .y = cc,
+                       .f = function(x, y) x3p_crosscut(x3p=x, y = y, range = 8*resolution))
+)
+
+# summarize ccdata by x - use median of captured values for stability
+bullets <- bullets %>% mutate(
+  ccdata = ccdata %>% purrr::map(.f = function(cc) {
+    cc %>% group_by(x) %>% summarize(
+        y = median(y),
+        sd_value = sd(value),
+        value = median(value)
+    )
+  })
 )
 
 # ------------------------------------------------------------------------------
@@ -205,7 +239,7 @@ meta$groove_left <- bullets$grooves %>% purrr::map_dbl(.f = function(g) g$groove
 meta$groove_right <- bullets$grooves %>% purrr::map_dbl(.f = function(g) g$groove[2])
 write.csv(meta, file="data/meta-info.csv", row.names = FALSE)
 } else {
-bullet$grooves <-  purrr::map2(meta$groove_left, meta$groove_right,
+bullets$grooves <-  purrr::map2(meta$groove_left, meta$groove_right,
                         .f = function(left, right) list(groove = c(left, right)))
 }
 
@@ -217,6 +251,27 @@ bullets <- bullets %>% mutate(
   sigs = purrr::map2(.x = ccdata, .y = grooves, .f = function(x, y) cc_get_signature(ccdata=x, grooves = y))
 )
 
+potential_problems <- bullets$sigs %>% sapply(FUN=function(sig) {
+  max(abs(sig$sig), na.rm=TRUE)
+})
+
+# inspect all signatures with high values of 'potential_problems' (above 10 or 15)
+idx <- which(potential_problems > 10)
+# if those bullets are damaged, there is nothing we can do:
+idx <- idx[!meta[idx,"damaged"]]
+# check if there are issues we can fix with changes to crosscuts or grooves
+if (length(idx) > 0) {
+  bullets$sigs[[idx[1]]] %>% ggplot(aes(x = x, y=value)) + geom_line()
+  bullets$sigs[[idx[1]]] %>% ggplot(aes(x = x, y=sig)) + geom_line()
+}
+# # example of changes:
+# bullets$grooves[[idx[1]]]$groove[2] <- 400
+# bullets$grooves[[idx[2]]]$groove[1] <- 300
+# bullets$grooves[[idx[3]]]$groove[2] <- 2125
+# bullets$grooves[[idx[4]]]$groove[1] <- 250
+
+
+saveRDS(bullets, "bullets.rds")
 
 # ------------------------------------------------------------------------------
 # *** Step 6: Create pairwise comparisons **************************************
@@ -235,24 +290,26 @@ alignHelper <- function(xx, yy) {
 
   sig_align(land1$sig, land2$sig)
 }
-# # sequential version - use parallelized version below
+
+# the following code is set up to be evaluated using multiple
+# cores in case they are available.
+library(future)
+plan(multisession, workers = max(parallelly::availableCores()-1, 1))
+library(furrr)
+
+# # sequential version
 # comparisons <- comparisons %>% mutate(
 #   aligned = purrr::map2(.x = land1, .y = land2, .f = alignHelper)
 # )
 
-library(parallel)
-numCores <- detectCores()
-comp_i <- function(i) {
-  cc <- comparisons[i,]
-  alignHelper(cc$land1, cc$land2)
-}
-
-system.time(
-  aligned <- mclapply(1:nrow(comparisons), FUN = comp_i, mc.cores = numCores-1)
+system.time({
+comparisons <- comparisons %>% mutate(
+   aligned = furrr::future_map2(.x = land1, .y = land2, .f = alignHelper)
 )
+})
 
-#      user    system   elapsed
-# 42227.436  6808.655  4891.661
+#    user   system  elapsed
+# 553.108   93.213 5218.017
 
 
 # sequential, parallel re-write below
@@ -260,51 +317,27 @@ system.time(
 #   striae = aligned %>% purrr::map(.f = sig_cms_max, span = 75)
 # )
 
-striae_i <- function(i) {
-  sig_cms_max(aligned[[i]], span=75)
-}
-
-system.time(
-  striae <- mclapply(1:nrow(comparisons), FUN = striae_i, mc.cores = numCores-1)
+system.time({
+comparisons <- comparisons %>% mutate(
+   striae = aligned %>% furrr::future_map(.f = sig_cms_max, span = 75)
 )
+})
 
-#      user    system   elapsed
-# 37560.232  7273.051  4639.551
+#    user   system  elapsed
+# 480.869   47.256 4456.626
 
-comparisons <- tibble(comparisons, aligned, striae)
-saveRDS(comparisons, "comparisons.rds")
-
-
-# # comparisons <- comparisons %>% mutate(
-# #   legacy_features = purrr::map(striae, extract_features_all_legacy, resolution = 1.5625)
-# # )
-#
-# legacy_i <- function(i) {
-#   extract_features_all_legacy(striae[[i]], resolution = 1.5625)
-# }
-#
-# system.time(
-#   legacy_features <- mclapply(1:nrow(comparisons), FUN = legacy_i, mc.cores = numCores-1)
+# # sequential, parallel re-write below
+# comparisons <- comparisons %>% mutate(
+#   features = purrr::map(striae, extract_features_all, resolution = 1.5625)
 # )
-# #     user   system  elapsed
-# # 9445.579  392.776  754.253
-# comparisons <- tibble(comparisons, legacy_features)
-# saveRDS(comparisons, "comparisons.rds")
-#
-# # comparisons <- comparisons %>% mutate(
-# #   legacy_features = purrr::map(striae, extract_features_all_legacy, resolution = 1.5625)
-# # )
+system.time({
+  comparisons <- comparisons %>% mutate(
+    features = furrr::future_map2(aligned, striae, extract_features_all, resolution = 1.5625)
+  )
+})
 
-feature_i <- function(i) {
-  extract_features_all(aligned[[i]], striae[[i]], resolution = 1.5625)
-}
-
-system.time(
-  features <- mclapply(1:nrow(comparisons), FUN = feature_i, mc.cores = numCores-1)
-)
-#  user   system  elapsed
-# 3.220    9.590 1426.357
-comparisons <- tibble(comparisons, features)
+#    user   system  elapsed
+# 278.031  157.864 1419.414
 saveRDS(comparisons, "comparisons.rds")
 
 # ------------------------------------------------------------------------------
@@ -344,11 +377,11 @@ comparisons <- comparisons %>%
   )
 saveRDS(comparisons, "comparisons.rds")
 
-features <- comparisons %>% select(-ccf) %>% unnest(features)
+features <- comparisons  %>% unnest(features)
 doubles <- duplicated(features$id)
 features <- features %>% filter(!doubles, !damaged)
+#features <- features %>% filter(land1 != land2)
 features <- features %>% mutate(abs_lag_mm = abs(lag_mm))
 write.csv(features %>%
-            select(-aligned,-striae, -legacy_features), "data/hamby-comparisons.csv", row.names = FALSE)
-
+            select(-aligned,-striae), "data/hamby-comparisons.csv", row.names = FALSE)
 
