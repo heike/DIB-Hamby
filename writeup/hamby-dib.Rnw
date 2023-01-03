@@ -101,6 +101,7 @@
 \author[3]{Susan \snm{VanderPlas}}
 \author[4]{Eric \snm{Hare}}
 %\fntext[fn1]{This is author footnote for second author.}
+\author[1,2]{Nathan \snm{Rethwisch}}
 \author[1,2]{Alicia \snm{Carriquiry}}
 
 %%Affiliations
@@ -333,7 +334,7 @@ Type of data           & Table: meta-info.csv\newline
 %\clearpage
 How data were acquired & Table (meta-info.csv): assembled by the authors; consists of a collection of descriptive elements for each of the raw scans and corresponding land engraved areas.  \newline
  Table (hamby-comparisons.csv): features quantifying the similarity between pairs of 3d topographic surface scans detailing striation marks on land engraved areas (LEAs) of fired bullets. Features were extracted using the R 4.2.2 software \cite{R} packages x3ptools (heike/x3ptools@29d71ec) and bulletxtrctr (heike/bulletxtrctr@758321b) as outlined in the pipeline by \citet{aoas} and detailed in the accompanying R script. From available meta information ground truth regarding source is added for each comparison. Values are stored in form of a comma separated value file.\newline
-                        Model (csafe-rf2.rds): using the features as training data a random forest is fit to predict same source pairs and different source pairs (R package randomForest 4.6-14).\\
+                        Model (csafe\_rf3.rds): using the features as training data a random forest is fit to predict same source pairs and different source pairs (R package randomForest 4.7-1.1).\\
 
 Data format            & Raw \& Analyzed\\
 Parameters for
@@ -615,20 +616,22 @@ Random forest object for assessing similarity of two land engraved areas based o
 % \noindent\textbf{Tip:} do not describe your data (figures, tables, etc.) in this section,
 % do this in the Data Description section above.]
 
-\subsection*{Materials and Data Collection Methods}
+%\subsection*{Materials and Data Collection Methods}
 
 The experimental design of the original Hamby sets is described in detail \cite{hamby}. The 35 bullets each of Hamby sets 173 and 252 were scanned at the National Institutes of Standards and Technology by Xiaoyu Zheng and Wei Chu using a NanoFocus V.6.12.6 confocal light microscope at 20x; the resulting scans have a resolution of 1.5625 $\mu m$ per pixel. All 420 scans are made available in x3p format from the NIST Ballistics Toolmark Research Database (https://tsapps.nist.gov/NRBTD/).
 
+\newpage
 
-
+\noindent
 There are three code files used in the assembly and analysis of the data and models:
 
-{\bf \texttt{create-features.R}}: provides step-by-step instructions to assess each scan and extract the features for pair-wise scan assessments in file `hamby-comparisons.csv'.
-
-{\bf \texttt{fitting-randomforest.R}}: includes the code to create the randomforest object \texttt{csafe\_rf3.rds}.
-
-{\bf \texttt{publishing-data.R}}: includes the code to create all of the data figures in this paper.
-
+\begin{description}
+\item[{\bf \texttt{create-features.R}}:] provides step-by-step instructions to assess each scan and extract the features for pair-wise scan assessments in file `hamby-comparisons.csv'.
+%
+\item[{\bf \texttt{fitting-randomforest.R}}:] includes the code to create the randomforest object \texttt{csafe\_rf3.rds}.
+%
+\item[{\bf \texttt{publishing-data.R}}:] includes the code to create all of the data figures in this paper.
+\end{description}
 
 \subsection*{Access to Raw data}
 
@@ -641,35 +644,42 @@ Step 0 in `create-features.R` sets up the required folder structure downloads th
 
 \subsection*{Assessment of each scan}
 
-Steps 1 to 5 in code file \texttt{create-features.R} summarize the process of visually inspecting scans for damage, determining suitable cross-sections and related beginning and end locations (determined by groove locations), and an extraction of a scan's signature (by removing the bullet curvature from the profile at the cross-section).
+Steps 1 to 5 in code file \texttt{create-features.R} summarize the process of visually inspecting scans for damage, determining suitable cross-sections and related beginning and end locations (determined by groove locations).
+
 
 \begin{enumerate}
 \item The scans are oriented so that the base of the bullet is at the bottom and the bullet scan is curving from left to right. Fired bullets have \emph{breakoff}, where some of the metal is ripped off the bullet during firing as a result of heat and pressure. The scans are oriented such that any breakoff is located towards the bottom right corner of the scan.
 For Hamby 173, bullets were flipped along the $y$ axis; for Hamby 252, the bullets were rotated counterclockwise by 90 degrees and then flipped along the $y$ axis. Finally, scans are converted so that all measurements are in $\mu m$ (microns, $1 \mu m = 10^{-3} mm$).
-\item Damaged scans not suitable for comparison are marked. A total of 30 out of 420 scans were found to be damaged.
-\item Once scans are oriented properly, a suitable cross-section (one that does not cross through any regions of breakoff) that is as low as possible on the bullet (so as to cross deeper, more well-engraved stria) is identified algorithmically using the cross-correlation between adjacent cross-sections to quantify stability. These cross sections are checked manually using graphics and are set by hand when the algorithmic identification fails (see shiny app `check-crosscuts.R'). In this dataset,  40 out of 420 cross-sections were identified manually.
-\item Using the cross-section location identified in step 2, the measurements are extracted from the scan at that crosscut.
-\item The grooves that demarcate the land engraved area are identified algorithmically and then manually checked and set as necessary using a web-app (code is provided in the file).
-\item The areas between the grooves are extracted and a smooth is fit to the data to remove the bullet surface curvature, producing a ``bullet signature". This signature is used to represent the entire bullet land engraved area scan.
+\item Algorithmically identify a crosscut for each scan. The algorithm takes into account (a) the percentage of missing values, (b) the 'stability' of the region measured in correlation between successive profiles, and (c) uses the first index that fulfills the requirements of (a) and (b). This biases the algorithm towards low cross-sections. Those have on average the deeper striation marks.
+\item Use visual inspection (see shiny app `check-crosscuts.R') to check scans for damage and verify suitability of cross-cut sections.
+In case of  failure, set cross-cut values manually. In this dataset,  40 out of 420 cross-sections were identified manually.
+Damaged scans are not suitable for further comparison. These scans are are marked. A total of 30 out of 420 scans were found to be damaged.
+\item Extract measurements from the scan from the identified cross-section.
+\item Identify groove locations algorithmically. Check results visually (see shiny app `check-grooves.R') and adjust as necessary.
+\end{enumerate}
+
+\subsection*{Signature Extractions}
+%The initial x3p scans describe a curved surface with striations produced as the bullet is propelled through the barrel during the firing process. Though the source data is three-dimensional, the actual information we use to make the comparison is two-dimensional: it is essentially a cross-section of the scanned surface. The initial processing method is designed to reduce the 3D scan into a two-dimensional ``signature" of a bullet land, without the underlying surface curvature. The protocol for the data reduction process is described in detail in \citet{aoas} and the code provided here leverages \texttt{bulletxtrctr}, an R package designed to implement the process.
+
+\begin{enumerate}
+\item[6.] The data between groove locations is extracted and a non-parametric function is fit to the data to remove the bullet surface curvature. The residuals of this fit produce the ``bullet signature". This signature is used to represent the entire bullet land engraved area scan.
 \end{enumerate}
 
 
 \subsection*{Feature Derivation}
 
-Steps 1 to 9 in code file \texttt{create-features.R}  generate the complete set of pairwise comparisons and intermediate results; the feature values for each pairwise comparison are provided in \texttt{hamby-comparisons.csv}. These features are produced using functions from the R package \texttt{bulletxtrctr}; here, we describe the feature derivation process
+Steps 7 to 9 in code file \texttt{create-features.R}  generate the complete set of pairwise comparisons; the feature values for each pairwise comparison are provided in \texttt{hamby-comparisons.csv}.
 
-The initial x3p scans describe a curved surface with striations produced as the bullet is propelled through the barrel during the firing process. Though the source data is three-dimensional, the actual information we use to make the comparison is two-dimensional: it is essentially a cross-section of the scanned surface. The initial processing method is designed to reduce the 3D scan into a two-dimensional ``signature" of a bullet land, without the underlying surface curvature. The protocol for the data reduction process is described in detail in \citet{aoas} and the code provided here leverages \texttt{bulletxtrctr}, an R package designed to implement the process.
-
-Each step in the file \texttt{create-features.R} is described briefly below; all of the code necessary to reproduce the steps exactly is provided in the file. In order to replicate the entire process,  download the data as directed and run the \texttt{create-features.R} file in the directory where the data is downloaded. The individual functions used are described in detail in the bulletxtrctr R package and the corresponding code can be found there.
+%Each step in the file \texttt{create-features.R} is described briefly below; all of the code necessary to reproduce the steps exactly is provided in the file. In order to replicate the entire process,  download the data as directed and run the \texttt{create-features.R} file in the directory where the data is downloaded. The individual functions used are described in detail in the bulletxtrctr R package and the corresponding code can be found there.
 
 \begin{enumerate}
-\item Once signatures have been identified, each scan is compared to every other scan to produce a set of pairwise comparisons. The signatures in each pairwise scan are identified and features are computed using the bulletxtrctr software describing how well the two scans are aligned.
-\item The ground truth is included in the feature set for evaluating the prediction algorithm.
-\item Duplicate pairwise comparisons are removed so as not to compromise the model fitting process.
+\item[7.] The signature of each scan is compared to every other scan to produce a set of pairwise comparisons. For that, signatures are first aligned, common striations are derived and a set of features is calculated.
+\item[8.] The ground truth is included in the feature set for evaluating the prediction algorithm.
+\item[9.] Remove comparisons from damaged scans. Delete duplicates to not compromise the model fitting process.
 \end{enumerate}
 
 \subsection*{Model Fitting}
-The random forest model is fit within the statistical computing software R 4.0.1 \citep{R} using the package {\tt randomForest} 4.6-14 \citep{randomforest}. The following lines of code fit the forest object `csafe\_rf3`:
+The random forest model is fit within the statistical computing software R 4.2.2 \citep{R} using the package {\tt randomForest} \citep{randomforest}. The following lines of code fit the forest object `csafe\_rf3`:
 
 <<fit-forest, echo=TRUE, eval=FALSE, tidy=FALSE>>=
 library(randomForest)
@@ -713,8 +723,8 @@ saveRDS(csafe_rf3, "data/csafe_rf3.rds")
 
 \section*{CRediT author statement}
 \noindent
-{\bf Heike Hofmann:} Conceptualization, Methodology, Software, Writing - Review & Editing, Data Curation, Supervision
-{\bf Susan VanderPlas:} Software, Writing - Review & Editing
+{\bf Heike Hofmann:} Conceptualization, Methodology, Software, Writing - Review \& Editing, Data Curation, Supervision
+{\bf Susan VanderPlas:} Software, Writing - Review \& Editing
 {\bf Eric Hare:}  Methodology, Software, Writing - Original Draft
 {\bf Nathan Rethwisch: } Validation
 {\bf Alicia Carriquiry:} Funding acquisition
