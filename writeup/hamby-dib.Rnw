@@ -117,18 +117,10 @@
 
 
 \begin{abstract}
-Land engraved areas (LEAs) on fired bullets form the basis of forensic examinations regarding whether these bullets were fired from the same source (the same barrel).  For algorithmic comparisons of similarity 3d topographic imaging forms the basis of assessing similarity. Here, three parts of the statistical analysis are included:
-(a) descriptive information for each scan, including its suitability for comparisons, (b) statistically derived features characterizing similarity and differences of each pair of topographic LEA scans, and (c) a fitted Random Forest model object used to predict the similarity of two scans based on their corresponding similarity features.
-The original raw data is available from the NIST Ballistics Toolmark Database \citep{nist}; here, we provide the code and intermediate data necessary to create the Random Forest model described in \citet{aoas} to make this work  accessible and reproducible. This also allows  future algorithms to be benchmarked against this random forest bullet matching model.
+Land engraved areas (LEAs) on fired bullets form the basis of forensic examinations regarding whether these bullets were fired from the same source (the same barrel). 3d topographic LEA scans form the basis of algorithmic comparisons of similarity assessments. Here, three parts of the statistical analysis are included:
+(a) descriptive information for each scan, including its suitability for comparisons, (b) statistically derived features characterizing similarity and differences for each pair of scans, and (c) a fitted Random Forest model object for predicting a similarity score for two scans based on their corresponding similarity features.
+The raw scans are available from the NIST Ballistics Toolmark Database \citep{nist}; here, we provide the code and intermediate data necessary to create a Random Forest model as described in \citet{aoas} to make this work accessible and reproducible as a benchmark for future development.
 %%%%
-% Please Type your abstract here.
-%
-% \noindent[The Abstract should describe the data collection process, the analysis
-% performed, the data, and their reuse potential. It should not provide
-% conclusions or interpretive insights. If your article is being
-% submitted via another Elsevier journal as a co-submission, please cite
-% this research article in the abstract.
-%
 % \noindent\textbf{Tip:} do not use words such as
 % `study', `results', and `conclusions' because a data article should be
 % describing your data only.  Min 100 words - Max 500 words.]
@@ -184,10 +176,6 @@ The original raw data is available from the NIST Ballistics Toolmark Database \c
 % \href{https://www.elsevier.com/authors/author-resources/research-data/data-base-linking#repositories}%
 % {list of supported data repositories}.
 %
-% \item For data that, for ethical reasons, require access controls a
-% mechanism must be provided so that our Editors and reviewers may access
-% these data without revealing their identities to authors (more
-% information is provided in the template \hyperlink{target1}{below}).
 % \end{itemize}
 % \end{itemize}
 %
@@ -300,8 +288,8 @@ The original raw data is available from the NIST Ballistics Toolmark Database \c
 % your research article in the other journal}.
 %
 % \clearpage
-\hypertarget{target2}{}
-\section*{Data Article template}
+%\hypertarget{target2}{}
+%\section*{Data Article template}
 % \noindent
 % Please fill in the template below. All sections are mandatory unless
 % otherwise indicated. Please read all instructions in [square brackets]
@@ -326,39 +314,36 @@ The original raw data is available from the NIST Ballistics Toolmark Database \c
 
 {\fontsize{7.5pt}{9pt}\selectfont
 %%%
-\noindent\textbf{Specifications Table}
+\section*{Specifications Table}
 
 % Every section of this table is mandatory.
 % Please enter information in the right-hand column and remove all the instructions
-\begin{longtable}{|p{33mm}|p{94mm}|}
+\begin{longtable}{p{33mm}p{94mm}}
 \hline
 \endhead
 \hline
 \endfoot
-Subject                & Data Science / Applied Machine Learning\\
-\hline
+Subject                & Forensic Science, Data Science, and Applied Machine Learning\\
+
 Specific subject area  & Statistical methods in firearms and toolmark evaluation\\
-\hline
+
 Type of data           & Table: meta-info.csv\newline
                          Table: hamby-comparisons.csv\newline
-                         Model: csafe-rf2.rds\\
+                         Model: csafe\_rf3.rds\\
 %\clearpage
 How data were acquired & Table (meta-info.csv): assembled by the authors; consists of a collection of descriptive elements for each of the raw scans and corresponding land engraved areas.  \newline
- Table (hamby-comparisons.csv): features quantifying the similarity between pairs of 3d topographic surface scans detailing striation marks on land engraved areas (LEAs) of fired bullets. Features were extracted using the R software packages x3ptools (heike/x3ptools@29d71ec) and bulletxtrctr (heike/bulletxtrctr@758321b) as outlined in the pipeline by \citet{aoas} and detailed in the accompanying R script. From available meta information ground truth regarding source is added for each comparison. Values are stored in form of a comma separated value file.\newline
+ Table (hamby-comparisons.csv): features quantifying the similarity between pairs of 3d topographic surface scans detailing striation marks on land engraved areas (LEAs) of fired bullets. Features were extracted using the R 4.2.2 software \cite{R} packages x3ptools (heike/x3ptools@29d71ec) and bulletxtrctr (heike/bulletxtrctr@758321b) as outlined in the pipeline by \citet{aoas} and detailed in the accompanying R script. From available meta information ground truth regarding source is added for each comparison. Values are stored in form of a comma separated value file.\newline
                         Model (csafe-rf2.rds): using the features as training data a random forest is fit to predict same source pairs and different source pairs (R package randomForest 4.6-14).\\
-\hline
+
 Data format            & Raw \& Analyzed\\
-\hline
 Parameters for
 data\newline
 collection             & Hamby sets \citep{hamby} consist of 35 bullets fired from ten consecutively manufactured P85 Ruger barrels. During the firing process micro-imperfections in form of striations are engraved on parts (LEAs) of each bullet. Striation marks are considered to be unique to a barrel. Marks were scanned under 20x magnification by a NanoFocus confocal microscope. Striae from scans of a total of 420 LEAs ($35 \times 2 \times 6$) from two Hamby sets (sets 173 and 252) were considered.
   \\
-\hline
 Description of
 data\newline
-collection             & 2d images were rendered from topographic scans. Visual inspection revealed damage on 18 of the 420 LEAs (such as `tank rash`, large amount of pitting, cracks). For the remaining scans, areas of good striations were identified, bullet curvature was removed, and signatures extracted. Pairwise signatures were aligned and features describing similarity of striae extracted. Extracted features include cross-correlation, number and location of coinciding peaks and valleys, height of peaks and valleys,  and consecutively matching striae among others.
+collection             & 2d images were rendered from topographic scans. Visual inspection revealed damage on 30 of the 420 LEAs (such as `tank rash', large amount of pitting, cracks). For the remaining scans, areas of good striations were identified, bullet curvature was removed, and signatures extracted. Pairwise signatures were aligned and features describing similarity of striae extracted. Extracted features include cross-correlation, number and location of coinciding peaks and valleys, height of peaks and valleys,  and consecutively matching striae among others.
                          \\
-\hline
 Data source location   &  Institution: Iowa State University\newline
                          City/Town/Region: Ames, Iowa\newline
                          Country: United States\newline\newline
@@ -366,7 +351,6 @@ Data source location   &  Institution: Iowa State University\newline
                          Primary data sources: \newline
                          x3p files containing topographic surface data from microscopic scans of 35 bullets each from Hamby Set 173 and Hamby Set 252. These scans are available from the
                          National Ballistic and Toolmark Research Database at https://tsapps.nist.gov/NRBTD/. In particular, scans for Hamby Set 173 is available from \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/b5fbda3e-d889-4211-be7e-654e19b7cd40?nm=True&mt=1&m=3&sp=1};  and scans for Hamby Set 252 are available from \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/c09aaa86-5d60-4acb-9031-46dad2c0ad32?nm=True&mt=1&m=3&sp=1}. \\
-\hline
 \hypertarget{target1}
 {Data accessibility}   & Primary sources are hosted on a database established by NIST (National Institute of Standards and Technology); data described here, are hosted by the data share service provided by Iowa State, handled through figshare. \newline
 
@@ -375,21 +359,15 @@ Data source location   &  Institution: Iowa State University\newline
                          Direct URL to data: [e.g. https://www.data.edu.com - please note,\newline
                          this URL should be working at the time of submission]\newline
 
-                         Instructions for accessing these data:\newline\\
+                         Instructions for accessing these data: \newline\\
 
 %
-%                          [\textit{Important: if your data have access controls a mechanism must also be
-%                          provided so that our Editors and reviewers may access these data
-%                          without revealing their identities to authors, please include
-%                          these instructions with your submission. Please contact the Managing
-%                          Editors (DIB-ME@DIB.com) if you have any questions.}]\\
-\hline
 Related
 research\newline
 article                & E. Hare, H. Hofmann, A. Carriquiry,
                          Automatic matching of bullet land impressions,
                          Annals of Applied Statistics, 11(4), 2017, 2332--2356.
-                         DOI: \url{10.1214/17-aoas1080}\newline
+                         DOI: \url{10.1214/17-aoas1080}\newline\hline
 \end{longtable}
 }
 %%%
@@ -414,7 +392,20 @@ Reproducibility is a critical component of work in forensic statistics, because 
 \item Open source algorithms supplemented by open data are a critical component of a fairer justice system, equally accessible to both prosecution and defense. Currently, many closed-source or closed-data algorithms are used to supplement the discretion of law enforcement agents and prosecutors, and these algorithms cannot be easily audited by affected parties. By making the source and intermediate data relating to this algorithm available, we are ensuring that the algorithm's details are fully transparent to all parties who may be affected by its use in forensic casework.
 \end{itemize}
 
-\section*{Data Description}
+\section{Objective}
+% [ Describe the reasoning and context behind the generation of this dataset. Do not make concluding, interpretive, or otherwise inferential statements about the dataset. In case your data article is related to an original research article, please briefly describe how the data article adds value to the published article (Max. 200 words). ]
+Determining whether two pieces of evidence come from the same source is a large part of a forensic examiner's job.
+In casework, ground truth can never be established with 100\% certainty; as a result, error rate and proficiency studies are used to establish the validity of forensic evaluation \citep[as recommended in][]{nrc,pcast}. These studies also serve as the basis for automated matching algorithms.
+The quality of any learning algorithm depends crucially on the training data. In forensics, topographic scans are the basis for algorithms. However, these scans are rarely usable in their raw form due to extraneous\footnote{such as pieces of groove engraved areas or areas without striation marks} or missing data\footnote{such as holes stemming from the scanning or physical holes from the firing process}, or damage unrelated to the firing\footnote{such as tank `rash' -- marks on the bullet from scraping along the side of the water tank after being fired}. Besides these manual choices for the input data, the pipeline described in \citet{aoas} depends on various parameters. Intermediate data allows a full reproducibility of the paper's methods and allows other researchers to try different approaches in each step.  Feature extraction reduces the millions of pixels in each scan to information on only a few dimensions. The choice of features in an ML-algorithm affects the final model's accuracy. Access to these features enables others to make changes or enhancements. Similarly, access to the final model makes it a benchmark for future development.
+
+
+%This information is included in `meta-info.csv`.
+%The algorithm in \citet{aoas} consists of multiple steps to derive features from each pair of scans -- the results for all features are reported in `hamby-comparisons.csv`. Ground truth for each one of these scans is known and included in the csv file. The random forest model (csafe\_rf3.rds) is trained on these features and included as benchmark for future development.
+
+
+%The random forest model provided in this paper is fitted based on two sets of bullets from a study conducted by \citeauthor{hamby}; the bullets in question were scanned at the National Institutes of Standards and Technology by Xiaoyu Zheng and Wei Chu using a NanoFocus V.6.12.6 confocal light microscope at 20x; the resulting scans have a resolution of 1.5625 $\mu m$ per pixel.
+
+\section{Data Description}
 %  [Individually describe each data file (i.e. figure 1, figure 2, table
 % 1, dataset, raw data, supplementary data, etc.) that are included in
 % this article. Please make sure you refer to every data file and provide
@@ -425,19 +416,29 @@ Reproducibility is a critical component of work in forensic statistics, because 
 % \noindent\textbf{Tip:} do not forget to describe any supplementary data files.]
 \noindent
 
-An early study in the field of firearm examination was executed by \citet{hamby} and consists of over 300 sets of bullets sent out to firearm examiners worldwide.
-Each of these sets consists of 20 bullets with known provenance and 15 questioned bullets: two bullets each were fired from ten consecutively manufactured barrels of P-85 Ruger firearms. Barrels are labeled 1 - 10, and the bullets are labelled as bullet 1 and bullet 2 from a particular barrel. %These two bullets were labeled as bullets 1 and 2 from barrels 1 through 10.
-The remaining fifteen bullets were each fired from one of the ten barrels (such that at at least one and at most 4 bullets came from the same barrel) and labeled with uppercase letters. Firearms examiners are then asked to match the questioned bullets to the corresponding barrels.
+%An early study in the field of firearm examination was executed by \citet{hamby} and consists of over 300 sets of bullets sent out to firearm examiners worldwide.
+%Each of these sets consists of 20 bullets with known provenance and 15 questioned bullets: two bullets each were fired from ten consecutively manufactured barrels of P-85 Ruger firearms. Barrels are labeled 1 to 10, and the bullets are labelled as bullet 1 and bullet 2 from a particular barrel. %These two bullets were labeled as bullets 1 and 2 from barrels 1 through 10.
+%The remaining fifteen bullets were each fired from one of the ten barrels (such that at at least one and at most 4 bullets came from the same barrel) and labeled with uppercase letters. Firearms examiners are then asked to match the questioned bullets to the corresponding barrels.
 
-Each barrel has six land engraved areas resulting from firing the gun; together with the Barrel and Bullet identifiers, the land identifier can be used to identify a single digital scan stored in x3p format\citep{x3p}.
+%Each barrel has six land engraved areas resulting from firing the gun; together with the Barrel and Bullet identifiers, the land identifier can be used to identify a single digital scan stored in x3p format\citep{x3p}.
 
-These scans have an additional advantage over conventional sets of physical bullets: it is much easier to share the digital data.
-The NIST database \citep{nist} contains the raw data for this study as well as many others.
-Information about the individual scans is provided in \autoref{meta}; here, each row describes a scan of a single bullet land, its location on disk after the download, whether the corresponding land shows damage unrelated to the firing, and its relationship to Hamby set 173 bullet 1 from the same barrel.
+%These scans have an additional advantage over conventional sets of physical bullets: it is much easier to share the digital data.
+%The NIST database \citep{nist} contains the raw data for this study as well as many others.
 
-\autoref{features} consists of a description of all features describing pairwise comparisons of scans. These features are aimed to distinguish between pairs of scans from the same source (corresponding to two bullets fired from the same barrel) and two different sources (corresponding to bullets fired from different barrels).
-\autoref{fig:densities} gives an overview of some of the features in the `hamby-comparisons.csv` file. Values from same-source comparisons are shown in orange, different-source comparisons are shown in grey. Area under the curve (AUC) is a value between 0 and 1 describing the strength of one feature's strength in discriminating between same-source and different-source comparisons. The closer values are to 1, the better they discriminate.
+\autoref{overview} sketches the process from fired bullet to aligned signatures. The data described here, are shown in steps (b) and (c): raw scans have to be inspected for their usability for comparisons; for a similarity assessment additional elements such as crosscut and corresponding groove locations are needed.
 
+Information about each of the 420 raw LEA scans is provided in \autoref{meta}; each row describes a scan of a single bullet land, its relative file path on the disk after the download, its suitability for comparisons, parameters for comparisons and, to determine ground truth for source assessments, its relationship to Hamby set 173 bullet 1 from the same barrel.
+
+\autoref{features} details all features based on the `r nrow(features)` pairwise comparisons of suitable scans. These features are aimed to distinguish between pairs of scans from the same source (corresponding to two bullets fired from the same barrel) and  different sources (corresponding to bullets fired from different barrels).
+\autoref{fig:densities} gives an overview of some of the features in the `hamby-comparisons.csv` file. Values from same-source comparisons are shown in orange, different-source comparisons are shown in grey. Area under the curve (AUC) is a value between 0 and 1 describing the strength of a feature's strength in discriminating between same-source and different-source comparisons. The closer values are to 1, the better they discriminate.
+
+\begin{figure}
+\begin{tabular}{p{23mm}p{50mm}p{40mm}}
+(a) fired bullet & (b) rendering of raw scan & (c) profiles (top \& bottom), aligned signatures (middle) \\
+\includegraphics[width=\textwidth]{images/overview.jpg}
+\end{tabular}
+\caption{\label{overview} (a) Fired bullet, the white rectangles indicates three of the six LEAs captured. (b) Renderings of LEA scans with manual markup of regions. The scan on the bottom is affected by tank `rash' -- damage to the bullet unrelated to the firing.  The white horizontal lines across areas with well-expressed striations are the basis for similarity assessments. (c) Top and bottom: Profiles of identified cross-sections with additional markups. Middle: Signatures are extracted from cross-sections (after removal of bullet curvature, note the difference in vertical scale) and aligned. Similarities between signatures is visible but they are not very strong.  }\\
+\end{figure}
 
 \begin{longtable}{p{33mm}p{94mm}}
 \caption{\label{meta} Description of the variables in `meta-info.csv`.}
@@ -454,12 +455,12 @@ Information about the individual scans is provided in \autoref{meta}; here, each
 \bf study, barrel, bullet, land & elements describing the provenance of a LEA. \\\rowcolor{lightgray}
 \bf source & path to the x3p file corresponding to the LEA. \\
 \bf H173\_B1\_index & matching land id to bullet 1 of the Hamby 173 set of the barrel the bullet was fired from.  This index enables to determine ground truth in any comparison: two land engraved areas come from the same source if their corresponding {\bf H173\_B1\_index} matches.\\\rowcolor{lightgray}
-\bf damaged & logical variable indicating whether the land engraved area is exhibiting damage not associated with the barrel and the firing process. \\
-\bf cc & index of a horizontal crosscut suitable for matching striations. \\\rowcolor{lightgray}
-\bf groove\_left, groove\_right & positions of left and right groove along the extracted cross-cut (manually determined). \\
+\bf damaged & logical variable indicating whether the land engraved area is exhibiting damage not associated with the barrel and the firing process; 30 out of the 420 scans are found to have damage that prevents good comparisons with other scans. \\
+\bf cc, cc\_pred & index of a horizontal crosscut suitable for matching striations; {\bf cc\_pred} is determined algorithmically. If a visual inspection finds the crosscut location unsuitable (because of missing values, such as holes, or break-off), a different value for {\bf cc} is used. \\\rowcolor{lightgray}
+\bf cc\_manual & logical variable indicating whether the crosscut value was determined by visual inspection (TRUE) or algorithmically (FALSE). 40 out of the 420 crosscuts were set manually. \\
+\bf groove\_left, groove\_right & positions of left and right groove along the extracted cross-cut (manually determined). \\\rowcolor{lightgray}
 \hline
 \end{longtable}
-
 
 \begin{longtable}{p{33mm}p{94mm}}
 \caption{\label{features} Description of features extracted from pairwise comparisons of scans. These values are stored in file `hamby-comparisons.csv`.}
@@ -499,9 +500,10 @@ Information about the individual scans is provided in \autoref{meta}; here, each
 library(tidyverse)
 library(randomForest)
 library(here)
+library(patchwork)
 features <- read.csv(here("data/hamby-comparisons.csv"))
-rf2 <- readRDS(here("data/csafe_rf2.rds"))
-important <- data.frame(importance = rf2$importance) %>% arrange(desc(MeanDecreaseGini))
+rf3 <- readRDS(here("data/csafe_rf3.rds"))
+important <- data.frame(rf3$importance) %>% arrange(desc(MeanDecreaseGini))
 important$name <- row.names(important)
 doubles <- duplicated(features$id)
 features <- features %>% filter(!doubles, !damaged)
@@ -514,7 +516,7 @@ for (i in 1:nrow(important)) {
 detach(package:pROC)
 @
 
-<<densities, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 10, fig.height=8, out.width='\\textwidth', fig.cap="Densities of same-source and different source comparisons of each  feature used in fitting the random forest model. Features are sorted according to importance (most important features first). AUC (area under the curve) describes each feature's univariate strength to distinguish between same source and different source.">>=
+<<densities, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 10, fig.height=8, out.width='\\textwidth', fig.cap="Histograms of same-source and different source comparisons of each  feature used in fitting the random forest model. Features are sorted according to decreasing importance (measured as Gini contribution). AUC (area under the curve) describes each feature's univariate strength to distinguish between same source and different source.">>=
 
 long_rf <- features %>%
   filter(!doubles, land1 != land2) %>%
@@ -522,32 +524,53 @@ long_rf <- features %>%
   pivot_longer(cols = -samesource) %>%
   mutate(
     name = factor(name, levels=important$name),
-    `Ground truth` = c("Different source", "Same source")[as.numeric(samesource)+1]
-  )
+    `Ground truth` = c("Different", "Same source")[as.numeric(samesource)+1]
+  ) %>% left_join(important %>% select(name, auc), by="name")
 
+data_rf <- long_rf %>% group_by(name, auc) %>% nest()
 
-long_rf %>%
-  ggplot(aes(x = value)) +
-  geom_density(aes(fill=`Ground truth`), alpha = 0.7, size = 0.2) +
-  facet_wrap(~factor(name, levels=important$name), scales = "free") +
-  scale_fill_manual(values=c("darkgrey", "darkorange")) +
+ggs <- 1:nrow(data_rf) %>% lapply(FUN = function(i) {
+  data_rf$data[[i]] %>%
+  ggplot(aes(x = value, colour=`Ground truth`, fill = `Ground truth`)) +
+  geom_histogram(alpha = 0.8) +
+  facet_grid(`Ground truth`~., scales="free") +
   theme_bw() +
-  theme(legend.position = c(.8,0.1)) +
-  geom_label(aes(x = Inf, y = Inf, label=sprintf("AUC: %.3f", round(auc,3))), data = important,
-            color = "grey50", size = 4.5, vjust=1, hjust=1,label.size = 0) +
-  xlab("Value observed in the comparison of two LEA scans")
+  theme(legend.position = "none") +
+  scale_colour_manual(values=c("darkgrey", "darkorange"))+
+  scale_fill_manual(values=c("darkgrey", "darkorange")) +
+  ggtitle(sprintf("%s\nAUC %.2f", data_rf$name[i], data_rf$auc[i])) +
+  xlab("") + ylab("") +
+    theme(plot.title = element_text(size = 10))
+})
+
+leg <- ggpubr::get_legend(ggs[[1]] + theme(legend.position = "right"))
+
+wrap_plots(ggs) + plot_spacer() + ggpubr::as_ggplot(leg)
+
+
+
+# long_rf %>%
+#   ggplot(aes(x = value)) +
+#   geom_density(aes(fill=`Ground truth`), alpha = 0.7, size = 0.2) +
+#   facet_wrap(~factor(name, levels=important$name), scales = "free") +
+#   scale_fill_manual(values=c("darkgrey", "darkorange")) +
+#   theme_bw() +
+#   theme(legend.position = c(.8,0.1)) +
+#   geom_label(aes(x = Inf, y = Inf, label=sprintf("AUC: %.3f", round(auc,3))), data = important,
+#             color = "grey50", size = 4.5, vjust=1, hjust=1,label.size = 0) +
+#   xlab("Value observed in the comparison of two LEA scans")
 @
 
-Finally, csafe-rf2.rds is the binary file containing the random forest object fitted on the features in \texttt{hamby-comparisons.csv}. Random forests \citep{breiman} are a machine-learning method using an ensemble of decision trees.
-This random forest model is used to assess the similarity of two scans, with an output prediction of 0 indicative of dissimilarity between the scans, and an output prediction near 1 indicative of similarity between the scans. In addition to containing the weights used to make predictions, the fitted model also contains a record of the predictions made during the fitting process; and the features used to fit the model to the original set of scans. It is important to archive not only the code used to fit this model, but also the intermediate data, derived features, and full fitted model object, so that when the model is re-fit we have a record of changes between versions of the random forest models.
+Finally, csafe\_rf3.rds is the binary file containing the random forest object fitted on the features in \texttt{hamby-comparisons.csv}. Random forests \citep{breiman} are a machine-learning method using an ensemble of decision trees.
+This random forest model is used to assess the similarity of two scans, with an output prediction of 0 indicative of a strong dissimilarity between the scans, and an output prediction near 1 indicating strong similarity between the scans. In addition to containing the weights used to make predictions, the fitted model also contains a record of the predictions made during the fitting process; and the features used to fit the model to the original set of scans.
+It is important to archive not only the code used to fit this model, but also the intermediate data, derived features, and full fitted model object, so that when the model is re-fit we have a record of changes between versions of the random forest models.
 
+The random forest object `csafe\_rf3` has an overall out-of-bag error rate estimated as 0.2\%. Out of the total 76,245 pairwise comparisons of the `hamby-comparisons.csv` data 76,096 comparisons or 99.8\% are correctly classified as same-source or different-source pairs.
 
-The random forest object `csafe\_rf2` has an overall out-of-bag error rate estimated as 0.32\%. Out of the total 81,003 pairwise comparisons of the `hamby-comparisons.csv` data 80,743 comparisons or 99.68\% are correctly classified as same-source or different-source pairs.
+\autoref{fig:outcomes} shows a summary of (out-of-bag) prediction values of the csafe\_rf3 random forest trained on the feature values.
 
-\autoref{fig:outcomes} shows a summary of (out-of-bag) prediction values of the csafe\_rf2 random forest trained on the feature values.
-
-<<outcomes, echo=FALSE, message=FALSE, warning=FALSE, fig.align="center", fig.width = 6, fig.height=4, out.width='.7\\textwidth', fig.cap="Summary of the out-of-bag predictions of the csafe\\_rf2 random forest object trained on the features in `hamby-comparisons.csv'.">>=
-features$rf_oob <- predict(rf2, type="prob")[,2]
+<<outcomes, echo=FALSE, message=FALSE, warning=FALSE, fig.align="center", fig.width = 6, fig.height=4, out.width='.7\\textwidth', fig.cap="Histograms by source for all out-of-bag predictions of the csafe\\_rf3 random forest model trained on the features in `hamby-comparisons.csv'.">>=
+features$rf_oob <- predict(rf3, type="prob")[,2]
 
 features %>%
   mutate(
@@ -555,18 +578,19 @@ features %>%
     Comparison = samesource
   ) %>%
   ggplot(aes(x = rf_oob, fill = Comparison, colour=Comparison)) +
-  geom_density(alpha=0.6) +
+  geom_histogram(alpha=0.6) +
   scale_colour_manual(values = c("darkgrey", "darkorange")) +
   scale_fill_manual(values = c("darkgrey", "darkorange")) +
   theme_bw() +
   xlab("Out-of-bag Random Forest Prediction values") +
-  facet_grid(samesource~.) +
-  theme(legend.position="bottom")
+  facet_grid(samesource~., scales="free") +
+  theme(legend.position="bottom") +
+  ylab("Number of Comparisons")
 @
 
 \begin{longtable}{p{127mm}}
 \hline
-\bf Model   (csafe-rf2.rds)              \\ \hline
+\bf Model   (csafe\_rf3.rds)              \\ \hline
 \endhead
 \hline
 \endfoot
@@ -592,34 +616,60 @@ Random forest object for assessing similarity of two land engraved areas based o
 % do this in the Data Description section above.]
 
 \subsection*{Materials and Data Collection Methods}
-A large part of a forensic examiner's job consists of evaluating whether two pieces of evidence come from the same source or from different sources.
-In casework, same source can never be established with 100\% certainty; as a result, error rate and proficiency studies are used to establish the validity of forensic evaluation \citep[as recommended in][]{nrc,pcast}.
-The random forest model provided in this paper is fitted based on two sets of bullets from a study conducted by \citeauthor{hamby}; the bullets in question were scanned at the National Institutes of Standards and Technology by Xiaoyu Zheng and Wei Chu using a NanoFocus V.6.12.6 confocal light microscope at 20x; the resulting scans have a resolution of 1.5625 $\mu$m per pixel.
 
-The raw scans can be downloaded from \citet{nist} by searching for ``Hamby (2009) Barrel Set" and selecting the two study results matching that name. The studies should be downloaded separately and each placed into a folder. We are providing code (as part of step 0 in `create-features.R`) for downloading the files in case the database download changes in the future.
+The experimental design of the original Hamby sets is described in detail \cite{hamby}. The 35 bullets each of Hamby sets 173 and 252 were scanned at the National Institutes of Standards and Technology by Xiaoyu Zheng and Wei Chu using a NanoFocus V.6.12.6 confocal light microscope at 20x; the resulting scans have a resolution of 1.5625 $\mu m$ per pixel. All 420 scans are made available in x3p format from the NIST Ballistics Toolmark Research Database (https://tsapps.nist.gov/NRBTD/).
+
+
+
+There are three code files used in the assembly and analysis of the data and models:
+
+{\bf \texttt{create-features.R}}: provides step-by-step instructions to assess each scan and extract the features for pair-wise scan assessments in file `hamby-comparisons.csv'.
+
+{\bf \texttt{fitting-randomforest.R}}: includes the code to create the randomforest object \texttt{csafe\_rf3.rds}.
+
+{\bf \texttt{publishing-data.R}}: includes the code to create all of the data figures in this paper.
+
+
+\subsection*{Access to Raw data}
+
+The raw scans can be downloaded from \citet{nist} by searching for ``Hamby (2009) Barrel Set" and selecting the two study results matching that name. The studies should be downloaded separately and each placed into a folder.
+
+Alternatively:
+\noindent
+Step 0 in `create-features.R` sets up the required folder structure downloads the scans of the two Hamby studies automatically.
+
+
+\subsection*{Assessment of each scan}
+
+Steps 1 to 5 in code file \texttt{create-features.R} summarize the process of visually inspecting scans for damage, determining suitable cross-sections and related beginning and end locations (determined by groove locations), and an extraction of a scan's signature (by removing the bullet curvature from the profile at the cross-section).
+
+\begin{enumerate}
+\item The scans are oriented so that the base of the bullet is at the bottom and the bullet scan is curving from left to right. Fired bullets have \emph{breakoff}, where some of the metal is ripped off the bullet during firing as a result of heat and pressure. The scans are oriented such that any breakoff is located towards the bottom right corner of the scan.
+For Hamby 173, bullets were flipped along the $y$ axis; for Hamby 252, the bullets were rotated counterclockwise by 90 degrees and then flipped along the $y$ axis. Finally, scans are converted so that all measurements are in $\mu m$ (microns, $1 \mu m = 10^{-3} mm$).
+\item Damaged scans not suitable for comparison are marked. A total of 30 out of 420 scans were found to be damaged.
+\item Once scans are oriented properly, a suitable cross-section (one that does not cross through any regions of breakoff) that is as low as possible on the bullet (so as to cross deeper, more well-engraved stria) is identified algorithmically using the cross-correlation between adjacent cross-sections to quantify stability. These cross sections are checked manually using graphics and are set by hand when the algorithmic identification fails (see shiny app `check-crosscuts.R'). In this dataset,  40 out of 420 cross-sections were identified manually.
+\item Using the cross-section location identified in step 2, the measurements are extracted from the scan at that crosscut.
+\item The grooves that demarcate the land engraved area are identified algorithmically and then manually checked and set as necessary using a web-app (code is provided in the file).
+\item The areas between the grooves are extracted and a smooth is fit to the data to remove the bullet surface curvature, producing a ``bullet signature". This signature is used to represent the entire bullet land engraved area scan.
+\end{enumerate}
 
 
 \subsection*{Feature Derivation}
-Once the raw data files are downloaded, the code \texttt{create-features.R} can be run to generate the complete set of pairwise comparisons and intermediate results; the feature summaries for each pairwise comparison are, of course, provided in \texttt{hamby-comparisons.csv}. These features are produced using functions from the R package \texttt{bulletxtrctr}; the feature derivation process will be described here.
 
-The initial x3p scans describe a curved surface with striations produced as the bullet is propelled through the barrel during the firing process. Though the source data is three-dimensional, the actual information we use to make the comparison is two-dimensional: it is essentially a cross-section of the scanned surface. The initial processing method is designed to reduce the 3D scan into a two-dimensional "signature" of a bullet land, without the underlying surface curvature. The protocol for the data reduction process is described in great detail in \citet{aoas} and the code provided here leverages \texttt{bulletxtrctr}, an R package designed to implement the process.
+Steps 1 to 9 in code file \texttt{create-features.R}  generate the complete set of pairwise comparisons and intermediate results; the feature values for each pairwise comparison are provided in \texttt{hamby-comparisons.csv}. These features are produced using functions from the R package \texttt{bulletxtrctr}; here, we describe the feature derivation process
 
-Each step in the file \texttt{create-features.R} is described briefly below; all of the code necessary to reproduce the steps exactly is provided in the file. In order to replicate the entire process, you can download the data as directed and run the \texttt{create-features.R} file in the directory where the data is downloaded. The individual functions used are described in detail in the bulletxtrctr R package and the corresponding code can be found there.
+The initial x3p scans describe a curved surface with striations produced as the bullet is propelled through the barrel during the firing process. Though the source data is three-dimensional, the actual information we use to make the comparison is two-dimensional: it is essentially a cross-section of the scanned surface. The initial processing method is designed to reduce the 3D scan into a two-dimensional ``signature" of a bullet land, without the underlying surface curvature. The protocol for the data reduction process is described in detail in \citet{aoas} and the code provided here leverages \texttt{bulletxtrctr}, an R package designed to implement the process.
+
+Each step in the file \texttt{create-features.R} is described briefly below; all of the code necessary to reproduce the steps exactly is provided in the file. In order to replicate the entire process,  download the data as directed and run the \texttt{create-features.R} file in the directory where the data is downloaded. The individual functions used are described in detail in the bulletxtrctr R package and the corresponding code can be found there.
 
 \begin{enumerate}
-\item The scans are oriented so that the base of the bullet is at the bottom and the bullet scan is curving from left to right. Fired bullets have \emph{breakoff}, where some of the metal flies off of the bullet during firing as a result of heat and pressure. The scans are oriented such that any breakoff should be located in the bottom right corner of the scan. For Hamby 173, bullets were flipped along the $y$ axis; for Hamby 252, the bullets were rotated counterclockwise by 90 degrees and then flipped along the $y$ axis. Finally, scans are converted so that all measurements are in $\mu$m.
-\item Damaged scans not suitable for comparison are marked.
-\item Once scans are oriented properly, a stable cross-section (one that does not cross through any regions of breakoff) that is as low as possible on the bullet (so as to cross deeper, more well-engraved stria) is identified algorithmically using the cross-correlation between adjacent cross-sections to quantify stability. These cross sections are checked manually using graphics and are set by hand when the algorithmic identification fails. In this dataset, there were no manually identified cross sections.
-\item Using the cross-section location identified in step 2, the measurements at that crosscut are extracted from the scan.
-\item The grooves that demarcate the land engraved area are identified algorithmically and then manually checked and set as necessary using a web-app (code is provided in the file).
-\item The areas between the grooves are extracted and a smooth is fit to the data to remove the bullet surface curvature, producing a "bullet signature". This signature is used to represent the entire bullet land engraved area scan.
 \item Once signatures have been identified, each scan is compared to every other scan to produce a set of pairwise comparisons. The signatures in each pairwise scan are identified and features are computed using the bulletxtrctr software describing how well the two scans are aligned.
 \item The ground truth is included in the feature set for evaluating the prediction algorithm.
 \item Duplicate pairwise comparisons are removed so as not to compromise the model fitting process.
 \end{enumerate}
 
 \subsection*{Model Fitting}
-The random forest model is fit within the statistical computing software R 4.0.1 \citep{R} using the package {\tt randomForest} 4.6-14 \citep{randomforest}. The following lines of code fit the forest object `csafe\_rf2`:
+The random forest model is fit within the statistical computing software R 4.0.1 \citep{R} using the package {\tt randomForest} 4.6-14 \citep{randomforest}. The following lines of code fit the forest object `csafe\_rf3`:
 
 <<fit-forest, echo=TRUE, eval=FALSE, tidy=FALSE>>=
 library(randomForest)
@@ -628,13 +678,16 @@ features <- read.csv("data/hamby-comparisons.csv")
 
 set.seed(20140105)
 # fit the random forest
-csafe_rf2 <- randomForest(
-  factor(samesource) ~ ccf + rough_cor + matches_per_mm + D + sd_D +
-    cms_per_mm + mismatches_per_mm + overlap + abs_lag_mm + sum_peaks,
-  data = features)
+csafe_rf3 <- randomForest(
+  factor(samesource) ~ ccf + rough_cor + matches_per_mm + D +
+    sd_D + cms_per_mm + mismatches_per_mm + overlap +
+    abs_lag_mm + sum_peaks,
+    importance=TRUE, ntree=313,
+    data = features)
 
-saveRDS(csafe_rf2, "data/csafe_rf2.rds")
+saveRDS(csafe_rf3, "data/csafe_rf3.rds")
 @
+
 
 
 \section*{Ethics Statement}
@@ -737,6 +790,7 @@ perceived to have, influenced the work reported in this article.
 % \hh{Associated research article is \cite{aoas}.}
 
 \hh{XXX add session info to the submission}
+
 
 %% Numbered
 %%If
