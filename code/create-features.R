@@ -167,77 +167,18 @@ bullets <- bullets %>% mutate(
 )
 
 # Manually assess the grooves
-library(shiny)
 grooves <- bullets$grooves
 
-shinyApp(
-  ui = fluidPage(
-    selectInput("k","Investigate kth plot:", selected = 1,
-                choices=1:length(grooves)),
-    textOutput("groovelocations"),
-    actionButton("confirm", "Confirm"),
-    actionButton("save", "Save"),
-    plotOutput("groovePlot", click = "plot_click"),
-    verbatimTextOutput("info")
-  ),
-
-  server = function(input, output, session) {
-    output$groovePlot <- renderPlot({
-      k <- as.numeric(input$k)
-      p <- grooves[[k]]$plot
-
-      p
-    })
-    output$groovelocations <- renderText({
-      paste("Left Groove: ",grooves[[as.numeric(input$k)]]$groove[1],
-            " Right Groove: ",grooves[[as.numeric(input$k)]]$groove[2])
-    })
-    observeEvent(input$confirm,{
-      cat(str(input$k))
-      updateSelectInput(session, "k","Investigate kth plot:",
-                        selected = as.numeric(input$k)+1,
-                        choices=1:length(grooves))
-    })
-    observeEvent(input$save,{
-      saveRDS(grooves, file="data/grooves.rda")
-      cat("groove data saved\n")
-    })
-
-    observeEvent(input$plot_click,{
-      k <- as.numeric(input$k)
-      xloc <- input$plot_click$x
-
-      gr <- grooves[[k]]$groove
-      if (abs(gr[1]-xloc) < abs(gr[2]-xloc)) {
-        grooves[[k]]$groove[1] <<- xloc
-      } else {
-        grooves[[k]]$groove[2] <<- xloc
-      }
-      output$groovePlot <- renderPlot({
-        k <- as.numeric(input$k)
-        p <- grooves[[k]]$plot +
-          geom_vline(xintercept = grooves[[k]]$groove[1], colour="green") +
-          geom_vline(xintercept = grooves[[k]]$groove[2], colour="green")
-
-        p
-      })
-
-    })
-    output$info <- renderText({
-      paste0("x=", input$plot_click$x, "\ny=", input$plot_click$y)
-    })
-
-  },
-
-  options = list(height = 500)
-)
+runApp("code/apps/check-grooves.R")
 
 bullets$grooves_pred <- bullets$grooves
 bullets$grooves <- grooves
 
 meta$groove_left <- bullets$grooves %>% purrr::map_dbl(.f = function(g) g$groove[1])
 meta$groove_right <- bullets$grooves %>% purrr::map_dbl(.f = function(g) g$groove[2])
+meta <- meta %>% select(land_id, study, barrel, bullet, land, source, H173_B1_index, damaged, cc, cc_pred, cc_manual, groove_left, groove_right)
 write.csv(meta, file="data/meta-info.csv", row.names = FALSE)
+
 } else {
 bullets$grooves <-  purrr::map2(meta$groove_left, meta$groove_right,
                         .f = function(left, right) list(groove = c(left, right)))

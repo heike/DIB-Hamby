@@ -17,7 +17,7 @@ library(dplyr)
 library(readr)
 library(x3ptools)
 
-ui = fluidPage(
+ui <- fluidPage(
   selectInput("k","Investigate kth plot:", selected = 1,
               choices=1:length(grooves)),
   textOutput("groovelocations"),
@@ -27,7 +27,7 @@ ui = fluidPage(
   verbatimTextOutput("info")
 )
 
-server = function(input, output, session) {
+server <- function(input, output, session) {
   output$groovePlot <- renderPlot({
     k <- as.numeric(input$k)
     p <- grooves[[k]]$plot
