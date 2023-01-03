@@ -91,6 +91,10 @@ bullets <- bullets %>% mutate(
   cc = x3p %>% purrr::map_dbl(.f = function(x) x3p_crosscut_optimize(x))
 )
 
+# ------------------------------------------------------------------------------
+# *** Step 3: Check for damage and verify suitability of  crosscut *************
+# ------------------------------------------------------------------------------
+
 # check crosscuts manually
 if (!file.exists("images")) dir.create("images")
 for (i in 1:nrow(bullets)) {
@@ -134,7 +138,7 @@ write.csv(meta, "data/meta-info.csv", row.names = FALSE)
 }
 
 # ------------------------------------------------------------------------------
-# *** Step 3: Get measurements at the identified crosscut **********************
+# *** Step 4: Get measurements at the identified crosscut **********************
 # ------------------------------------------------------------------------------
 
 resolution <- bullets$x3p[[1]] %>% x3p_get_scale()
@@ -156,7 +160,7 @@ bullets <- bullets %>% mutate(
 )
 
 # ------------------------------------------------------------------------------
-# *** Step 4: Identify the grooves between GEA and LEAs on the scans ***********
+# *** Step 5: Identify the locations between GEA and LEAs on the scans ***********
 # ------------------------------------------------------------------------------
 
 # only run this code if grooves have not been identified
@@ -185,7 +189,7 @@ bullets$grooves <-  purrr::map2(meta$groove_left, meta$groove_right,
 }
 
 # ------------------------------------------------------------------------------
-# *** Step 5: Remove bullet curvature and groove areas, get signature **********
+# *** Step 6: Remove bullet curvature and groove areas, get signature **********
 # ------------------------------------------------------------------------------
 
 bullets <- bullets %>% mutate(
@@ -215,7 +219,7 @@ if (length(idx) > 0) {
 saveRDS(bullets, "bullets.rds")
 
 # ------------------------------------------------------------------------------
-# *** Step 6: Create pairwise comparisons **************************************
+# *** Step 7: Create pairwise comparisons **************************************
 # ------------------------------------------------------------------------------
 
 lands <- unique(bullets$land_id)
@@ -282,7 +286,7 @@ system.time({
 saveRDS(comparisons, "comparisons.rds")
 
 # ------------------------------------------------------------------------------
-# *** Step 7: Include ground truth *********************************************
+# *** Step 8: Include ground truth *********************************************
 # ------------------------------------------------------------------------------
 meta <- read.csv("meta-info.csv", stringsAsFactors = FALSE)
 
@@ -295,9 +299,8 @@ saveRDS(comparisons, "comparisons.rds")
 
 
 # ------------------------------------------------------------------------------
-# *** Step 8: Mark damaged scans ***********************************************
+# *** Step 9: Exclude comparisons from damaged scans and duplicates ************
 # ------------------------------------------------------------------------------
-
 
 comparisons <- comparisons %>%
   left_join(meta %>% select(land_id, flagged1=damaged), by=c("land1"="land_id")) %>%
@@ -305,10 +308,6 @@ comparisons <- comparisons %>%
 comparisons$damaged <- comparisons$flagged1|comparisons$flagged2
 comparisons %>% count(damaged)
 
-
-# ------------------------------------------------------------------------------
-# *** Step 9: Remove duplicate comparisons *************************************
-# ------------------------------------------------------------------------------
 
 # use only one comparison of a pair of scans
 
