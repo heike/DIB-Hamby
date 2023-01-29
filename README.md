@@ -2,6 +2,15 @@
 
 Data in Brief for the Random Forest based on Hamby sets 173 and 252
 
+## Repository structure
+
+    ├── code
+    ├── data
+    ├── images
+    ├── writeup
+
+
+
 ## Code
 
 There are three R scripts in the code folder:
