@@ -430,7 +430,7 @@ The quality of any learning algorithm depends crucially on the training data. In
 
 Information about each of the 420 raw LEA scans is provided in \autoref{meta}; each row describes a scan of a single bullet land, its relative file path on the disk after the download, its suitability for comparisons, parameters for comparisons and, to determine ground truth for source assessments, its relationship to Hamby set 173 bullet 1 from the same barrel.
 
-\autoref{features} details all features based on 76,245 pairwise comparisons of suitable scans. These features are aimed to distinguish between pairs of scans from the same source (corresponding to two bullets fired from the same barrel) and  different sources (corresponding to bullets fired from different barrels).
+\autoref{features} details all features based on the `r nrow(features)` pairwise comparisons of suitable scans. These features are aimed to distinguish between pairs of scans from the same source (corresponding to two bullets fired from the same barrel) and  different sources (corresponding to bullets fired from different barrels).
 \autoref{fig:densities} gives an overview of some of the features in the `hamby-comparisons.csv` file. Values from same-source comparisons are shown in orange, different-source comparisons are shown in grey. Area under the curve (AUC) is a value between 0 and 1 describing the strength of a feature's strength in discriminating between same-source and different-source comparisons. The closer values are to 1, the better they discriminate.
 
 \begin{figure}
@@ -464,7 +464,7 @@ Information about each of the 420 raw LEA scans is provided in \autoref{meta}; e
 \end{longtable}
 
 \begin{longtable}{p{33mm}p{94mm}}
-\caption{\label{features} Description of features extracted from 76,245 pairwise comparisons of scans. These values are stored in file `hamby-comparisons.csv`.}
+\caption{\label{features} Description of features extracted from pairwise comparisons of scans. These values are stored in file `hamby-comparisons.csv`.}
 \hline
 \multicolumn{2}{l}{\bf Table   (hamby-comparisons.csv)}             \\
 \bf Variable name & \bf Description\\ \hline
