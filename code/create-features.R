@@ -81,12 +81,26 @@ bullets <- rbind(b173, b252)
 
 
 # ------------------------------------------------------------------------------
-# *** Step 3: Merge meta info into bullets *************************************
+# *** Step 3: Merge meta info into bullets & compare checksums *****************
 # ------------------------------------------------------------------------------
 
 meta <- read.csv("data/meta-info.csv")
 bullets <- bullets %>% left_join(meta, by = c("source", "study", "barrel", "bullet", "land", "land_id"))
 
+bullets <- bullets %>% mutate(
+  checksum2 = x3p %>% purrr::map_chr(.f = function(x) {
+    x3p_show_xml(x ,element = "DataLink.MD5ChecksumPointData")[[1]]
+  })
+)
+
+if (any(bullets$checksum != bullets$checksum2)) {
+  cat("x3p scans have changed. Results will not match previous calculations.\n")
+  differences <- which(bullets$checksum != bullets$checksum2)
+  cat("Differences were found in the following scans:\n")
+  cat(paste(bullets$land_id[differences], collapse="\n"))
+}
+
+bullets <- bullets %>% select(-checksum2)
 
 # ------------------------------------------------------------------------------
 # *** Step 4: Get measurements at the identified crosscut **********************

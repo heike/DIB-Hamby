@@ -55,8 +55,7 @@ There are three R scripts in the code folder:
 -   (automatically triggered) download of the x3p files from the [NIST Ballistics Toolmark Database](https://tsapps.nist.gov/NRBTD/Studies/Search)
 -   file `data/meta-info.csv` with meta information for each scan, such as (manual) groove locations of each profile, and an identifier with ground truth for all land-to-land comparisons. 
 
-**output:\
-**\
+**output:**\
 `data/hamby-comparisons.csv`, this file contains features based on pairwise comparisons of striation marks on bullet lands\
 
 #### code/fitting-randomforest.R

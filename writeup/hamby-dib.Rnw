@@ -364,7 +364,7 @@ Data source location   &  Institution: Iowa State University\newline
 
 %
 Related
-research 
+research
 article                & E. Hare, H. Hofmann, A. Carriquiry,
                          Automatic matching of bullet land impressions,
                          Annals of Applied Statistics, 11(4), 2017, 2332--2356.
@@ -430,7 +430,7 @@ The quality of any learning algorithm depends crucially on the training data. In
 
 Information about each of the 420 raw LEA scans is provided in \autoref{meta}; each row describes a scan of a single bullet land, its relative file path on the disk after the download, its suitability for comparisons, parameters for comparisons and, to determine ground truth for source assessments, its relationship to Hamby set 173 bullet 1 from the same barrel.
 
-\autoref{features} details all features based on 76,245 pairwise comparisons of suitable scans. These features are aimed to distinguish between pairs of scans from the same source (corresponding to two bullets fired from the same barrel) and  different sources (corresponding to bullets fired from different barrels).
+\autoref{features} details all features based on the `r nrow(features)` pairwise comparisons of suitable scans. These features are aimed to distinguish between pairs of scans from the same source (corresponding to two bullets fired from the same barrel) and  different sources (corresponding to bullets fired from different barrels).
 \autoref{fig:densities} gives an overview of some of the features in the `hamby-comparisons.csv` file. Values from same-source comparisons are shown in orange, different-source comparisons are shown in grey. Area under the curve (AUC) is a value between 0 and 1 describing the strength of a feature's strength in discriminating between same-source and different-source comparisons. The closer values are to 1, the better they discriminate.
 
 \begin{figure}
@@ -468,7 +468,7 @@ Information about each of the 420 raw LEA scans is provided in \autoref{meta}; e
 \end{longtable}
 
 \begin{longtable}{p{33mm}p{94mm}}
-\caption{\label{features} Description of features extracted from 76,245 pairwise comparisons of scans. These values are stored in file `hamby-comparisons.csv`.}
+\caption{\label{features} Description of features extracted from pairwise comparisons of scans. These values are stored in file `hamby-comparisons.csv`.}
 \hline
 \multicolumn{2}{l}{\bf Table   (hamby-comparisons.csv)}             \\
 \bf Variable name & \bf Description\\ \hline
@@ -476,18 +476,18 @@ Information about each of the 420 raw LEA scans is provided in \autoref{meta}; e
 \hline
 \endfoot
 \hline
-\bf Land identifiers\\ 
+\bf Land identifiers\\
 \hline
 \rowcolor{lightgray}
-\bf land1, land2          
+\bf land1, land2
   & identifiers of the land engraved areas of the form {\tt study\_barrel\_bullet\_land} where {\tt study} corresponds to either Hamby173 or Hamby252. A Hamby set consists of twenty bullets of known origin fired from barrels 1 through 10, and 15 questioned bullets. Questioned bullets are named by an uppercase latin letter. They have by definition no known barrel, i.e.\  land 3 from questioned bullet A from set 252 would be denoted as {\tt Hamby252-BrUkn-BA-L3}. Two bullets are fired from each of the ten barrels. Land 2 from the first bullet of barrel 4 in Set 173 is denoted as {\tt Hamby252-Br4-B1-L2}.
 {\bf land1} and {\bf land2} uniquely describe one row in the hamby-comparisons.csv data set.\\
-\bf study1, study2, barrel1, barrel2, bullet1, bullet2, l1, l2 
+\bf study1, study2, barrel1, barrel2, bullet1, bullet2, l1, l2
   & elements describing the provenance of the two LEAs in a comparison. All of these elements can be directly derived from {\bf land1} and {\bf land2} and are added for convenience  only.\\ \hline
-\multicolumn{2}{l}{\bf Measures based on comparisons of two aligned signatures} 
+\multicolumn{2}{l}{\bf Measures based on comparisons of two aligned signatures}
 \\ \hline
-\bf ccf 
-  & maximized cross-correlation between two LEA signatures, 
+\bf ccf
+  & maximized cross-correlation between two LEA signatures,
 \\ \rowcolor{lightgray}
 \bf rough\_cor & correlation after detrending aligned signatures.\\
 \bf length, length\_mm & length of the shorter of two signatures -- as vector length, or converted to millimeter taking resolution into account.\\\rowcolor{lightgray}
