@@ -175,7 +175,7 @@ bullets <- bullets %>% mutate(
 # Manually assess the grooves
 grooves <- bullets$grooves
 
-runApp("code/apps/check-grooves.R")
+shiny::runApp("code/apps/check-grooves.R")
 
 bullets$grooves_pred <- bullets$grooves
 bullets$grooves <- grooves
