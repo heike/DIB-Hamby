@@ -338,11 +338,11 @@ How data were acquired & Table (meta-info.csv): assembled by the authors; consis
 
 Data format            & Raw \& Analyzed\\
 Parameters for
-data\newline
+data \newline
 collection             & Hamby sets \citep{hamby} consist of 35 bullets fired from ten consecutively manufactured P85 Ruger barrels. During the firing process micro-imperfections in form of striations are engraved on parts (LEAs) of each bullet. Striation marks are considered to be unique to a barrel. Marks were scanned under 20x magnification by a NanoFocus confocal microscope. Striae from scans of a total of 420 LEAs ($35 \times 2 \times 6$) from two Hamby sets (sets 173 and 252) were considered.
   \\
 Description of
-data\newline
+data \newline
 collection             & 2d images were rendered from topographic scans. Visual inspection revealed damage on 30 of the 420 LEAs (such as `tank rash', large amount of pitting, cracks). For the remaining scans, areas of good striations were identified, bullet curvature was removed, and signatures extracted. Pairwise signatures were aligned and features describing similarity of striae extracted. Extracted features include cross-correlation, number and location of coinciding peaks and valleys, height of peaks and valleys,  and consecutively matching striae among others.
                          \\
 Data source location   &  Institution: Iowa State University\newline
@@ -351,9 +351,9 @@ Data source location   &  Institution: Iowa State University\newline
 
                          Primary data sources: \newline
                          x3p files containing topographic surface data from microscopic scans of 35 bullets each from Hamby Set 173 and Hamby Set 252. These scans are available from the
-                         National Ballistic and Toolmark Research Database at https://tsapps.nist.gov/NRBTD/. In particular, scans for Hamby Set 173 is available from \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/b5fbda3e-d889-4211-be7e-654e19b7cd40?nm=True&mt=1&m=3&sp=1};  and scans for Hamby Set 252 are available from \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/c09aaa86-5d60-4acb-9031-46dad2c0ad32?nm=True&mt=1&m=3&sp=1}. \\
+                         National Ballistic and Toolmark Research Database at https://tsapps.nist.gov/NRBTD/. In particular, scans for Hamby Set 173 are available from \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/b5fbda3e-d889-4211-be7e-654e19b7cd40?nm=True&mt=1&m=3&sp=1} and scans for Hamby Set 252 are available from \url{https://tsapps.nist.gov/NRBTD/Studies/Studies/Details/c09aaa86-5d60-4acb-9031-46dad2c0ad32?nm=True&mt=1&m=3&sp=1}. \\
 \hypertarget{target1}
-{Data accessibility}   & Primary sources are hosted on a database established by NIST (National Institute of Standards and Technology); data described here, are hosted by the data share service provided by Iowa State, handled through figshare. \newline
+{Data accessibility}   & Primary sources are hosted on a database established by NIST (National Institute of Standards and Technology); data described here are hosted by the data share service provided by Iowa State, handled through figshare. \newline
 
                          Repository name: [Name repository]\newline
                          Data identification number: [provide number]\newline
@@ -364,11 +364,11 @@ Data source location   &  Institution: Iowa State University\newline
 
 %
 Related
-research\newline
+research 
 article                & E. Hare, H. Hofmann, A. Carriquiry,
                          Automatic matching of bullet land impressions,
                          Annals of Applied Statistics, 11(4), 2017, 2332--2356.
-                         DOI: \url{10.1214/17-aoas1080}\newline\hline
+                         DOI: \url{10.1214/17-aoas1080}\\\hline
 \end{longtable}
 }
 %%%
@@ -451,15 +451,19 @@ Information about each of the 420 raw LEA scans is provided in \autoref{meta}; e
 \endfoot
 \hline
 \bf Land identifiers\\
-\hline\rowcolor{lightgray}
+\hline
+\rowcolor{lightgray}
 \bf land\_id          & identifier of a land engraved area of the form {\tt study\_barrel\_bullet\_land}. \\
-\bf study, barrel, bullet, land & elements describing the provenance of a LEA. \\\rowcolor{lightgray}
+\bf study, barrel, bullet, land & elements describing the provenance of a LEA. \\
+\rowcolor{lightgray}
 \bf source & path to the x3p file corresponding to the LEA. \\
-\bf H173\_B1\_index & matching land id to bullet 1 of the Hamby 173 set of the barrel the bullet was fired from.  This index enables to determine ground truth in any comparison: two land engraved areas come from the same source if their corresponding {\bf H173\_B1\_index} matches.\\\rowcolor{lightgray}
+\bf H173\_B1\_index & matching land id to bullet 1 of the Hamby 173 set of the barrel the bullet was fired from.  This index enables to determine ground truth in any comparison: two land engraved areas come from the same source if their corresponding {\bf H173\_B1\_index} matches.\\
+\rowcolor{lightgray}
 \bf damaged & logical variable indicating whether the land engraved area is exhibiting damage not associated with the barrel and the firing process; 30 out of the 420 scans are found to have damage that prevents good comparisons with other scans. \\
-\bf cc, cc\_pred & index of a horizontal crosscut suitable for matching striations; {\bf cc\_pred} is determined algorithmically. If a visual inspection finds the crosscut location unsuitable (because of missing values, such as holes, or break-off), a different value for {\bf cc} is used. \\\rowcolor{lightgray}
+\bf cc, cc\_pred & index of a horizontal crosscut suitable for matching striations; {\bf cc\_pred} is determined algorithmically. If a visual inspection finds the crosscut location unsuitable (because of missing values, such as holes, or break-off), a different value for {\bf cc} is used. \\
+\rowcolor{lightgray}
 \bf cc\_manual & logical variable indicating whether the crosscut value was determined by visual inspection (TRUE) or algorithmically (FALSE). 40 out of the 420 crosscuts were set manually. \\
-\bf groove\_left, groove\_right & positions of left and right groove along the extracted cross-cut (manually determined). \\\rowcolor{lightgray}
+\bf groove\_left, groove\_right & positions of left and right groove along the extracted cross-cut (manually determined). \\
 \hline
 \end{longtable}
 
@@ -472,14 +476,19 @@ Information about each of the 420 raw LEA scans is provided in \autoref{meta}; e
 \hline
 \endfoot
 \hline
-\bf Land identifiers\\
-\hline\rowcolor{lightgray}
-\bf land1, land2          & identifiers of the land engraved areas of the form {\tt study\_barrel\_bullet\_land} where {\tt study} corresponds to either Hamby173 or Hamby252. A Hamby set consists of twenty bullets of known origin fired from barrels 1 through 10, and 15 questioned bullets. Questioned bullets are named by an uppercase latin letter. They have by definition no known barrel, i.e.\  land 3 from questioned bullet A from set 252 would be denoted as {\tt Hamby252-BrUkn-BA-L3}. Two bullets are fired from each of the ten barrels. Land 2 from the first bullet of barrel 4 in Set 173 is denoted as {\tt Hamby252-Br4-B1-L2}.
-{\bf land1} and {\bf land2} uniquely describe one row in the hamby-comparisons.csv data set.
-\\
-\bf study1, study2, barrel1, barrel2, bullet1, bullet2, l1, l2 & elements describing the provenance of the two LEAs in a comparison. All of these elements can be directly derived from {\bf land1} and {\bf land2} and are added for convenience  only.\\ \hline
-\multicolumn{2}{l}{\bf Measures based on comparisons of two aligned signatures} \\ \hline
-\bf ccf & maximized cross-correlation between two LEA signatures, \\\rowcolor{lightgray}
+\bf Land identifiers\\ 
+\hline
+\rowcolor{lightgray}
+\bf land1, land2          
+  & identifiers of the land engraved areas of the form {\tt study\_barrel\_bullet\_land} where {\tt study} corresponds to either Hamby173 or Hamby252. A Hamby set consists of twenty bullets of known origin fired from barrels 1 through 10, and 15 questioned bullets. Questioned bullets are named by an uppercase latin letter. They have by definition no known barrel, i.e.\  land 3 from questioned bullet A from set 252 would be denoted as {\tt Hamby252-BrUkn-BA-L3}. Two bullets are fired from each of the ten barrels. Land 2 from the first bullet of barrel 4 in Set 173 is denoted as {\tt Hamby252-Br4-B1-L2}.
+{\bf land1} and {\bf land2} uniquely describe one row in the hamby-comparisons.csv data set.\\
+\bf study1, study2, barrel1, barrel2, bullet1, bullet2, l1, l2 
+  & elements describing the provenance of the two LEAs in a comparison. All of these elements can be directly derived from {\bf land1} and {\bf land2} and are added for convenience  only.\\ \hline
+\multicolumn{2}{l}{\bf Measures based on comparisons of two aligned signatures} 
+\\ \hline
+\bf ccf 
+  & maximized cross-correlation between two LEA signatures, 
+\\ \rowcolor{lightgray}
 \bf rough\_cor & correlation after detrending aligned signatures.\\
 \bf length, length\_mm & length of the shorter of two signatures -- as vector length, or converted to millimeter taking resolution into account.\\\rowcolor{lightgray}
 \bf lag, lag\_mm, abs\_lag, abs\_lag\_mm & (absolute) lag (in millimeter) between signatures to achieve alignment. \\
@@ -492,8 +501,7 @@ Information about each of the 420 raw LEA scans is provided in \autoref{meta}; e
 \bf D, sd\_D & Euclidean distance (in millimeters) between two aligned signatures and its standard deviation. \\\rowcolor{lightgray}
 \bf sum\_peaks & the depth of peaks measured as the sum of matching peaks between two aligned signatures (in microns).\\
 \bf samesource &  ground truth whether a pair is from the same source (TRUE) or from different sources (FALSE). \\\rowcolor{lightgray}
-\bf damaged & logical variable indicating whether one of the land engraved areas shows visible damage such as pitting (holes in the bullet surface from gun powder exploding in the barrel next to it) or ``tank rash" (damage to the bullet after it exited the barrel after the firing). \\
-\hline
+\bf damaged & logical variable indicating whether one of the land engraved areas shows visible damage such as pitting (holes in the bullet surface from gun powder exploding in the barrel next to it) or ``tank rash" (damage to the bullet after it exited the barrel after the firing). \\ \hline
 \end{longtable}
 
 

@@ -149,7 +149,7 @@ if (length(idx) > 0) {
 # bullets$grooves[[idx[2]]]$groove[2] <- 2125
 # bullets$grooves[[idx[3]]]$groove[1] <- 250
 
-saveRDS(bullets, "bullets.rds")
+saveRDS(bullets, "data/bullets.rds")
 
 # ------------------------------------------------------------------------------
 # *** Step 7: Create pairwise comparisons **************************************
@@ -214,7 +214,7 @@ system.time({
 
 #    user   system  elapsed
 # 278.031  157.864 1419.414
-saveRDS(comparisons, "comparisons.rds")
+# saveRDS(comparisons, "data/comparisons.rds")
 
 # ------------------------------------------------------------------------------
 # *** Step 8: Include ground truth *********************************************
@@ -226,7 +226,7 @@ comparisons <- comparisons %>%
   left_join(meta %>% select(land_id, index_land2=H173_B1_index), by=c("land2"="land_id"))
 
 comparisons$samesource <- comparisons$index_land1 == comparisons$index_land2
-saveRDS(comparisons, "comparisons.rds")
+# saveRDS(comparisons, "data/comparisons.rds")
 
 
 # ------------------------------------------------------------------------------
@@ -246,7 +246,7 @@ comparisons <- comparisons %>%
   mutate(
     id = paste(pmin(land1, land2), pmax(land1,land2), sep="|")
   )
-saveRDS(comparisons, "comparisons.rds")
+saveRDS(comparisons, "data/comparisons.rds")
 
 features <- comparisons  %>% unnest(features)
 doubles <- duplicated(features$id)
