@@ -9,7 +9,7 @@ The four main elements to this repository are the four folders: `data`, `images`
 ### Images
 
 The `images` folder contains a total of 420 images in png format. These images are renderings from the original topographic scans of land engraved areas from fired bullets.  The renderings are overlaid by annotations from the matching procedure. The white lines correspond to the profile used for comparisons. 
-All images are checked (manually) for problems with the physical bullet (such as tank rash or holes), that make the scans unsuitable for automatic comparisons, and problems stemming from the matching algorithm, such as an unfortunate choice of crosscut. 
+All images are checked (manually) for problems with the physical bullet (such as tank rash or holes), that make the scans unsuitable for automatic comparisons, and problems stemming from the matching algorithm, such as an unfortunate choice of crosscut. These crosscuts are replaced by a manual choice for the further analysis.
 The images with identified problems are moved into the corresponding folders.
 
     ├── images
@@ -25,6 +25,8 @@ The images with identified problems are moved into the corresponding folders.
     .   .
     .   .
     │   ├── Hamby173-Br1-B1-L1.png
+
+
 
 
 ### Code
