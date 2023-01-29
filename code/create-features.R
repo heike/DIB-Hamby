@@ -5,7 +5,7 @@ library(purrr) # version 1.0.1
 library(future) # version 1.30.0
 
 # ------------------------------------------------------------------------------
-# *** Step 0: Download scans for the Hamby Study 173 and 225    ****************
+# *** Step 1: Download scans for the Hamby Study 173 and 225    ****************
 # ------------------------------------------------------------------------------
 nbtrd <- "https://tsapps.nist.gov"
 
@@ -36,7 +36,7 @@ h173 %>% mutate(
 }
 
 # ------------------------------------------------------------------------------
-# *** Step 1: Read in data and orient scans, convert to microns ****************
+# *** Step 2: Read in data and orient scans, convert to microns ****************
 # ------------------------------------------------------------------------------
 b252 <- read_bullet("NBTRD/Hamby 252 (2009) Barrel/bullets")
 b252 <- b252 %>%
@@ -81,7 +81,7 @@ bullets <- rbind(b173, b252)
 
 
 # ------------------------------------------------------------------------------
-# *** Step 2: Merge meta info into bullets *************************************
+# *** Step 3: Merge meta info into bullets *************************************
 # ------------------------------------------------------------------------------
 
 meta <- read.csv("data/meta-info.csv")
@@ -89,7 +89,7 @@ bullets <- bullets %>% left_join(meta, by = c("source", "study", "barrel", "bull
 
 
 # ------------------------------------------------------------------------------
-# *** Step 3: Get measurements at the identified crosscut **********************
+# *** Step 4: Get measurements at the identified crosscut **********************
 # ------------------------------------------------------------------------------
 
 resolution <- bullets$x3p[[1]] %>% x3p_get_scale()
@@ -138,6 +138,7 @@ idx <- which(potential_problems > 10)
 # if those bullets are damaged, there is nothing we can do:
 idx <- idx[!meta[idx,"damaged"]]
 # check if there are issues we can fix with changes to crosscuts or grooves
+# there should not be any issues based on the meta-info.csv file
 if (length(idx) > 0) {
   bullets$sigs[[idx[1]]] %>% ggplot(aes(x = x, y=value)) + geom_line()
   bullets$sigs[[idx[1]]] %>% ggplot(aes(x = x, y=sig)) + geom_line()
@@ -147,7 +148,6 @@ if (length(idx) > 0) {
 # bullets$grooves[[idx[2]]]$groove[1] <- 300
 # bullets$grooves[[idx[2]]]$groove[2] <- 2125
 # bullets$grooves[[idx[3]]]$groove[1] <- 250
-
 
 saveRDS(bullets, "bullets.rds")
 
