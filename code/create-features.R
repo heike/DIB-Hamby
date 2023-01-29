@@ -214,7 +214,7 @@ system.time({
 
 #    user   system  elapsed
 # 278.031  157.864 1419.414
-# saveRDS(comparisons, "data/comparisons.rds")
+saveRDS(comparisons, "data/comparisons.rds")
 
 # ------------------------------------------------------------------------------
 # *** Step 8: Include ground truth *********************************************
