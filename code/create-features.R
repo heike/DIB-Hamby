@@ -9,7 +9,8 @@ nbtrd <- "https://tsapps.nist.gov"
 
 h252 <- read.csv("data/Hamby252.csv")
 p252 <- "NBTRD/Hamby 252 (2009) Barrel/bullets/"
-if (!file.exists(p252)) dir.create(p252, recursive = TRUE)
+if (!file.exists(p252)) {
+  dir.create(p252, recursive = TRUE)
 
 h252 %>% mutate(
   foo = purrr::map2(.x=file, .y=link, .f = function(.x,.y) {
@@ -30,11 +31,12 @@ h173 %>% mutate(
                   mode="wb")
   })
 )
+}
 
 # ------------------------------------------------------------------------------
 # *** Step 1: Read in data and orient scans, convert to microns ****************
 # ------------------------------------------------------------------------------
-b252 <- read_bullet("NBTRD/Hamby 252 (2009) Barrel/bullets/")
+b252 <- read_bullet("NBTRD/Hamby 252 (2009) Barrel/bullets")
 b252 <- b252 %>%
   mutate(
     x3p = x3p %>% purrr::map(.f = function(x) {
@@ -50,7 +52,7 @@ b252 <- b252 %>% mutate(
   land_id = sprintf("%s-Br%s-B%s-L%s",study, barrel, bullet, land)
 )
 
-b173 <- read_bullet("NBTRD/Hamby 173 (2009) Barrel/bullets/")
+b173 <- read_bullet("NBTRD/Hamby 173 (2009) Barrel")
 b173 <- b173 %>%
   mutate(
     x3p = x3p %>% purrr::map(.f = function(x) {

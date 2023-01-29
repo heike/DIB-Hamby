@@ -3,24 +3,24 @@
 %% generated with the docstrip utility.
 %%
 %% Copyright 2020 Elsevier Ltd
-%% 
+%%
 %% This file is part of the 'Elsarticle Bundle'.
 %% -------------------------------------------
-%% 
+%%
 %% It may be distributed under the conditions of the LaTeX Project Public
 %% License, either version 1.2 of this license or (at your option) any
 %% later version.  The latest version of this license is in
 %%    http://www.latex-project.org/lppl.txt
 %% and version 1.2 or later is part of all distributions of LaTeX
 %% version 1999/12/01 or later.
-%% 
+%%
 %%
 %% $Id: dib.sty 181 2020-06-15 05:15:03Z rishi $
 %%
  \def\RCSfile{dib}%
  \def\RCSversion{0.1}%
  \def\RCSdate{2020/06/15}%
- \def\@shortjnl{\relax} 
+ \def\@shortjnl{\relax}
  \def\@journal{Displays}
  \def\@company{Elsevier Inc.}
  \def\@issn{2352-3409}
@@ -29,13 +29,13 @@
 
 \@ifclassloaded{elsarticle}
 {\typeout{elsarticle.cls is loaded...}}
-{\errmessage{This package will work only with 
-  elsarticle.cls. So please load elsarticle.cls 
+{\errmessage{This package will work only with
+  elsarticle.cls. So please load elsarticle.cls
   and try.}}
-  
+
 \@ifpackageloaded{hyperref}{}
-   {\def\href#1#2{#2}}  
-  
+   {\def\href#1#2{#2}}
+
 \AtBeginDocument{\@twosidetrue\@mparswitchtrue}
 
 \def\@verso{}
@@ -78,7 +78,7 @@
 \def\dblcolfootnote{\@ifnextchar[\@xdblcolfootnote{\stepcounter\@mpfn
      \protected@xdef\@thefnmark{\thempfn}%
      \@footnotemark\@dblcolfootnotetext}}
-     
+
 \def\@xdblcolfootnote[#1]{%
    \begingroup
      \csname c@\@mpfn\endcsname #1\relax
@@ -126,7 +126,7 @@
       }%
       \FN@mf@prepare
     }%
-    
+
 \newif\if@elsdblcolfootinsdone\@elsdblcolfootinsdonefalse
 
 \patchcmd{\@outputdblcol}{\@combinedblfloats}
@@ -173,7 +173,7 @@
        \fboxsep0pt%
        \ifvmode\leavevmode\fi\smash{\put(#1)%
        {\makebox(#2)[#3]{\fbox{#4}}}}}
-       
+
 \long\def\elsptputbox(#1)(#2)[#3]#4{%
        \unitlength=1pt%
        \fboxsep=-\fboxrule%
@@ -229,7 +229,7 @@
      \vspace*{6pt}%
        {\raisebox{0pt}{\includegraphics%
           {\elslogo}\hspace*{\titleblocksep}}}%
-     \colorbox{\elstitleboxcolor}{%     
+     \colorbox{\elstitleboxcolor}{%
        \parbox[b][#2]{#3}{\elstitlejnldetails}}%
    \endminipage%
 }
@@ -241,15 +241,15 @@
 \def\elstitlejnldetails{%
     \minipage[b][23mm][b]{\titlegrayboxwidth}%
        \centering%
-       \parbox[b]{\titlegrayboxwidth}{%       
+       \parbox[b]{\titlegrayboxwidth}{%
        \centering%\sffamily%
-       \fontsize{8pt}{9.6pt}\fontseries{m}\selectfont%       
+       \fontsize{8pt}{9.6pt}\fontseries{m}\selectfont%
        Contents lists available at \ScienceDirect}\\[\@elsctslstskip]%
        {\fontsize{14pt}{18pt}\selectfont%
         \@journal%
        }\\[15pt]%
        \parbox[b]{\titlegrayboxwidth}%
-       {\centering\sffamily\fontsize{8.5pt}{9.6pt}\fontseries{m}\selectfont%       
+       {\centering\sffamily\fontsize{8.5pt}{9.6pt}\fontseries{m}\selectfont%
        journal homepage:~%
        \href{http://\@jnlurl}{\@jnlurl}%
        \vspace*{0pt}%
@@ -264,10 +264,10 @@
       }%
   \endminipage}
 
-\@ifpackageloaded{charissil}%  
+\@ifpackageloaded{charissil}%
     {\def\titleheaderfont{\fontsize{6.5pt}{6.5pt}\selectfont}}
     {\def\titleheaderfont{\fontsize{8pt}{8pt}\selectfont}}
-  
+
 \def\stmtitleheader{\noindent\unskip\ignorespaces%
   \vspace*{18pt}%
   \@tempdima=\dimexpr(\textheight+24pt+\dblcolfnht)
@@ -276,11 +276,11 @@
       \noindent\footnotesize%
       http://dx.doi.org/10.1016/j.dib.xxxx.xx.xxx\\
       \elsarthistorybox\\%
-      \@issn/\,\textcopyright\ \the\year\ 
-      The\ Author(s).\ Published\ by\ 
+      \@issn/\,\textcopyright\ \the\year\
+      The\ Author(s).\ Published\ by\
       \@company
       }
-  }%                        
+  }%
   {\parskip=0pt%
    \parindent=0pt%
    \vspace*{\abovestmtitleheaderskip}%
@@ -290,15 +290,15 @@
      {\titlegrayboxheight}{\titlegrayboxwidth}%
      \hspace*{\dimexpr(\titleblocksep-0.3pt)}%
    \elsjnllogoboxb{\elsjnllogowidth}{\elsjnllogoheight}%
-   \par\vspace*{-3pt}%   
-   \rule{\textwidth}{3pt}%   
+   \par\vspace*{-3pt}%
+   \rule{\textwidth}{3pt}%
    \vspace*{18pt}%
    \endminipage%
   }%
-}  
+}
 
 \long\def\getSpaceLeft{%\global\@twocolumnfalse%
-   \global\setbox0=\vbox{\hsize=\textwidth%   
+   \global\setbox0=\vbox{\hsize=\textwidth%
     \par\vspace*{12pt}%
     \MaketitleBox%
     \MakeabstractBox}%
@@ -311,7 +311,7 @@
     \@tempdima=\vsize
     \advance\@tempdima-\noteheight
     \advance\@tempdima-1\baselineskip
-    \xdef\savefpageheight{\the\@tempdima}%    
+    \xdef\savefpageheight{\the\@tempdima}%
     \setbox2=\vbox{\titlespancalculator{\titleheight}%
                   {\savefpageheight}{\textheight}{0}}%
 }
@@ -323,20 +323,20 @@
          \ifdim\noteheight>0pt%
 			      \advance\@tempdima-1.35\baselineskip
          \fi%
-         \setcounter{cnote}{0}%         
+         \setcounter{cnote}{0}%
          \setcounter{tnote}{0}%
          \setcounter{fnote}{0}%
          \global\setbox\els@boxa=\vsplit0 to \@tempdima
          \box\els@boxa%
-         \printFirstPageNotes%                  
+         \printFirstPageNotes%
          \par\resetTitleCounters
          \thispagestyle{pprintTitle}%
          \ifnum\savetitlepagespan>1\relax%
             \myfor{2}{\savetitlepagespan}{%
-            \global\setbox\els@boxb=\vsplit0 to \textheight%\@tempdima              
+            \global\setbox\els@boxb=\vsplit0 to \textheight%\@tempdima
             \twocolumn[\unvbox\els@boxb]}
          \else%
-         \fi%       
+         \fi%
          \twocolumn[\unvbox0]%
       \else
          \twocolumn[\vspace*{10pt}\finalMaketitle]\printFirstPageNotes
@@ -353,19 +353,19 @@
 			        \advance\@tempdima-1.35\baselineskip
            \fi%
            \setcounter{cnote}{0}%
-           \setcounter{tnote}{0}%           
-           \setcounter{fnote}{0}%           
+           \setcounter{tnote}{0}%
+           \setcounter{fnote}{0}%
            \global\setbox\els@boxa=\vsplit0 to \@tempdima
-           \printFirstPageNotes%                      
+           \printFirstPageNotes%
            \unvbox\els@boxa%
            \par\resetTitleCounters
-           \thispagestyle{pprintTitle}%           
+           \thispagestyle{pprintTitle}%
            \ifnum\savetitlepagespan>1\relax%
               \myfor{2}{\savetitlepagespan}{%
-              \global\setbox\els@boxb=\vsplit0 to \textheight%\@tempdima              
+              \global\setbox\els@boxb=\vsplit0 to \textheight%\@tempdima
               \unvbox\els@boxb}
            \else%
-           \fi%              
+           \fi%
            \unvbox0%
         \else
           \finalMaketitle\printFirstPageNotes
@@ -382,7 +382,7 @@
   \def\@oddhead{%
     %\stmtitleheader
    {\titleheaderfont%
-   \hfil\@journal\ (\the\year)\hfil}%    
+   \hfil\@journal\ (\the\year)\hfil}%
     }%
   \let\@evenhead\@empty
   \def\@oddfoot{%
@@ -396,7 +396,7 @@
       \fi%
       \global\advance\textheight by \dimexpr(37.5pt+\dblcolfnht)%
       \global\let\footnote\savedefaultfootnote%
-      \global\let\footnotetext\savedefaultfootnotetext%      
+      \global\let\footnotetext\savedefaultfootnotetext%
   }
   \let\@evenfoot\@oddfoot
 }
@@ -442,15 +442,15 @@
 \gdef\elsarthistorybox{{
     \ifx\@received\@empty\relax
     \else
-    \receivedhead~\@received;\space 
+    \receivedhead~\@received;\space
     \fi
     \ifx\@finalform\@empty\relax
     \else
-    \finalformhead~\@finalform;\space 
+    \finalformhead~\@finalform;\space
     \fi
     \ifx\@accepted\@empty\relax
     \else
-    \acceptedhead~\@accepted;\space 
+    \acceptedhead~\@accepted;\space
     \fi
     \ifx\@availableonline\@empty\relax
     \else
@@ -462,8 +462,8 @@
 \def\articleinfobox{%
     \parbox[t]{.25\textwidth}{%
     \vspace*{0pt}%
-%    \hrule%        
-%    \vspace*{6pt}%    
+%    \hrule%
+%    \vspace*{6pt}%
     \elsabsfont%
 %    \fontsize{8pt}{10pt}\selectfont%
 %    \textit{Article history}:\\
@@ -501,7 +501,7 @@
 
 
 
-% Maketitle 
+% Maketitle
 \def\elsauthorfont{\fontsize{10.5pt}{12pt}\selectfont}%
 \def\@@author[#1]#2{\g@addto@macro\elsauthors{\elsauthorfont%
     \def\baselinestretch{1}%
@@ -573,12 +573,12 @@
     \end{tabular*}
     \par\noindent%
     \unvbox\absbox%
-    \mbox{}\\[\belowabstractskip]%\rule{.665\textwidth}{.2pt}%\vskip10pt%    
+    \mbox{}\\[\belowabstractskip]%\rule{.665\textwidth}{.2pt}%\vskip10pt%
     \noindent\hrule%
     \if@twocolumn%
       \vspace*{24pt}%
-    \fi%    
-}    
+    \fi%
+}
 }
 
 \long\def\MakeartinfoBox{%
@@ -603,7 +603,7 @@
   \gdef\thefootnote{\arabic{footnote}}%
   }
 
- 
+
 \def\printFirstPageNotes{%
   \def\snm##1{##1}%
   \iflongmktitle
@@ -622,7 +622,7 @@
   \ifx\@elsuads\@empty\relax\else
    \let\thefootnote\relax
    \footnotetext{\textit{URL:\space}%
-     \@elsuads}\fi   
+     \@elsuads}\fi
  \fi
   \ifx\@fnotes\@empty\else\@fnotes\fi
   \iflongmktitle\if@twocolumn
@@ -638,7 +638,7 @@
   \global\setbox\absbox=\vtop\bgroup%
   \hsize=\textwidth%
   \leftskip=.335\textwidth%%
-  \bgroup\elsabsfont%  
+  \bgroup\elsabsfont%
   \noindent\unskip\ignorespaces%
 %  \hskip-1pt%
   }
