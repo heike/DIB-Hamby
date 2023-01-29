@@ -2,7 +2,35 @@
 
 Data in Brief for the Random Forest based on Hamby sets 173 and 252
 
-## Code
+## Repository structure
+
+The four main elements to this repository are the four folders: `data`, `images`, `code`, and `writeup`. The contents of each of these folders is described in detail below.
+
+### Images
+
+The `images` folder contains a total of 420 images in png format. These images are renderings from the original topographic scans of land engraved areas from fired bullets.  The renderings are overlaid by annotations from the matching procedure. The white lines correspond to the profile used for comparisons. 
+All images are checked (manually) for problems with the physical bullet (such as tank rash or holes), that make the scans unsuitable for automatic comparisons, and problems stemming from the matching algorithm, such as an unfortunate choice of crosscut. These crosscuts are replaced by a manual choice for the further analysis.
+The images with identified problems are moved into the corresponding folders.
+
+    ├── images
+    │   ├── crosscut
+    │   ├── damaged
+    │   ├── Hamby173-Br1-B1-L1.png
+    .   .
+    .   .
+    .   .
+    │   ├── Hamby173-BrUkn-BX-L6.png
+    │   ├── Hamby252-Br1-B1-L1.png
+    .   .
+    .   .
+    .   .
+    │   ├── Hamby173-Br1-B1-L1.png
+
+#### scans showing damage to the bullet
+
+
+
+### Code
 
 There are three R scripts in the code folder:
 
