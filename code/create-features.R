@@ -145,8 +145,8 @@ if (length(idx) > 0) {
 # # example of changes:
 # bullets$grooves[[idx[1]]]$groove[2] <- 400
 # bullets$grooves[[idx[2]]]$groove[1] <- 300
-# bullets$grooves[[idx[3]]]$groove[2] <- 2125
-# bullets$grooves[[idx[4]]]$groove[1] <- 250
+# bullets$grooves[[idx[2]]]$groove[2] <- 2125
+# bullets$grooves[[idx[3]]]$groove[1] <- 250
 
 
 saveRDS(bullets, "bullets.rds")
