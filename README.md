@@ -26,6 +26,7 @@ The images with identified problems are moved into the corresponding folders.
     .   .
     │   ├── Hamby173-Br1-B1-L1.png
 
+#### scans showing damage to the bullet
 
 
 
