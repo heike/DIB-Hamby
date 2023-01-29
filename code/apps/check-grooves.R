@@ -45,7 +45,7 @@ server <- function(input, output, session) {
                       choices=1:length(grooves))
   })
   observeEvent(input$save,{
-    saveRDS(grooves, file="data/grooves.rda")
+    saveRDS(grooves, file="../../data/grooves.rda")
     cat("groove data saved\n")
   })
 

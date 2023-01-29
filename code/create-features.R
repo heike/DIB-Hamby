@@ -117,7 +117,7 @@ bullets <- bullets %>% mutate(
 # combine left and right groove locations into the structure needed
 # to get the signature
 bullets$grooves <-  purrr::map2(bullets$groove_left, bullets$groove_right,
-                        .f = function(left, right) list(groove = c(left, right)))
+                       .f = function(left, right) list(groove = c(left, right)))
 
 
 # ------------------------------------------------------------------------------
