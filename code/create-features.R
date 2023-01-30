@@ -240,7 +240,7 @@ comparisons <- comparisons %>%
   left_join(meta %>% select(land_id, index_land2=H173_B1_index), by=c("land2"="land_id"))
 
 comparisons$samesource <- comparisons$index_land1 == comparisons$index_land2
-# saveRDS(comparisons, "data/comparisons.rds")
+saveRDS(comparisons, "data/comparisons.rds")
 
 
 # ------------------------------------------------------------------------------
