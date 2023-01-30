@@ -233,15 +233,13 @@ saveRDS(comparisons, "data/comparisons.rds")
 # ------------------------------------------------------------------------------
 # *** Step 8: Include ground truth *********************************************
 # ------------------------------------------------------------------------------
-meta <- read.csv("meta-info.csv", stringsAsFactors = FALSE)
+meta <- read.csv("data/meta-info.csv", stringsAsFactors = FALSE)
 
 comparisons <- comparisons %>%
   left_join(meta %>% select(land_id, index_land1=H173_B1_index), by=c("land1"="land_id")) %>%
   left_join(meta %>% select(land_id, index_land2=H173_B1_index), by=c("land2"="land_id"))
 
 comparisons$samesource <- comparisons$index_land1 == comparisons$index_land2
-saveRDS(comparisons, "data/comparisons.rds")
-
 
 # ------------------------------------------------------------------------------
 # *** Step 9: Exclude comparisons from damaged scans and duplicates ************
@@ -253,15 +251,14 @@ comparisons <- comparisons %>%
 comparisons$damaged <- comparisons$flagged1|comparisons$flagged2
 comparisons %>% count(damaged)
 
-
-# use only one comparison of a pair of scans
-
+# create a unique identifier for each pair of comparisons
 comparisons <- comparisons %>%
   mutate(
     id = paste(pmin(land1, land2), pmax(land1,land2), sep="|")
   )
 saveRDS(comparisons, "data/comparisons.rds")
 
+# remove comparisons from duplicates and damaged lands from the training data
 features <- comparisons  %>% unnest(features)
 doubles <- duplicated(features$id)
 features <- features %>% filter(!doubles, !damaged)
