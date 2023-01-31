@@ -659,8 +659,8 @@ Step 1 in `create-features.R` sets up the required folder structure and download
 {\it Formatting of the scans}:
 
 \begin{enumerate}
-\item[2] Read the scans for each study into the work session. In this step, raw scans are rotated to the same orientation and re-scaled to the same units as during the creation of the meta-information.
-\item[3] Include the meta data for each scan into the downloaded information.
+\item[2.] Read the scans for each study into the work session. In this step, raw scans are rotated to the same orientation and re-scaled to the same units as during the creation of the meta-information.
+\item[3.] Include the meta data for each scan into the downloaded information.
 During this step (lines 96--101) a check is completed to verify that the scans have not changed since the meta data was derived.
 \end{enumerate}
 
@@ -668,15 +668,15 @@ During this step (lines 96--101) a check is completed to verify that the scans h
 {\it Extract a profile}:
 
 \begin{enumerate}
-\item[4] Suitable (horizontal) cross-sections are extracted from the scans at previously determined heights {\tt cc}.
-\item[5] Assemble an object from the (manually inspected) groove locations reported in the file {\tt meta-info.csv}.
+\item[4.] Suitable (horizontal) cross-sections are extracted from the scans at previously determined heights {\tt cc}.
+\item[5.] Assemble an object from the (manually inspected) groove locations reported in the file {\tt meta-info.csv}.
 \end{enumerate}
 
 \noindent
 {\it Signature Extractions}:
 
 \begin{enumerate}
-\item[6] Extract the data between groove locations extracted (into object {\tt ccdata}, as shown in Figure 1b);
+\item[6.] Extract the data between groove locations extracted (into object {\tt ccdata}, as shown in Figure 1b);
 fit a non-parametric function to the data, and remove the bullet surface curvature.
 The residuals of this fit produce the ``bullet signature" (see Figure 1c, middle). This signature is used to represent the entire bullet land engraved area scan.
 \end{enumerate}
@@ -684,7 +684,8 @@ The residuals of this fit produce the ``bullet signature" (see Figure 1c, middle
 \noindent
 {\it Feature Derivation}:
 
-Steps 7 to 9 in code file \texttt{create-features.R}  generate the complete set of pairwise comparisons; the feature values for each pairwise comparison are provided in the file \texttt{hamby-comparisons.csv}:
+\noindent
+Steps 7 to 9 in code file \texttt{create-features.R}  generate the complete set of pairwise comparisons; the feature values for each pairwise comparison are provided in  \texttt{hamby-comparisons.csv}:
 
 \begin{enumerate}
 \item[7.] The signature of each scan is compared to every other scan to produce a set of pairwise comparisons. For that, signatures are first aligned, common striations are derived and a set of features is calculated.
@@ -713,23 +714,49 @@ saveRDS(csafe_rf3, "data/csafe_rf3.rds")
 @
 
 \noindent
-Note, that the object is fit on 200 basic classification trees. The overall (out-of-bag) error rate is 0.18\%. As can be seen from
+Figure~\ref{fig:show-forest} shows the out-of-bag error rates of the random forest at different stages of its fit. After 200 iteration, the fit stabilizes at an overall out-of-bag error rate of 0.0018. The false positive rate is very small at about $6.7 \times 10^{-5}$, while the false negative rate is about 0.0864.
 
 
 <<read-forest, echo=FALSE, tidy=FALSE>>=
 csafe_rf3 <- readRDS("../data/csafe_rf3.rds")
 error_rf3 <- csafe_rf3$err.rate %>% data.frame() %>% mutate(iteration = 1:n())
-knitr::kable(csafe_rf3$confusion)
+confusion <- csafe_rf3$confusion
+row.names(confusion) <- c("Different","Same-Source")
+#colnames(confusion) <- c("Predicted\nDifferent", "Predicted\nSame", "Error")
+#knitr::kable(confusion, row.names = TRUE, label="confusion", align="c", caption="Confusion matrix of Out-of-Bag predictions versus ground truth for the 76,245 comparison pairs.", format = "latex")
 @
 
-<<show-forest, echo=FALSE, fig.cap="Out-of-bag error rates over the number of iterations">>=
+\begin{table}
+\caption{\label{tab:confusion}Confusion matrix of Out-of-Bag predictions versus ground truth for the 76,245 comparison pairs.}
+\centering
+\begin{tabular}[t]{lrrr}
+\hline
+  & Predicted &  & \\
+  & Different & Same & Error \\
+\hline
+Different & 74736 & 5 & 0.0000669\\
+Same-Source & 130 & 1374 & 0.0864362\\
+\hline
+\end{tabular}
+\end{table}
+
+<<show-forest, echo=FALSE, fig.height = 5, fig.width = 8, fig.cap="Sequence of out-of-bag error rates over the cumulative number of trees evaluated for the random forest. After 200 iterations (not show), the fit stabilizes and no further reduction of the error rate is achieved.">>=
 error_rf3 %>%
   pivot_longer(-iteration, names_to="Types of Errors", values_to="Error rate") %>%
-  ggplot(aes(x = iteration, y = `Error rate`, group = `Types of Errors`)) +
-    geom_line() +
+  mutate(
+    Types = `Types of Errors`,
+    Types = factor(Types, labels=c("Overall & False positives", "Overall & False positives", "False negatives")),
+    Types = factor(Types, levels=c("False negatives", "Overall & False positives"))
+    ) %>%
+  ggplot(aes(x = iteration, y = `Error rate`, colour = `Types of Errors`)) +
+    geom_line(linewidth = 1) +
   theme_bw() +
   ylab("Error rate") +
-  facet_grid(`Types of Errors`~., scale="free_y")
+  facet_grid(Types~., scale="free_y") +
+  scale_colour_manual("Types of Errors", values=c("orange", "grey50", "#219ebc"),
+                      labels=c("False positives", "Overall", "False negatives"),
+                      guide = guide_legend(reverse = TRUE)) +
+  theme(legend.position = c(.9, .45))
 @
 
 
