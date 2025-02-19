@@ -92,12 +92,12 @@
 %%Calgary Preschool Magnetic Resonance Imaging (MRI) Dataset]
 
 %%Authors
-\author[1,2]{Heike \snm{Hofmann}\corref{cor1}}
+\author[3,2]{Heike \snm{Hofmann}\corref{cor1}}
 %% First author's email
-\ead{hofmann@iastate.edu}
+\ead{hhofmann4@unl.edu}
 \cortext[cor1]{Corresponding author:
-  Tel.: +1-515-294-8948;
-  fax: +1-515-294-4040;}
+  Tel.: +1-402-472-1149;
+  fax: +1-402-472-2903;}
 \author[3]{Susan \snm{VanderPlas}}
 \author[4]{Eric \snm{Hare}}
 %\fntext[fn1]{This is author footnote for second author.}
@@ -458,11 +458,13 @@ Information about each of the 420 raw LEA scans is provided in \autoref{meta}; e
 (a) fired bullet & (b) rendering of raw scan & (c) profiles (top \& bottom), aligned signatures (middle) \\
 \includegraphics[width=\textwidth]{images/overview.jpg}
 \end{tabular}
-\caption{\label{overview} (a) Fired bullet, the white rectangles indicates three of the six LEAs captured. (b) Renderings of LEA scans with manual markup of regions. The scan on the bottom is affected by tank `rash' -- damage to the bullet unrelated to the firing.  The white horizontal lines across areas with well-expressed striations are the basis for similarity assessments. (c) Top and bottom: Profiles of identified cross-sections with additional markups. Middle: Signatures are extracted from cross-sections (after removal of bullet curvature, note the difference in vertical scale) and aligned. Similarities between signatures is visible but they are not very strong.  }\\
+\caption{\label{overview} (a) Fired bullet, the white rectangles indicates three of the six LEAs captured. (b) Renderings of LEA scans with manual markup of regions. The scan on the bottom is affected by tank `rash' -- damage to the bullet unrelated to the firing.  The white horizontal lines across areas with well-expressed striations are the basis for similarity assessments. (c) Top and bottom: Profiles of identified cross-sections with additional markups. Middle: Signatures are extracted from cross-sections (after removal of bullet curvature, note the difference in vertical scale) and aligned. Similarities between signatures is visible but they are not very strong.  }
 \end{figure}
 
+\newpage
 \begin{longtable}{p{33mm}p{94mm}}
 \caption{\label{meta} Description of the variables in `meta-info.csv`.}
+
 \hline
 \bf Table   (meta-info.csv)              \\
 \bf Variable name & \bf Description\\ \hline
@@ -472,7 +474,7 @@ Information about each of the 420 raw LEA scans is provided in \autoref{meta}; e
 \hline
 \bf Land \& scan properties\\
 \hline
-\bf study          & identifies the origin set (Hamby-173 or Hamby-252) of the bulle. \\
+\bf study          & identifies the origin set (Hamby-173 or Hamby-252) of the bullet. \\
 \rowcolor{lightgray}
 \bf land\_id          & identifier of a land engraved area of the form {\tt study\_barrel\_bullet\_land}. \\
 \bf barrel, bullet, land & elements describing the provenance of each LEA. \\
@@ -490,6 +492,7 @@ Information about each of the 420 raw LEA scans is provided in \autoref{meta}; e
 \hline
 \end{longtable}
 
+\newpage
 \begin{longtable}{p{33mm}p{94mm}}
 \caption{\label{features} Description of features extracted from pairwise comparisons of scans. These values are stored in file `hamby-comparisons.csv`.}
 \hline
@@ -756,7 +759,7 @@ error_rf3 %>%
   scale_colour_manual("Types of Errors", values=c("orange", "grey50", "#219ebc"),
                       labels=c("False positives", "Overall", "False negatives"),
                       guide = guide_legend(reverse = TRUE)) +
-  theme(legend.position = c(.9, .45))
+  theme(legend.position = c(.9, .45), legend.position.inside = TRUE)
 @
 
 
@@ -861,6 +864,10 @@ perceived to have, influenced the work reported in this article.
 
 \hh{XXX add session info to the submission}
 
+<<session-info>>=
+require(sessioninfo)
+session_info()
+@
 
 %% Numbered
 %%If
