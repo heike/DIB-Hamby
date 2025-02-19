@@ -1,8 +1,8 @@
-library(tidyverse) # version 1.3.2
+library(tidyverse) # version  2.0.0
 library(x3ptools) # remotes::install_github("heike/x3ptools@e763e1cd")
 library(bulletxtrctr) # remotes::install_github("heike/bulletxtrctr@e8cea5d")
-library(purrr) # version 1.0.1
-library(future) # version 1.30.0
+library(purrr) # version 1.0.4
+library(future) # version 1.34.0
 
 # ------------------------------------------------------------------------------
 # *** Step 1: Download scans for the Hamby Study 173 and 225    ****************
