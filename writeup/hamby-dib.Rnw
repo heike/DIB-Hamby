@@ -334,7 +334,7 @@ Type of data           & Table: meta-info.csv\newline
 %\clearpage
 How data were acquired & Table (meta-info.csv): assembled by the authors; consists of a collection of descriptive elements for each of the raw scans and corresponding land engraved areas.  \newline
  Table (hamby-comparisons.csv): features quantifying the similarity between pairs of 3d topographic surface scans detailing striation marks on land engraved areas (LEAs) of fired bullets. Features were extracted using the R 4.2.2 software \cite{R} packages x3ptools (heike/x3ptools@29d71ec) and bulletxtrctr (heike/bulletxtrctr@758321b) as outlined in the pipeline by \citet{aoas} and detailed in the accompanying R script. From available meta information ground truth regarding source is added for each comparison. Values are stored in form of a comma separated value file.\newline
-                        Model (csafe\_rf3.rds): using the features as training data a random forest is fit to predict same source pairs and different source pairs (R package randomForest 4.7-1.1).\\
+                        Model (csafe\_rf3.rds): Using the features as training data a random forest is fit to predict same source pairs and different source pairs (R package randomForest 4.7-1.1).\\
 
 Data format            & Raw \& Analyzed\\
 Parameters for
@@ -385,7 +385,7 @@ article                & E. Hare, H. Hofmann, A. Carriquiry,
 These data facilitate the development of probabilistic methods for evaluating and quantifying similarity between pairs of striation mark evidence on fired bullets.
 
 \item
-Reproducibility is a critical component of work in forensic statistics, because it enables comparison between newly developed algorithms and established methods. Thus, other researchers in forensic statistics, and possibly forensic examiners who are interested in validating new methods, will benefit from these data being publicly available. Outside of forensic applications, researchers in statistics with violations of independence or researchers in machine learning may find this dataset useful because of its real-world relevance.
+Reproducibility is a critical component of work in forensic statistics because it enables comparison between newly developed algorithms and established methods. Thus, other researchers in forensic statistics, and possibly forensic examiners who are interested in validating new methods, will benefit from these data being publicly available. Outside of forensic applications, researchers in statistics with violations of independence or researchers in machine learning may find this dataset useful because of its real-world relevance.
 
 \item This data enables researchers to compare the method described in \citep{aoas} to other methods for analysis of bullet land scans, including those previously published, such as in \citet{cmps}, and methods developed in the future. In addition, this data has been used internally for validation of the method for use across other types of ammunition and other models of handguns; thus, experiments which examine the robustness of the model's application on external test sets may produce new insights by leveraging this data. %\svp{XXX It would also be possible to e.g. predict the change in the model's predictions based on updates to include new data sources, but I don't know whether we want to mention that...XXX}
 % Forensic handwriting analysis is used to evaluate the source of ransom notes, forgeries, and other such pieces of handwritten evidence. The dataset serves as a sample to build statistical approaches to handwriting analysis. These data, and the methods based upon them, have potential implications in the judicial process, to ensure a transparent, accessible, repeatable, and more objective consideration of handwritten evidence.
@@ -446,7 +446,7 @@ detach(package:pROC)
 %These scans have an additional advantage over conventional sets of physical bullets: it is much easier to share the digital data.
 %The NIST database \citep{nist} contains the raw data for this study as well as many others.
 
-\autoref{overview} sketches the process from fired bullet to aligned signatures. The data described here, are shown in steps (b) and (c): raw scans have to be inspected for their usability for comparisons; for a similarity assessment additional elements such as crosscut and corresponding groove locations are needed.
+\autoref{overview} sketches the process from fired bullet to aligned signatures. The data described here are shown in steps (b) and (c): raw scans have to be inspected for their usability for comparisons; for a similarity assessment additional elements such as crosscut and corresponding groove locations are needed.
 
 Information about each of the 420 raw LEA scans is provided in \autoref{meta}; each row describes a scan of a single bullet land, its relative file path on the disk after the download, its suitability for comparisons, parameters for comparisons and, to determine ground truth for source assessments, its relationship to Hamby set 173 bullet 1 from the same barrel.
 
@@ -506,27 +506,27 @@ Information about each of the 420 raw LEA scans is provided in \autoref{meta}; e
 \hline
 \rowcolor{lightgray}
 \bf land1, land2
-  & identifiers of the land engraved areas of the form {\tt study\_barrel\_bullet\_land} where {\tt study} corresponds to either Hamby173 or Hamby252. A Hamby set consists of twenty bullets of known origin fired from barrels 1 through 10, and 15 questioned bullets. Questioned bullets are named by an uppercase latin letter. They have by definition no known barrel, i.e.\  land 3 from questioned bullet A from set 252 would be denoted as {\tt Hamby252-BrUkn-BA-L3}. Two bullets are fired from each of the ten barrels. Land 2 from the first bullet of barrel 4 in Set 173 is denoted as {\tt Hamby252-Br4-B1-L2}.
+  & identifiers of the land engraved areas of the form {\tt study\_barrel\_bullet\_land} where {\tt study} corresponds to either Hamby173 or Hamby252. A Hamby set consists of twenty bullets of known origin fired from barrels 1 through 10, and 15 questioned bullets. Questioned bullets are named by an uppercase latin letter. They have, by definition, no known barrel, i.e.\  land 3 from questioned bullet A from set 252 would be denoted as {\tt Hamby252-BrUkn-BA-L3}. Two bullets are fired from each of the ten barrels. Land 2 from the first bullet of barrel 4 in Set 173 is denoted as {\tt Hamby252-Br4-B1-L2}.
 {\bf land1} and {\bf land2} uniquely describe one row in the hamby-comparisons.csv data set.\\
 \bf study1, study2, barrel1, barrel2, bullet1, bullet2, l1, l2
   & elements describing the provenance of the two LEAs in a comparison. All of these elements can be directly derived from {\bf land1} and {\bf land2} and are added for convenience  only.\\ \hline
 \multicolumn{2}{l}{\bf Measures based on comparisons of two aligned signatures}
 \\ \hline
 \bf ccf
-  & maximized cross-correlation between two LEA signatures,
+  & maximized cross-correlation between two LEA signatures.
 \\ \rowcolor{lightgray}
 \bf rough\_cor & correlation after detrending aligned signatures.\\
 \bf length, length\_mm & length of the shorter of two signatures -- as vector length, or converted to millimeter taking resolution into account.\\\rowcolor{lightgray}
-\bf lag, lag\_mm, abs\_lag, abs\_lag\_mm & (absolute) lag (in millimeter) between signatures to achieve alignment. \\
+\bf lag, lag\_mm, abs\_lag, abs\_lag\_mm & (absolute) lag (in millimeters) between signatures to achieve alignment. \\
 \bf overlap & ratio of overlap between the signatures after alignment. The length of the shorter of the two signatures is used as denominator in the ratio. \\\rowcolor{lightgray}
 \bf matches, matches\_per\_mm & number of matching peaks (per millimeter) between aligned signatures. Matching in this context is defined as the same (or similar) location along the $x$ axis. \\
 \bf mismatches, mismatches\_per\_mm & number of peaks on a signature that does not have a counterpart peak in close proximity along the $x$ axis on the aligned signature. \\\rowcolor{lightgray}
 \bf cms, cms\_per\_mm, cms2, cms\_per\_mm, & CMS are \underline{c}onsecutively \underline{m}atching \underline{s}triae \citep{biasotti} between two aligned land engraved areas (LEAs). Striations, as defined by firearms and toolmarks examiners, exhibit as peaks in the  corresponding signature. Because confocal light microscopy also captures depths, we can expand the notion of striations to peaks and valleys. Correspondingly, {\bf cms} is defined as the number of consecutively matching peaks and valleys of two aligned signatures, while {\bf cms2} is the number of just the peaks. \\
-\bf non\_cms, non\_cms\_per\_mm & longest sequence of non-matching peaks (per millimeter) between two aligned signatures\\\rowcolor{lightgray}
+\bf non\_cms, non\_cms\_per\_mm & longest sequence of non-matching peaks (per millimeter) between two aligned signatures.\\\rowcolor{lightgray}
 \bf left\_cms, right\_cms & longest sequence of matching striae from the left/right of two aligned signatures. \\
 \bf D, sd\_D & Euclidean distance (in millimeters) between two aligned signatures and its standard deviation. \\\rowcolor{lightgray}
 \bf sum\_peaks & the depth of peaks measured as the sum of matching peaks between two aligned signatures (in microns).\\
-\bf samesource &  ground truth whether a pair is from the same source (TRUE) or from different sources (FALSE). \\\rowcolor{lightgray}
+\bf samesource &  ground truth - whether a pair is from the same source (TRUE) or from different sources (FALSE). \\\rowcolor{lightgray}
 \bf damaged & logical variable indicating whether one of the land engraved areas shows visible damage such as pitting (holes in the bullet surface from gun powder exploding in the barrel next to it) or ``tank rash" (damage to the bullet after it exited the barrel after the firing). \\ \hline
 \end{longtable}
 
@@ -579,9 +579,9 @@ wrap_plots(ggs) + plot_spacer() + ggpubr::as_ggplot(leg)
 
 Finally, csafe\_rf3.rds is the binary file containing the random forest object fitted on the features in \texttt{hamby-comparisons.csv}. Random forests \citep{breiman} are a machine-learning method using an ensemble of decision trees.
 This random forest model is used to assess the similarity of two scans, with an output prediction of 0 indicative of a strong dissimilarity between the scans, and an output prediction near 1 indicating strong similarity between the scans. In addition to containing the weights used to make predictions, the fitted model also contains a record of the predictions made during the fitting process; and the features used to fit the model to the original set of scans.
-It is important to archive not only the code used to fit this model, but also the intermediate data, derived features, and full fitted model object, so that when the model is re-fit we have a record of changes between versions of the random forest models.
+It is important to archive not only the code used to fit this model, but also the intermediate data, derived features, and fully fitted model object, so that when the model is re-fit we have a record of changes between versions of the random forest models.
 
-The random forest object `csafe\_rf3` has an overall out-of-bag error rate estimated as 0.2\%. Out of the total 76,245 pairwise comparisons of the `hamby-comparisons.csv` data 76,096 comparisons or 99.8\% are correctly classified as same-source or different-source pairs.
+The random forest object `csafe\_rf3` has an overall out-of-bag error rate estimated as 0.2\%. Out of the total 76,245 pairwise comparisons of the `hamby-comparisons.csv` data, 76,096 comparisons, or 99.8\%, are correctly classified as same-source or different-source pairs.
 
 \autoref{fig:outcomes} shows a summary of (out-of-bag) prediction values of the csafe\_rf3 random forest trained on the feature values.
 
@@ -664,7 +664,7 @@ Step 1 in `create-features.R` sets up the required folder structure and download
 \begin{enumerate}
 \item[2.] Read the scans for each study into the work session. In this step, raw scans are rotated to the same orientation and re-scaled to the same units as during the creation of the meta-information.
 \item[3.] Include the meta data for each scan into the downloaded information.
-During this step (lines 96--101) a check is completed to verify that the scans have not changed since the meta data was derived.
+During this step (lines 96--101), a check is completed to verify that the scans have not changed since the meta data was derived.
 \end{enumerate}
 
 \noindent
@@ -680,7 +680,7 @@ During this step (lines 96--101) a check is completed to verify that the scans h
 
 \begin{enumerate}
 \item[6.] Extract the data between groove locations extracted (into object {\tt ccdata}, as shown in Figure 1b);
-fit a non-parametric function to the data, and remove the bullet surface curvature.
+fit a non-parametric function to the data and remove the bullet surface curvature.
 The residuals of this fit produce the ``bullet signature" (see Figure 1c, middle). This signature is used to represent the entire bullet land engraved area scan.
 \end{enumerate}
 
@@ -691,7 +691,7 @@ The residuals of this fit produce the ``bullet signature" (see Figure 1c, middle
 Steps 7 to 9 in code file \texttt{create-features.R}  generate the complete set of pairwise comparisons; the feature values for each pairwise comparison are provided in  \texttt{hamby-comparisons.csv}:
 
 \begin{enumerate}
-\item[7.] The signature of each scan is compared to every other scan to produce a set of pairwise comparisons. For that, signatures are first aligned, common striations are derived and a set of features is calculated.
+\item[7.] The signature of each scan is compared to every other scan to produce a set of pairwise comparisons. For that, signatures are first aligned, common striations are derived, and a set of features is calculated.
 \item[8.] The ground truth is included in the feature set for evaluating the prediction algorithm.
 \item[9.] Remove comparisons from damaged scans. Delete duplicates to not compromise the model fitting process.
 \end{enumerate}
@@ -743,7 +743,7 @@ Same-Source & 130 & 1374 & 0.0864362\\
 \end{tabular}
 \end{table}
 
-<<show-forest, echo=FALSE, fig.height = 5, fig.width = 8, fig.cap="Sequence of out-of-bag error rates over the cumulative number of trees evaluated for the random forest. After 200 iterations (not show), the fit stabilizes and no further reduction of the error rate is achieved.">>=
+<<show-forest, echo=FALSE, fig.height = 5, fig.width = 8, fig.cap="Sequence of out-of-bag error rates over the cumulative number of trees evaluated for the random forest. After 200 iterations (not shown), the fit stabilizes and no further reduction of the error rate is achieved.">>=
 error_rf3 %>%
   pivot_longer(-iteration, names_to="Types of Errors", values_to="Error rate") %>%
   mutate(
